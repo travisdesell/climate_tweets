@@ -24,14 +24,13 @@ echo "
 //these lines will add images
 $carousel_info['items'][] = array(
     'active' => 'true',
-    'image' => './images/dna_image_2.png',
-    'caption' => 'can put captions here.',
-    'text' => "Need a blurb here for the climate change twitter project. Need cool images too.");
-
+'image' => 'https://g.twimg.com/Twitter_logo_blue.png',
+    'caption' => '',
+    'text' => "The Climate Tweets project is focused on personal opinions about climate change or global warming. The goal is to sort tweets and view the different views in various countries, how the discussion has changed over time, and how opinions change with political orientation.");
 $carousel_info['items'][] = array(
-    'image' => './images/e-cadherin_after_snail_expression.png',
-    'caption' => 'This image shows what happens to the E-cadherin protein (stained in red) after Snail expression.',
-    'text' => "Need a blurb here for the climate change twitter project. Need cool images too.");
+    'image' => 'http://solarviews.com/raw/earth/bluemarblewest.jpg',
+    'caption' => '',
+    'text' => "Classifying tweets allows us to discover patterns and coorelations in people's opinions about our world. It also helps us understand what people know about climate change.");
 
 $projects_template = file_get_contents($cwd[__FILE__] . "/../../citizen_science_grid/templates/carousel.html");
 

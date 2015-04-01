@@ -60,5 +60,6 @@ shell_exec($command);
 
 $command = "ln -s $cwd/templates $target/templates";
 shell_exec("rm $target/templates ");
-shell_exec($command);
+shell_exec("rm $cwd/templates ");
+
 ?>
