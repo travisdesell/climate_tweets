@@ -19,6 +19,13 @@ $css_header = "<link rel='stylesheet' type = 'text/css' href = 'css/style.css' /
 print_header("Classifying Climate Tweets", "$css_header <script type='text/javascript' src='js/climate_tweets.js'></script>", "dna");
 print_navbar("Projects: Climate Tweets", "Climate Tweets", "..");
 
+/*
+$profanity_query = "SELECT user_id, seen_modal from update_profanity order by null");
+$prof_result = query_boinc_db($profanity_query);
+$data = $prof_result->fetch_assoc();
+$seen_modal = $data['seen_modal'];
+ */
+
 echo"
 <div class='modal fade' id = 'warning-modal'>
     <div class='modal-dialog'>
@@ -44,8 +51,6 @@ if ($langArrayResult != '') {
     $langArrayQuery = "lang IN ($langArrayResult) AND ";
 }
 
-//error_log("langArray: '" . implode(',',$langArray) . "'");
-
 //query for tweets only within languages selected
 $query = "SELECT id, tweet_id, text, lang, datetime FROM climate_tweets ct WHERE $langArrayQuery NOT EXISTS (select * FROM tweet_classifications tc where tc.tweet_id = ct.id and tc.user_id != $user_id) order by rand() limit 1";
 
@@ -60,19 +65,10 @@ else {
     $text = $row['text'];
 }
 
+
 //$text = $row['text'];
 $lang = $row['lang'];
 $datetime = $row['datetime'];
-
-
-/*css
-echo "<style>
-        .jumbotron{border: double #8DCDC1 8px; background-color: rgba(13, 205, 193, 0.05)}
-        .well{border: double #D3E397 8px; background-color: rgba(211, 227, 151, 0.1)}
-        .panel{border: #000000}
-        .modal-content{border: double #FFFFCC 8px; background-color: rgba(255, 255, 204)}      
-        </style>";
- */
 
 //modal for instructions
 
@@ -286,5 +282,14 @@ echo"
 print_footer('Travis Desell and the Climate Tweets Team', 'Aaron Bergstrom, Travis Desell, Lindsey Wingate, and Andrei Kirilenko');
 
 echo "</body></html>";
+
+/*css
+echo "<style>
+        .jumbotron{border: double #8DCDC1 8px; background-color: rgba(13, 205, 193, 0.05)}
+        .well{border: double #D3E397 8px; background-color: rgba(211, 227, 151, 0.1)}
+        .panel{border: #000000}
+        .modal-content{border: double #FFFFCC 8px; background-color: rgba(255, 255, 204)}      
+        </style>";
+ */
 
 ?>

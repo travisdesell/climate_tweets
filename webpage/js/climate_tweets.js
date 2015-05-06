@@ -2,11 +2,11 @@ $(document).ready(function () {
     //sets array for users desired tweet languages
     var languages = [];
   
-    //check if user accepts warning modal
+       //check if user accepts warning modal. If they have already seen it, modal will be disactivated
     $("#button1").click(function() {
         console.log("User will continue to the website");
         
-        });
+    });
 
     $("#button2").click(function() {
         console.log("Redirect to previous page");
