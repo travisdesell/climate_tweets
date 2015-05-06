@@ -6,11 +6,13 @@ $cwd[__FILE__] = dirname($cwd[__FILE__]);
 
 require_once($cwd[__FILE__] . '/../../citizen_science_grid/my_query.php');
 require_once($cwd[__FILE__] . '/../../citizen_science_grid/user.php');
+require_once($cwd[__FILE__] . '/get_languages.php');
 
 $user = csg_get_user(false);
 $user_id = $user['id'];
 
 error_log("user with id: $user_id submitted tweet classifications!");
+
 
 $tweet_id = mysql_real_escape_string($_POST['tweet_id']);
 $attitude = mysql_real_escape_string($_POST['attitude']);
@@ -32,7 +34,6 @@ $unknown = 0;
 
 foreach ($checked_boxes as $checked_box) {
     error_log("checked box was: '$checked_box'");
-
     if ($checked_box == 'phenomenon-drivers') {
         $phen_drivers = 1;
     } else if ($checked_box == 'phenomenon-science') {
@@ -55,41 +56,19 @@ foreach ($checked_boxes as $checked_box) {
         $unknown = 1;
     }
 }
-/*
-set language preferences to pass
-$english = 0;
-$portuguese = 0;
-$spanish = 0;
-$german = 0;
-$russian = 0;
-$french = 0;
-
-foreach ($languages as $lang) {
-    error_log("checked box was: '$lang'");
-    if ($lang == 'english') {
-        $english = 1;
-    } else if ($lang = 'portuguese') {
-        $portuguese = 1;
-    } else if ($lang = 'spanish') {
-        $spanish = 1;
-    } else if ($lang = 'german') {
-        $german = 1;
-    } else if ($lang = 'russian') {
-        $russian = 1;
-    } else if ($lang = 'french') {
-        $french = 1;
-    }
-}
-
-$query = "INSERT INTO tweet_preferences SET user_id = $user_id, english = $english, portuguese = $portuguese, spanish = $spanish, german = $german, russian = $russian, french = $french"; 
- */
+//classified tweet put into new table
 $query = "INSERT INTO tweet_classifications SET user_id = $user_id, tweet_id = $tweet_id, insert_time = now(), attitude = $attitude, phenomenon_science = $phen_science, phenomenon_drivers = $phen_drivers, phenomenon_denial = $phen_denial, impacts_extreme = $imp_extreme, impacts_weather = $imp_weather, impacts_environment = $imp_environment, impacts_society = $imp_society, adaptation_politics = $adapt_politics, adaptation_ethics = $adapt_ethics, unknown = $unknown";
-
-query_boinc_db($query);
 
 error_log($query);
 
-$result = query_boinc_db("SELECT id, tweet_id, text, lang, datetime FROM climate_tweets ct WHERE NOT EXISTS(SELECT * FROM tweet_classifications tc WHERE tc.tweet_id = ct.id AND tc.user_id != $user_id) ORDER BY RAND() LIMIT 1");
+query_boinc_db($query);
+
+$langArray = get_languages($user_id);
+$query = "SELECT id, tweet_id, text, lang, datetime FROM climate_tweets ct WHERE lang IN ( ".implode(',', $langArray).") AND NOT EXISTS(SELECT * FROM tweet_classifications tc WHERE tc.tweet_id = ct.id AND tc.user_id != $user_id) ORDER BY RAND() LIMIT 1";
+error_log($query);
+
+$result = query_boinc_db($query);
+
 $row = $result->fetch_assoc();
 $id = $row['id'];
 $text = $row['text'];
