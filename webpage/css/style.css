@@ -27,6 +27,7 @@
 */
 
 /*blocks possibly profane tweets until user has accepted terms*/
+
 .modal-backdrop{
     opacity:.90 !important;
 }
@@ -34,6 +35,10 @@
     background-color: #000000;
 }
 
+footer {
+    color: #e9FFFB;
+	
+}
 /*background*/
 body{
     background-image: url('../images/clouds.jpg');
