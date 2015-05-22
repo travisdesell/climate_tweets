@@ -257,7 +257,7 @@ echo "</div>";//row
 //submit button
 echo" <div class = 'col-sm-12'>";
 echo "<button type ='button' class='btn btn-primary center-block' data-toggle='modal' id='submit-button' tweet_id='$id' data-target='.conf-modal'>Submit the classification!</button>";
-echo "<font size = '2'><center><b>An attitude is required to submit the tweet</b></font>";
+echo "<font size = '2'><font color = #B8FFF3><center><b>An attitude is required to submit the tweet</b></font>";
 echo "</div><!--col-->";
 
 //modal response to submission
