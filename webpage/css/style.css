@@ -1,0 +1,45 @@
+.jumbotron{
+    border: double #8DCDC1 5px;
+    background-color: rgba(255, 255, 255, 0.8);
+    
+}
+
+
+.well{
+    border: double #D3E397 8px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding-left: 25px;
+
+}
+
+
+.modal-content{
+    
+    border: double #FFFFFF 20px;
+    background-color: rgba(255, 255, 255, 1);
+   
+
+}
+/*
+.modal-content p{
+    color: #FFFFFF;
+}
+*/
+
+/*blocks possibly profane tweets until user has accepted terms*/
+.modal-backdrop{
+    opacity:.90 !important;
+}
+.modal-backdrop{
+    background-color: #000000;
+}
+
+/*background*/
+body{
+    background-image: url('../images/clouds.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    
+}
+ 

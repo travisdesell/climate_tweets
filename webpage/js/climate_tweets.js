@@ -1,27 +1,59 @@
-$(document).ready(function () {
+$(document).ready(function() {
     //sets array for users desired tweet languages
     var languages = [];
-  
-       //check if user accepts warning modal. If they have already seen it, modal will be disactivated
+
+
+    //first ajax call gets whether user has seen modal or not 
+     $.ajax({
+         type : 'POST',
+         url : './get_profanity.php',
+         dataType : 'text',
+       
+         success : function(result) {
+            console.log("the profanity ajax call worked!");
+            console.log("the php script returned: '" + result + "'");
+            
+            if(result == 1){
+                $('#warning-modal').modal('hide');
+            }
+            else {
+                $('#warning-modal').modal('show');
+            }
+
+         },
+        
+        error : function(jqXHR, textStatus, errorThrown) {
+            console.log("there was an error during the get_profanity ajax call: '" + errorThrown + "'");
+        }
+    });
+
+    //check if user accepts warning modal.
     $("#button1").click(function() {
         console.log("User will continue to the website");
+       
+       //second ajax call: once the user has accepted profanity warning it is recorded in the table so they will not see it again 
+        $.ajax({
+            type : 'POST',
+            url : './update_profanity.php',
+            dataType : 'text',
+      
+            success : function(query) {
+                console.log("the profanity ajax call worked!");
+                console.log("query is: "+JSON.stringify(query));
+                },
         
+            error : function(jqXHR, textStatus, errorThrown) {
+                console.log("there was an error during the update_profanity ajax call: '" + errorThrown + "'");
+           }
+       });      
     });
 
     $("#button2").click(function() {
         console.log("Redirect to previous page");
         window.history.back(-1);
-        });
+    });
 
 
-    $('#warning-modal').modal('show');
- 
-    //upon click, code recorded so the user has seen the warning
-    $('#warning-modal').click(function() {
-        $('#warning-modal').collapse('hide');
-        var warning = true;
-    });    
-    
     //when the document is loaded, this will
     //initialize the languages array to preselected user preferences
     $(".lang-checkbox").each(function() {
@@ -39,7 +71,7 @@ $(document).ready(function () {
         console.log(languages);  
     });
 
-
+    //selects languages when clicked or unclicked
     $(".lang-checkbox").click(function() {
          if ($(this).prop('checked')) { 
              console.log($(this).attr("id") + " is checked!");
@@ -54,7 +86,7 @@ $(document).ready(function () {
             }   
         }
         console.log(languages);  
-
+    //sends languages to table in database to be stored for future user preferences
         $.ajax({
             type : 'POST',
             url : './update_language_preferences.php',
@@ -70,7 +102,6 @@ $(document).ready(function () {
                 console.log("there was an error: '" + errorThrown + "'");
             }
          });//ajax
-
     });
 
 
@@ -80,7 +111,8 @@ $(document).ready(function () {
 
     //if user has not selected an attitude, cannot submit tweet classification
     $("#submit-button").addClass('disabled');
-
+    
+    //records classified checkboxes in array
     $(".classify-checkbox").click(function() {
         if ($(this).prop('checked')) {
             //when a box is checked, increment the number checked
@@ -91,6 +123,7 @@ $(document).ready(function () {
 
             console.log( checked_boxes );
 
+            //max of 3
             if (number_checked > 3) {
                 console.log("unchecking: #" + checked_boxes[0]);
                 //this will uncheck the checkbox with the first id in the checked boxes array
@@ -110,6 +143,11 @@ $(document).ready(function () {
         }
     });
 
+  //open and close instructions button 
+   $('#instructions-button').click(function() {
+       $('#modal').collapse('hide');
+   });
+
    //set radio box variable
     $('.attitude-radio').click(function() {
         if ($('.attitude-radio'.checked)) {
@@ -120,8 +158,7 @@ $(document).ready(function () {
             $('#submit-button').removeClass('disabled');
     });
 
-    //submit data to server
-                
+    //submit data to server      
     $("#submit-button").click(function() {
         console.log("clicked the submit button!");
 
@@ -159,7 +196,6 @@ $(document).ready(function () {
                 $(".classify-checkbox").attr('checked',false);
                 $(".attitude-radio").attr('checked',false);     
                 
-                $('#test').modal('hide');
             },
             
             error : function(jqXHR, textStatus, errorThrown) {
@@ -168,10 +204,7 @@ $(document).ready(function () {
          });//ajax
       });//function
   
-    $('#modal').collapse('show');
-    
-    $('#instructions-button').click(function() {
-        $('#modal').collapse('hide');
-    });
+    $('#modal').modal('show');
+
 });
  

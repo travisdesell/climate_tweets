@@ -14,9 +14,8 @@ $user_id = $user['id'];
 error_log("user with id: $user_id submitted tweet classifications!");
 
 
-$tweet_id = mysql_real_escape_string($_POST['tweet_id']);
-$attitude = mysql_real_escape_string($_POST['attitude']);
-//$user_id = mysql_real_escape_string($_POST['user_id']);
+$tweet_id = $boinc_db->real_escape_string($_POST['tweet_id']);
+$attitude = $boinc_db->real_escape_string($_POST['attitude']);
 
 $checked_boxes = $_POST['checked_boxes'];
 $fixed_checked_boxes = array();
@@ -67,8 +66,10 @@ $langArray = get_languages($user_id);
 $query = "SELECT id, tweet_id, text, lang, datetime FROM climate_tweets ct WHERE lang IN ( ".implode(',', $langArray).") AND NOT EXISTS(SELECT * FROM tweet_classifications tc WHERE tc.tweet_id = ct.id AND tc.user_id != $user_id) ORDER BY RAND() LIMIT 1";
 error_log($query);
 
+
 $result = query_boinc_db($query);
 
+//returns new tweet information
 $row = $result->fetch_assoc();
 $id = $row['id'];
 $text = $row['text'];
@@ -77,6 +78,7 @@ $response['success'] = true;
 $response['new_id' ] = $id;
 $response['tweet_text'] = $text;
 
+//returns data to js
 echo json_encode($response);
 
 

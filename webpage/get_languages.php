@@ -28,10 +28,10 @@ function get_languages($user_id) {
     $langArray = array();
     $x = 0;
 
-    /*if($sum==0){
+    if($sum==0){
         $langArray[$x] = '\'en\'';
         $x = $x+1;
-    }*/
+    }
 
     if ($english == 1) {
         $langArray[$x] = '\'en\'';

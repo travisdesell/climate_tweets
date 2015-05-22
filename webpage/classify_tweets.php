@@ -19,19 +19,14 @@ $css_header = "<link rel='stylesheet' type = 'text/css' href = 'css/style.css' /
 print_header("Classifying Climate Tweets", "$css_header <script type='text/javascript' src='js/climate_tweets.js'></script>", "dna");
 print_navbar("Projects: Climate Tweets", "Climate Tweets", "..");
 
-/*
-$profanity_query = "SELECT user_id, seen_modal from update_profanity order by null");
-$prof_result = query_boinc_db($profanity_query);
-$data = $prof_result->fetch_assoc();
-$seen_modal = $data['seen_modal'];
- */
-
 echo"
-<div class='modal fade' id = 'warning-modal'>
+<div class='modal fade modal-black' id = 'warning-modal'>
     <div class='modal-dialog'>
         <div class='modal-content'>
             <div class='modal-body'>
-                <p>Some tweets included in the Climate Tweets project contain profanity. <p>
+            <center><b><p>&nbsp;The views in these tweets do not reflect the attitudes of the University of North Dakota, the Climate Tweets Team, or the Citizen Science Grid.</p>
+            <p>&nbsp;Some tweets included in the Climate Tweets project contain profanity. Continue only if you are 18 or older.</p>
+            <p><font color = 'red'>Note: Tweets will be shown in English unless otherwise specified.</font></p></b>
             </div>
             <div class='modal-footer'>
                 <button type='button' id = 'button1' class='btn btn-primary' data-dismiss='modal'>Continue</button>
@@ -39,7 +34,7 @@ echo"
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->";
+</div><!-- /.modal -->";
 
 echo"<http://pietervanklinken.nl/wp-content/uploads/2010/10/twitter-creative-commons-2.jpg>";
 
@@ -58,25 +53,24 @@ $result = query_boinc_db($query);
 $row = $result->fetch_assoc();
 $id = $row['id'];
 
+/*
 if(count($langArray) == 0){
     $text = 'Please enter your language preferences below';
 }
 else {
     $text = $row['text'];
-}
+}*/
 
-
-//$text = $row['text'];
+$text = $row['text'];
 $lang = $row['lang'];
 $datetime = $row['datetime'];
 
 //modal for instructions
-
 echo "
-    <div class='container'>
-        <div class='row'>
-            <div class='col-sm-12'>
-                <div class = 'jumbotron'>";
+<div class='container'>
+    <div class='col-sm-12'>
+        <div class='row row-centered'>
+            <div class = 'jumbotron'>";
 //echo "<html><head><body> <img src = 'http://www.steamfeed.com/wp-content/uploads/2013/07/twitter-bird.jpg' />  </body></head></html>";
 echo "<h1 align='center'>Help us classify the tweets!</h1>";
 echo "
@@ -132,7 +126,10 @@ echo "
 
 echo "<br>";
 echo "</div><!--jumbo-->";
+echo "</div><!--row-->";
+echo "</div><!--col-->";
 
+//tweets
 echo "<div class='row row-centered'>";
 echo "<div class='col-sm-12'>";
 echo "<div class='well' id='tweet-well'>";
@@ -143,38 +140,43 @@ echo "'$text'<br>";
 //echo "Language: '$lang'<br>";
 //echo "Tweeted on: '$datetime'<br>";
 
-echo "</div>";
-echo "</div>";
+echo "</div>"; //well
+echo "</div>"; //col
+echo "</div>"; //row
 
 //section for checkboxes - classify tweets by categories
 
+echo "<div class = 'row row-centered'>";
 echo "<div class='col-sm-6'>";
 echo "<div class='well well-sm'>";
-echo "<h3>Categories</h3>";
-echo "<b>Phenomenon:</b><br>";
-echo "&nbsp;&nbsp;&nbsp;<input type='checkbox' class='classify-checkbox' id='phenomenon-drivers' value='0'> Drivers</input><br>";
-echo "&nbsp;&nbsp;&nbsp;<input type='checkbox' class='classify-checkbox' id='phenomenon-science' value='0'> Science</input> <br>";
-echo "&nbsp;&nbsp;&nbsp;<input type='checkbox' class='classify-checkbox' id='phenomenon-denial' value='0'> Denial</input> <br>";
-echo "<b>Impacts:</b><br>";
-echo "&nbsp;&nbsp;&nbsp;<input type='checkbox' class='classify-checkbox' id='impacts-extreme' value='0'> Extreme</input> <br>";
-echo "&nbsp;&nbsp;&nbsp;<input type='checkbox' class='classify-checkbox' id='impacts-weather' value='0'> Weather</input> <br>";
-echo "&nbsp;&nbsp;&nbsp;<input type='checkbox' class='classify-checkbox' id='impacts-environment' value='0'> Environment</input> <br>";
-echo "&nbsp;&nbsp;&nbsp;<input type='checkbox' class='classify-checkbox' id='impacts-society' value='0'> Society</input> <br>";
-echo "<b>Adaptation:</b><br>";
-echo "&nbsp;&nbsp;&nbsp;<input type='checkbox' class='classify-checkbox' id='adaptation-politics' value='0'> Politics</input> <br>";
-echo "&nbsp;&nbsp;&nbsp;<input type='checkbox' class='classify-checkbox' id='adaptation-ethics' value='0'> Ethics</input> <br>";
-echo "<b>Other:</b><br>";
-echo "&nbsp;&nbsp;&nbsp;<input type='checkbox' class='classify-checkbox' id='unknown' value='0'> Unknown</input> <br>";
-echo "<i><font size ='1'>You may choose up to three applicable categories</font></i><br>";
-echo "<br>";
-echo "</div>";//well
-echo "</span>";
-echo "</div>";//column 
+    echo "<p><h3>Categories</h3></p>";
+        echo "<div class = 'col-md-6'>";
+            echo "<b>Phenomenon:</b><br>";
+            echo "&nbsp;&nbsp;&nbsp;<input type='checkbox' class='classify-checkbox' id='phenomenon-drivers' value='0'> Drivers</input><br>";
+            echo "&nbsp;&nbsp;&nbsp;<input type='checkbox' class='classify-checkbox' id='phenomenon-science' value='0'> Science</input> <br>";
+            echo "&nbsp;&nbsp;&nbsp;<input type='checkbox' class='classify-checkbox' id='phenomenon-denial' value='0'> Denial</input> <br>";
+            echo "<br>";
+            echo "<b>Adaptation:</b><br>";
+            echo "&nbsp;&nbsp;&nbsp;<input type='checkbox' class='classify-checkbox' id='adaptation-politics' value='0'> Politics</input> <br>";
+            echo "&nbsp;&nbsp;&nbsp;<input type='checkbox' class='classify-checkbox' id='adaptation-ethics' value='0'> Ethics</input> <br>";
+        echo "<br></div>"; //closes first mini-column    
+        echo "<div class = 'col-mod-6'>"; //second mini-column
+            echo "<b>Impacts:</b><br>";
+            echo "&nbsp;&nbsp;&nbsp;<input type='checkbox' class='classify-checkbox' id='impacts-extreme' value='0'> Extreme</input> <br>";
+            echo "&nbsp;&nbsp;&nbsp;<input type='checkbox' class='classify-checkbox' id='impacts-weather' value='0'> Weather</input> <br>";
+            echo "&nbsp;&nbsp;&nbsp;<input type='checkbox' class='classify-checkbox' id='impacts-environment' value='0'> Environment</input> <br>";
+            echo "&nbsp;&nbsp;&nbsp;<input type='checkbox' class='classify-checkbox' id='impacts-society' value='0'> Society</input> <br>";
+            echo "<br>";
+            echo "<b>Other:</b><br>";
+            echo "&nbsp;&nbsp;&nbsp;<input type='checkbox' class='classify-checkbox' id='unknown' value='0'> Unknown</input> <br>";
+        echo "<br></div>";
+        echo "<i><font size ='1'>You may choose up to three applicable categories</font></i><br>";
+    echo "</div>";//well
+echo "</div><!--col-->";
 
 //section for radio buttons - classify tweets by attitude
 echo "<div class ='col-sm-6'>";
 echo "<div class = 'well well-sm'>";
-
 
 echo "<p><h3>Attitudes</h3></p>";
 echo "<form role='form'>
@@ -192,22 +194,14 @@ echo "<form role='form'>
     <label><input type = 'radio' class = 'attitude-radio' id = 'radioID6' name = 'optradio' value = 'Unknown'>Unknown</label></div>
     </form>";
 echo "</div><!-- well -->";
-echo "</div><!--column-->";
-echo "</div><!--row-->";
+echo "</div><!-- col -->"; 
+echo "</div><!-- row -->";
 
-//submit button
-echo"<div class = 'col-sm-12'>";
-echo "<button type ='button' class='btn btn-primary center-block' data-toggle='modal' id='submit-button' tweet_id='$id' data-target='.conf-modal'>Submit the classification!</button>";
-echo "<font size = '1'><center>An attitude is needed to submit the tweet</font>";
-echo "</div><!--col-->";
-
-
-//section for languages
-echo"<div class ='col-sm-12'>
-    <div class = 'panel panel-default'>
-    <div class = 'panel-body'>";
-
-echo "<br><i><font color = 'hex_number-666666'><font size = '2'>Please select the language(s) of the tweets presented:  </font></font> </i>";
+//language stuff
+echo "<div class = 'row'>";
+echo "<div class = col-sm-12 col-centered'>";
+echo "<div class = 'well well-sm'>";
+echo "<br>Please select your default tweet languages. (english default) </i>";
 
 error_log( json_encode($langArray) );
 
@@ -255,9 +249,16 @@ if ($french) {
 } else {
     echo "<input type='checkbox' class='lang-checkbox' id='french' value='0'> French  </input>";
 }
+echo "<br><br>";
+echo "</div>";//well
+echo "</div>";//column
+echo "</div>";//row
 
-
-echo"</div></div>";//col12 & well
+//submit button
+echo" <div class = 'col-sm-12'>";
+echo "<button type ='button' class='btn btn-primary center-block' data-toggle='modal' id='submit-button' tweet_id='$id' data-target='.conf-modal'>Submit the classification!</button>";
+echo "<font size = '2'><center><b>An attitude is required to submit the tweet</b></font>";
+echo "</div><!--col-->";
 
 //modal response to submission
 echo " 
@@ -271,25 +272,7 @@ echo "
         </div>";
 
 echo"<http://pietervanklinken.nl/wp-content/uploads/2010/10/twitter-creative-commons-2.jpg>";
-
-echo"
-    </div><!--well-->
-            </div> <!-- col-sm-6 -->
-            </div> <!-- row -->
-            </div> <!-- /container -->";
- 
-
-print_footer('Travis Desell and the Climate Tweets Team', 'Aaron Bergstrom, Travis Desell, Lindsey Wingate, and Andrei Kirilenko');
-
+echo"</div> <!-- /container -->";
+print_footer('<strong>Travis Desell and the Climate Tweets Team</strong>', '<strong>Aaron Bergstrom, Travis Desell, Lindsey Wingate, and Andrei Kirilenko</strong>');
 echo "</body></html>";
-
-/*css
-echo "<style>
-        .jumbotron{border: double #8DCDC1 8px; background-color: rgba(13, 205, 193, 0.05)}
-        .well{border: double #D3E397 8px; background-color: rgba(211, 227, 151, 0.1)}
-        .panel{border: #000000}
-        .modal-content{border: double #FFFFCC 8px; background-color: rgba(255, 255, 204)}      
-        </style>";
- */
-
 ?>
