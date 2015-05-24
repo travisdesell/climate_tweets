@@ -11,7 +11,7 @@ require_once($cwd[__FILE__] . "/../../citizen_science_grid/footer.php");
 require_once($cwd[__FILE__] . "/../../citizen_science_grid/my_query.php");
 require_once($cwd[__FILE__] . "/../../citizen_science_grid/csg_uotd.php");
 
-print_header("Climate Tweets", "", "dna");
+print_header("Climate Tweets", "", "climate");
 print_navbar("Projects: Climate Tweets", "Climate Tweets", "..");
 
 echo "
@@ -24,7 +24,7 @@ echo "
 //these lines will add images
 $carousel_info['items'][] = array(
     'active' => 'true',
-'image' => 'https://g.twimg.com/Twitter_logo_blue.png',
+    'image' => 'https://g.twimg.com/Twitter_logo_blue.png',
     'caption' => '',
     'text' => "The Climate Tweets project is focused on personal opinions about climate change or global warming. The goal is to sort tweets and view the different views in various countries, how the discussion has changed over time, and how opinions change with political orientation.");
 $carousel_info['items'][] = array(
@@ -40,7 +40,7 @@ echo $m->render($projects_template, $carousel_info);
 
 echo "
             <div class='btn-group btn-group-justified' style='margin-top:20px;'>
-                <a class='btn btn-primary' role='button' href='../instructions.php'><h4>Volunteer Your Computer</h4></a>
+                <a class='btn btn-primary' role='button' href='./classify_tweets.php'><h4>Help us understand the Tweets! <font color='red'>18+</font></h4></a>
             </div>
 
             </div> <!-- col-sm-12 -->

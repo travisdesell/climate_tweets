@@ -16,7 +16,7 @@ $user_id = $user['id'];
 
 $css_header = "<link rel='stylesheet' type = 'text/css' href = 'css/style.css' />";
 
-print_header("Classifying Climate Tweets", "$css_header <script type='text/javascript' src='js/climate_tweets.js'></script>", "dna");
+print_header("Classifying Climate Tweets", "$css_header <script type='text/javascript' src='js/climate_tweets.js'></script><script type='text/javascript' src='js/discuss.js'></script>", "dna");
 print_navbar("Projects: Climate Tweets", "Climate Tweets", "..");
 
 echo"
@@ -48,6 +48,8 @@ if ($langArrayResult != '') {
 
 //query for tweets only within languages selected
 $query = "SELECT id, tweet_id, text, lang, datetime FROM climate_tweets ct WHERE $langArrayQuery NOT EXISTS (select * FROM tweet_classifications tc where tc.tweet_id = ct.id and tc.user_id != $user_id) order by rand() limit 1";
+
+error_log("tweet query: '$query'");
 
 $result = query_boinc_db($query);
 $row = $result->fetch_assoc();
@@ -255,10 +257,18 @@ echo "</div>";//column
 echo "</div>";//row
 
 //submit button
-echo" <div class = 'col-sm-12'>";
-echo "<button type ='button' class='btn btn-primary center-block' data-toggle='modal' id='submit-button' tweet_id='$id' data-target='.conf-modal'>Submit the classification!</button>";
+echo" <div class = 'col-sm-12 text-center'>";
+echo "<button type ='button' class='btn btn-primary pull-center' data-toggle='modal' id='submit-button' tweet_id='$id' data-target='.conf-modal'>Submit the classification!</button>";
+echo "&nbsp;&nbsp;";
+echo "<button type ='button' class='btn btn-primary pull-center' data-toggle='modal' id='discuss-tweet-button' tweet_id='$id' >Discuss this tweet!</button>";
 echo "<font size = '2'><font color = #B8FFF3><center><b>An attitude is required to submit the tweet</b></font>";
 echo "</div><!--col-->";
+
+echo "
+<form id='discuss-tweet-form' class='hidden' action='../forum_post.php?id=17' method='post' target='_blank'>
+    <input type='hidden' id='discuss-tweet-content' name='content' value=''>
+</form>";
+
 
 //modal response to submission
 echo " 

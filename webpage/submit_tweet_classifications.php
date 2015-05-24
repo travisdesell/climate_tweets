@@ -62,6 +62,16 @@ error_log($query);
 
 query_boinc_db($query);
 
+$query = "UPDATE user SET total_tweets = total_tweets + 1 WHERE id = $user_id";
+query_boinc_db($query);
+
+error_log("user team id is: " . $user['teamid']);
+if (intval($user['teamid']) > 0) {
+    $query = "UPDATE team SET total_tweets = total_tweets + 1 WHERE id = " . $user['teamid'];
+    query_boinc_db($query);
+
+}
+
 $langArray = get_languages($user_id);
 $query = "SELECT id, tweet_id, text, lang, datetime FROM climate_tweets ct WHERE lang IN ( ".implode(',', $langArray).") AND NOT EXISTS(SELECT * FROM tweet_classifications tc WHERE tc.tweet_id = ct.id AND tc.user_id != $user_id) ORDER BY RAND() LIMIT 1";
 error_log($query);
