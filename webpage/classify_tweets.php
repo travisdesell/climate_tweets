@@ -203,7 +203,7 @@ echo "</div><!-- row -->";
 echo "<div class = 'row'>";
 echo "<div class = col-sm-12 col-centered'>";
 echo "<div class = 'well well-sm'>";
-echo "<br>Please select your default tweet languages. (english default) </i>";
+echo "<br>Tweets are available in six languages. Please select which languages you would like to categorize. (english default) </i>";
 
 error_log( json_encode($langArray) );
 
