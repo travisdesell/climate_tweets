@@ -170,7 +170,7 @@ echo "<div class='well well-sm'>";
             echo "&nbsp;&nbsp;&nbsp;<input type='checkbox' class='classify-checkbox' id='impacts-society' value='0'> Society</input> <br>";
             echo "<br>";
             echo "<b>Other:</b><br>";
-            echo "&nbsp;&nbsp;&nbsp;<input type='checkbox' class='classify-checkbox' id='unknown' value='0'> Unknown</input> <br>";
+            echo "&nbsp;&nbsp;&nbsp;<input type='checkbox' class='classify-checkbox' id='unknown' value='0'> Unknown / Jokes</input> <br>";
         echo "<br></div>";
         echo "<i><font size ='1'>You may choose up to three applicable categories</font></i><br>";
     echo "</div>";//well
@@ -187,7 +187,7 @@ echo "<form role='form'>
        <div class = 'radio'>
        <label> <input type='radio' class= 'attitude-radio' id = 'radioID2' name='optradio' value ='-1'>-1: Negative</label></div>
        <div class = 'radio'>
-    <label><input type='radio' class = 'attitude-radio' id = 'radioID3' name='optradio' value= '0'>0: Neutral</label></div>
+    <label><input type='radio' class = 'attitude-radio' id = 'radioID3' name='optradio' value= '0'>0: Neutral / Inconclusive</label></div>
     <div class = 'radio'>
     <label><input type = 'radio' class= 'attitude-radio' id = 'radioID4' name = 'optradio' value ='1'>1: Positive </label></div>
     <div class = 'radio'>
@@ -206,6 +206,13 @@ echo "<div class = 'well well-sm'>";
 echo "<br>Please select your default tweet languages. (english default) </i>";
 
 error_log( json_encode($langArray) );
+
+$english = 0;
+$spanish = 0;
+$portuguese = 0;
+$german = 0;
+$french = 0;
+$russian = 0;
 
 foreach ($langArray as $lang) {
     if ($lang == "'en'") $english = 1;

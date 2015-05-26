@@ -49,7 +49,7 @@ echo "
         <div class='row'>
             <div class='col-sm-6'>";
 
-show_uotd(2, 10, "style='margin-top:20px;'");
+show_uotd(2, 10, "style='margin-top:20px;'", false);
 csg_show_news();
 
 echo "
