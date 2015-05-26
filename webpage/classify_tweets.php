@@ -283,7 +283,7 @@ echo "
         <div class='modal fade conf-modal' tabindex='1' role='dialog' aria-labelledby='mySmallModalLabel' aria-hidden='true'>
             <div class='modal-dialog modal-sm'>
                 <div class='modal-content'>
-                   <center><font size = '5'>Your tweet has now been classified.</font><br>Thanks for your help!</center>
+                   <center><font size = '5'>Your tweet has now been classified.</font><br>Thanks for your help! Click outside box to exit.</center>
                 </div>
             </div>
         </div>";
