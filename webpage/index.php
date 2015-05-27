@@ -28,7 +28,7 @@ $carousel_info['items'][] = array(
     'caption' => '',
     'text' => "The Climate Tweets project is focused on personal opinions about climate change or global warming. The goal is to sort tweets and view the different views in various countries, how the discussion has changed over time, and how opinions change with political orientation.");
 $carousel_info['items'][] = array(
-    'image' => './images/NASAworld.jpg',
+    'image' => '/images/NASAworld.jpg',
     'caption' => '',
     'text' => "Classifying tweets allows us to discover patterns and coorelations in people's opinions about our world. It also helps us understand what people know about climate change.");
 
@@ -38,10 +38,18 @@ $m = new Mustache_Engine;
 echo $m->render($projects_template, $carousel_info);
 
 
+
 echo "
+	<div class = 'well well-sm'>
+	    <button type = 'button' class = 'btn btn-primary pull-center' role='button' href='./classify_tweets.php'><h4>Help us understand the tweets! <font color='red'>18+</font></h4></button>
+	</div>
+"
+
+
+/*echo "
             <div class='btn-group btn-group-justified' style='margin-top:20px;'>
                 <a class='btn btn-primary' role='button' href='./classify_tweets.php'><h4>Help us understand the Tweets! <font color='red'>18+</font></h4></a>
-            </div>
+            </div>*/
 
             </div> <!-- col-sm-12 -->
         </div> <!-- row -->
