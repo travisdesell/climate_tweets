@@ -183,17 +183,17 @@ echo "<div class = 'well well-sm'>";
 echo "<p><h3>Attitudes</h3></p>";
 echo "<form role='form'>
       <div class = 'radio'>
-       <label> <input type='radio' class = 'attitude-radio' id = 'radioID' name='optradio' value ='-2' >-2: Extremely Negative </label></div>
-       <div class = 'radio'>
-       <label> <input type='radio' class= 'attitude-radio' id = 'radioID2' name='optradio' value ='-1'>-1: Negative</label></div>
-       <div class = 'radio'>
-    <label><input type='radio' class = 'attitude-radio' id = 'radioID3' name='optradio' value= '0'>0: Neutral / Inconclusive</label></div>
-    <div class = 'radio'>
-    <label><input type = 'radio' class= 'attitude-radio' id = 'radioID4' name = 'optradio' value ='1'>1: Positive </label></div>
-    <div class = 'radio'>
-    <label> <input type = 'radio' class = 'attitude-radio' id = 'radioID5' name = 'optradio' value ='2'>2: Extremely Positive </labe></div>
-    <div class = 'radio'>
-    <label><input type = 'radio' class = 'attitude-radio' id = 'radioID6' name = 'optradio' value = 'Unknown'>Unknown</label></div>
+       <label> <input type='radio' class = 'attitude-radio' id = 'radioID' name='optradio' value ='-2' >-2: Strongly does not support Climate Change </label></div>
+      <div class = 'radio'>
+       <label> <input type='radio' class= 'attitude-radio' id = 'radioID2' name='optradio' value ='-1'>-1: Does not support</label></div>
+      <div class = 'radio'>
+       <label><input type='radio' class = 'attitude-radio' id = 'radioID3' name='optradio' value= '0'>0: Neutral / Inconclusive</label></div>
+      <div class = 'radio'>
+       <label><input type = 'radio' class= 'attitude-radio' id = 'radioID4' name = 'optradio' value ='1'>1: Supports Climate Change </label></div>
+      <div class = 'radio'>
+       <label> <input type = 'radio' class = 'attitude-radio' id = 'radioID5' name = 'optradio' value ='2'>2: Strongly supports Climate Change </labe></div>
+      <div class = 'radio'>
+       <label><input type = 'radio' class = 'attitude-radio' id = 'radioID6' name = 'optradio' value = 'Unknown'>Unknown</label></div>
     </form>";
 echo "</div><!-- well -->";
 echo "</div><!-- col -->"; 
