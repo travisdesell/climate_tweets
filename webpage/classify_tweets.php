@@ -92,11 +92,11 @@ echo "
           <i>Note: If the tweet does not fit any category select the 'Unknown' attitude and submit</i><br>
           <br>
                 <b>Attitudes</b><br>
-                -2: Extremely negative, denial or skepticism of Climate Change.<br>
-                -1: Negative, denial of Climate Change.<br>
+                -2: Strongly denies or criticizes Climate Change.<br>
+                -1: Denies Climate Change.<br>
                 0: Neutral.<br>
-                1. Positive, supports Climate Change.<br>
-                2. Extremely positive, supports Climate Change.<br>
+                1. Supports Climate Change.<br>
+                2. Strongly supports Climate Change.<br>
                 <br>
                 <b>Categories</b><br>
                 <i>Global Warming Phenomenon</i><br>
@@ -283,7 +283,8 @@ echo "
         <div class='modal fade conf-modal' tabindex='1' role='dialog' aria-labelledby='mySmallModalLabel' aria-hidden='true'>
             <div class='modal-dialog modal-sm'>
                 <div class='modal-content'>
-                   <center><font size = '5'>Your tweet has now been classified.</font><br>Thanks for your help! Click outside box to exit.</center>
+                    <button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
+			<center><font size = '5'>Your tweet has now been classified.</font><br>Thanks for your help! Click outside box to exit.</center>
                 </div>
             </div>
         </div>";
