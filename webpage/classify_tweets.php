@@ -284,7 +284,7 @@ echo "
             <div class='modal-dialog modal-sm'>
                 <div class='modal-content'>
                     <button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
-			<center><font size = '5'>Your tweet has now been classified.</font><br>Thanks for your help! Click below or outside box to exit.</center>
+			<center><font size = '5'>Your tweet has now been classified.</font><br>Thanks for your help!</center>
                 </div>
             </div>
         </div>";
