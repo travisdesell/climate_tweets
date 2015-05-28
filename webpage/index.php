@@ -24,11 +24,11 @@ echo "
 //these lines will add images
 $carousel_info['items'][] = array(
     'active' => 'true',
-    'image' => 'https://g.twimg.com/Twitter_logo_blue.png',
+    'image' => './images/twitterFinalLogo.psd',
     'caption' => '',
     'text' => "The Climate Tweets project is focused on personal opinions about climate change or global warming. The goal is to sort tweets and view the different views in various countries, how the discussion has changed over time, and how opinions change with political orientation.");
 $carousel_info['items'][] = array(
-    'image' => '/images/NASAworld.jpg',
+    'image' => './images/nasaworld.psd',
     'caption' => '',
     'text' => "Classifying tweets allows us to discover patterns and coorelations in people's opinions about our world. It also helps us understand what people know about climate change.");
 
@@ -40,10 +40,9 @@ echo $m->render($projects_template, $carousel_info);
 
 
 echo "
-	<div class = 'well well-sm'>
-	    <button type = 'button' class = 'btn btn-primary pull-center' role='button' href='./classify_tweets.php'><h4>Help us understand the Tweets!<font color='red'>18+</font></h4></button>
-	</div>
-"
+	<br>
+        <button type = 'button' class = 'btn btn-primary center-block' role='button' href='./classify_tweets.php'><h4>Help us understand the Tweets!<font color='red'>18+</font></h4></button>
+";
 
 
 /*echo "
@@ -51,6 +50,7 @@ echo "
                 <a class='btn btn-primary' role='button' href='./classify_tweets.php'><h4>Help us understand the Tweets! <font color='red'>18+</font></h4></a>
             </div>*/
 
+echo "
             </div> <!-- col-sm-12 -->
         </div> <!-- row -->
 
