@@ -41,7 +41,7 @@ echo $m->render($projects_template, $carousel_info);
 
 echo "
 	<div class = 'well well-sm'>
-	    <button type = 'button' class = 'btn btn-primary pull-center' role='button' href='./classify_tweets.php'><h4>Help us understand the tweets! <font color='red'>18+</font></h4></button>
+	    <button type = 'button' class = 'btn btn-primary pull-center' role='button' href='./classify_tweets.php'><h4>Help us understand the Tweets!<font color='red'>18+</font></h4></button>
 	</div>
 "
 

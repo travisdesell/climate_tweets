@@ -185,7 +185,7 @@ echo "<form role='form'>
       <div class = 'radio'>
        <label> <input type='radio' class = 'attitude-radio' id = 'radioID' name='optradio' value ='-2' >-2: Strongly does not support Climate Change </label></div>
       <div class = 'radio'>
-       <label> <input type='radio' class= 'attitude-radio' id = 'radioID2' name='optradio' value ='-1'>-1: Does not support</label></div>
+       <label> <input type='radio' class= 'attitude-radio' id = 'radioID2' name='optradio' value ='-1'>-1: Does not support Climate Change</label></div>
       <div class = 'radio'>
        <label><input type='radio' class = 'attitude-radio' id = 'radioID3' name='optradio' value= '0'>0: Neutral / Inconclusive</label></div>
       <div class = 'radio'>
@@ -284,7 +284,7 @@ echo "
             <div class='modal-dialog modal-sm'>
                 <div class='modal-content'>
                     <button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
-			<center><font size = '5'>Your tweet has now been classified.</font><br>Thanks for your help! Click outside box to exit.</center>
+			<center><font size = '5'>Your tweet has now been classified.</font><br>Thanks for your help! Click below or outside box to exit.</center>
                 </div>
             </div>
         </div>";
