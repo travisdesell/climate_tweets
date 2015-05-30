@@ -92,11 +92,11 @@ echo "
           <i>Note: If the tweet does not fit any category select the 'Unknown' attitude and submit</i><br>
           <br>
                 <b>Attitudes</b><br>
-                -2: Extremely negative, denial or skepticism of Climate Change.<br>
-                -1: Negative, denial of Climate Change.<br>
+                -2: Strongly denies or criticizes Climate Change.<br>
+                -1: Denies Climate Change.<br>
                 0: Neutral.<br>
-                1. Positive, supports Climate Change.<br>
-                2. Extremely positive, supports Climate Change.<br>
+                1. Supports Climate Change.<br>
+                2. Strongly supports Climate Change.<br>
                 <br>
                 <b>Categories</b><br>
                 <i>Global Warming Phenomenon</i><br>
@@ -183,17 +183,17 @@ echo "<div class = 'well well-sm'>";
 echo "<p><h3>Attitudes</h3></p>";
 echo "<form role='form'>
       <div class = 'radio'>
-       <label> <input type='radio' class = 'attitude-radio' id = 'radioID' name='optradio' value ='-2' >-2: Extremely Negative </label></div>
-       <div class = 'radio'>
-       <label> <input type='radio' class= 'attitude-radio' id = 'radioID2' name='optradio' value ='-1'>-1: Negative</label></div>
-       <div class = 'radio'>
-    <label><input type='radio' class = 'attitude-radio' id = 'radioID3' name='optradio' value= '0'>0: Neutral / Inconclusive</label></div>
-    <div class = 'radio'>
-    <label><input type = 'radio' class= 'attitude-radio' id = 'radioID4' name = 'optradio' value ='1'>1: Positive </label></div>
-    <div class = 'radio'>
-    <label> <input type = 'radio' class = 'attitude-radio' id = 'radioID5' name = 'optradio' value ='2'>2: Extremely Positive </labe></div>
-    <div class = 'radio'>
-    <label><input type = 'radio' class = 'attitude-radio' id = 'radioID6' name = 'optradio' value = 'Unknown'>Unknown</label></div>
+       <label> <input type='radio' class = 'attitude-radio' id = 'radioID' name='optradio' value ='-2' >-2: Strongly does not support Climate Change </label></div>
+      <div class = 'radio'>
+       <label> <input type='radio' class= 'attitude-radio' id = 'radioID2' name='optradio' value ='-1'>-1: Does not support Climate Change</label></div>
+      <div class = 'radio'>
+       <label><input type='radio' class = 'attitude-radio' id = 'radioID3' name='optradio' value= '0'>0: Neutral / Inconclusive</label></div>
+      <div class = 'radio'>
+       <label><input type = 'radio' class= 'attitude-radio' id = 'radioID4' name = 'optradio' value ='1'>1: Supports Climate Change </label></div>
+      <div class = 'radio'>
+       <label> <input type = 'radio' class = 'attitude-radio' id = 'radioID5' name = 'optradio' value ='2'>2: Strongly supports Climate Change </labe></div>
+      <div class = 'radio'>
+       <label><input type = 'radio' class = 'attitude-radio' id = 'radioID6' name = 'optradio' value = 'Unknown'>Unknown</label></div>
     </form>";
 echo "</div><!-- well -->";
 echo "</div><!-- col -->"; 
@@ -283,7 +283,8 @@ echo "
         <div class='modal fade conf-modal' tabindex='1' role='dialog' aria-labelledby='mySmallModalLabel' aria-hidden='true'>
             <div class='modal-dialog modal-sm'>
                 <div class='modal-content'>
-                   <center><font size = '5'>Your tweet has now been classified.</font><br>Thanks for your help!</center>
+                    <button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
+			<center><font size = '5'>Your tweet has now been classified.</font><br>Thanks for your help!</center>
                 </div>
             </div>
         </div>";

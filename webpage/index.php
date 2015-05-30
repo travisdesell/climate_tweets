@@ -24,7 +24,7 @@ echo "
 //these lines will add images
 $carousel_info['items'][] = array(
     'active' => 'true',
-    'image' => 'https://g.twimg.com/Twitter_logo_blue.png',
+    'image' => './images/Twitter_logo_blue.png',
     'caption' => '',
     'text' => "The Climate Tweets project is focused on personal opinions about climate change or global warming. The goal is to sort tweets and view the different views in various countries, how the discussion has changed over time, and how opinions change with political orientation.");
 $carousel_info['items'][] = array(
@@ -38,11 +38,19 @@ $m = new Mustache_Engine;
 echo $m->render($projects_template, $carousel_info);
 
 
+
 echo "
+	<br>
+        <button type = 'button' class = 'btn btn-primary center-block' role='button' href='./classify_tweets.php'><h4>Help us understand the Tweets!<font color='red'>18+</font></h4></button>
+";
+
+
+/*echo "
             <div class='btn-group btn-group-justified' style='margin-top:20px;'>
                 <a class='btn btn-primary' role='button' href='./classify_tweets.php'><h4>Help us understand the Tweets! <font color='red'>18+</font></h4></a>
-            </div>
+            </div>*/
 
+echo "
             </div> <!-- col-sm-12 -->
         </div> <!-- row -->
 
