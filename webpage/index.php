@@ -40,8 +40,9 @@ echo $m->render($projects_template, $carousel_info);
 
 
 echo "
-	<br>
-        <button type = 'button' class = 'btn btn-primary center-block' role='button' href='./classify_tweets.php'><h4>Help us understand the Tweets!<font color='red'>18+</font></h4></button>
+    <div class='btn-group btn-group-justified pull-center' style='margin-top:20px; padding-left:30px; padding-right:30px;'>
+        <a class='btn btn-primary' role='button' href='./classify_tweets.php'><h4>Help us understand the Tweets! <font color='red'>18+</font></h4></a>
+    </div>
 ";
 
 
