@@ -28,7 +28,7 @@ $carousel_info['items'][] = array(
     'caption' => '',
     'text' => "The Climate Tweets project is focused on personal opinions about climate change or global warming. The goal is to sort tweets and view the different views in various countries, how the discussion has changed over time, and how opinions change with political orientation.");
 $carousel_info['items'][] = array(
-    'image' => 'http://solarviews.com/raw/earth/bluemarblewest.jpg',
+    'image' => '../images/bluemarblewest.png',
     'caption' => '',
     'text' => "Classifying tweets allows us to discover patterns and coorelations in people's opinions about our world. It also helps us understand what people know about climate change.");
 
