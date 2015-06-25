@@ -124,7 +124,7 @@ $(document).ready(function() {
             console.log( checked_boxes );
 
             //max of 3
-            if (number_checked > 2) {
+            if (number_checked > 3) {
                 console.log("unchecking: #" + checked_boxes[0]);
                 //this will uncheck the checkbox with the first id in the checked boxes array
                 $("#" + checked_boxes[0]).attr('checked', false);
