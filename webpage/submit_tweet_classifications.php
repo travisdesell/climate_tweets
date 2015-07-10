@@ -13,7 +13,6 @@ $user_id = $user['id'];
 
 error_log("user with id: $user_id submitted tweet classifications!");
 
-
 $tweet_id = $boinc_db->real_escape_string($_POST['tweet_id']);
 $attitude = $boinc_db->real_escape_string($_POST['attitude']);
 

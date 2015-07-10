@@ -86,6 +86,7 @@ $(document).ready(function() {
             }   
         }
         console.log(languages);  
+
     //sends languages to table in database to be stored for future user preferences
         $.ajax({
             type : 'POST',
@@ -158,13 +159,63 @@ $(document).ready(function() {
             $('#submit-button').removeClass('disabled');
     });
 
-    //submit data to server      
-    $("#submit-button").click(function() {
+
+   //set radio box variables for incorrect language drop down
+    $('.lang-radio').click(function() {
+        if ($('.lang-radio'.checked)) {
+            radio_checked_2 = ($(this).attr("value"));
+            console.log( $(this).attr("value") + " is checked");
+            }
+    });
+
+//submit data to server for incorrect language tweets     
+    $("#new-tweet").click(function() {
+        console.log("clicked the new tweet button!");
+
+        var lang_data = {
+                    tweet_id : $(this).attr('tweet_id'),
+                    lang : radio_checked_2
+                };//data
+
+        console.log(lang_data);
+        var inc_lang = $(this);
+
+//ajax call for tweet submissions - incorrect languages
+        $.ajax({
+            type : 'POST',
+            url : './update_wrong_languages.php',
+            data : lang_data,
+           dataType : 'JSON',
+           
+            success : function(response) {
+                console.log("the ajax call worked!");
+                console.log("the response was: " + JSON.stringify(response));   
+
+                inc_lang.attr('tweet_id', response['new_id']);
+                $("#tweet-well").text( response['tweet_text'] );
+                $(this).removeClass('disabled');
+               
+        //unchecks boxes when ajax call is successful and pulls another tweet to classify
+             
+                checked_boxes = [];
+                number_checked = 0;
+                $(".classify-checkbox").attr('checked',false);
+                $(".attitude-radio").attr('checked',false);     
+                $(".lang-radio").attr('checked',false); 
+            },
+            
+            error : function(jqXHR, textStatus, errorThrown) {
+                console.log("there was an error with the wrong language selection: '" + errorThrown + "'");
+            }
+         });//ajax
+      });//function
+  
+
+//submit data to server for correct languages 
+    $("#submit_button").click(function() {
         console.log("clicked the submit button!");
 
-        $(this).addClass('disabled');
-
-        //making an object on the go
+       //making an object on the go
         var submit_data = {
                     tweet_id : $(this).attr('tweet_id'),
                     attitude : radio_checked,
@@ -175,6 +226,8 @@ $(document).ready(function() {
 
         var submit_button = $(this);
 
+
+//ajax call for tweet submissions
         $.ajax({
             type : 'POST',
             url : './submit_tweet_classifications.php',
@@ -189,13 +242,13 @@ $(document).ready(function() {
                 $("#tweet-well").text( response['tweet_text'] );
                 $(this).removeClass('disabled');
                
-                //unchecks boxes when ajax call is successful and pulls another tweet to classify
+        //unchecks boxes when ajax call is successful and pulls another tweet to classify
              
                 checked_boxes = [];
                 number_checked = 0;
                 $(".classify-checkbox").attr('checked',false);
                 $(".attitude-radio").attr('checked',false);     
-                
+		$(".lang-radio").attr('checked',false);                
             },
             
             error : function(jqXHR, textStatus, errorThrown) {
@@ -204,7 +257,7 @@ $(document).ready(function() {
          });//ajax
       });//function
   
-    $('#modal').modal('show');
+      $('#modal').modal('show');
 
 });
  
