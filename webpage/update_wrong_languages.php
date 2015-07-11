@@ -14,12 +14,10 @@ $user_id = $user['id'];
 error_log("user with id: $user_id submitted an incorrect language tweet classification!");
 
 $tweet_id = $boinc_db->real_escape_string($_POST['tweet_id']);
-$lang = $boinc_db->real_escape_string($_POST['language']);
-
+$language = $boinc_db->real_escape_string($_POST['language']);
 error_log("user with id: $user_id submitted an incorrect language classification!");
 
-$wrong_lang_query = "insert into wrong_language set user_id = $user_id, tweet_id = $tweet_id, language = $lang";   
-
+$wrong_lang_query = "insert into wrong_language set user_id = $user_id, tweet_id = $tweet_id, language = $language";   
 $result1 = query_boinc_db($wrong_lang_query);
 
 $new_tweet_query = "SELECT id, tweet_id, text, lang, datetime FROM climate_tweets ct WHERE lang IN ( ".implode(',', $langArray).") AND NOT EXISTS(SELECT * FROM tweet_classifications tc WHERE tc.tweet_id = ct.id AND tc.user_id != $user_id) ORDER BY RAND() LIMIT 1";

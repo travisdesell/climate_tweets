@@ -185,7 +185,7 @@ $(document).ready(function() {
             type : 'POST',
             url : './update_wrong_languages.php',
             data : lang_data,
-           dataType : 'JSON',
+            dataType : 'JSON',
            
             success : function(response) {
                 console.log("the ajax call worked!");
@@ -213,19 +213,18 @@ $(document).ready(function() {
 
 //submit data to server for correct languages 
     $("#submit_button").click(function() {
-        console.log("clicked the submit button!");
+    	console.log("clicked the submit button!");
 
        //making an object on the go
         var submit_data = {
                     tweet_id : $(this).attr('tweet_id'),
                     attitude : radio_checked,
                     checked_boxes : checked_boxes
-                };//data
+        	};//data
 
         console.log(submit_data);
 
         var submit_button = $(this);
-
 
 //ajax call for tweet submissions
         $.ajax({
@@ -254,8 +253,8 @@ $(document).ready(function() {
             error : function(jqXHR, textStatus, errorThrown) {
                 console.log("there was an error: '" + errorThrown + "'");
             }
-         });//ajax
-      });//function
+        });//ajax
+    });//function
   
       $('#modal').modal('show');
 
