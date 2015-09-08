@@ -257,7 +257,22 @@ echo "</div>";//column
 echo "</div>";//row
 
 //submit button
-echo" <div class = 'col-sm-12 text-center'>";
+echo "<div class = 'col-sm-12 text-center'>";
+echo "<div class = 'btn-group'>
+      <button type = 'button' class = 'btn btn-primary dropdown-toggle' data-toggle='dropdown' id='wrong-lang-button' aria-haspopup='true' aria-expanded='false'>Incorrect Language<span class = 'caret'><span></button>
+<ul class='dropdown-menu'>
+     <li><label> <input type='radio' class = 'lang-radio' id = 'radioID' name = 'optradio' value = 'french'>French</label></li> 
+     <li><label> <input type='radio' class = 'lang-radio' id = 'radioID' name = 'optradio' value = 'english'>English</label></li>
+     <li><label> <input type='radio' class = 'lang-radio' id = 'radioID' name = 'optradio' value = 'spanish'>Spanish</label></li>
+     <li><label> <input type='radio' class = 'lang-radio' id = 'radioID' name = 'optradio' value = 'german'>German</label></li> 
+     <li><label> <input type='radio' class = 'lang-radio' id = 'radioID' name = 'optradio' value = 'russian'>Russian</label></li>  
+     <li><label> <input type='radio' class = 'lang-radio' id = 'radioID' name = 'optradio' value = 'portuguese'>Portuguese</label></li>  
+     <li><label> <input type='radio' class = 'lang-radio' id = 'radioID' name = 'optradio' value = 'unknown'>Unknown</label></li>  
+     <li>&nbsp;&nbsp;&nbsp&nbsp;&nbsp;
+     <button type = 'button' class = 'btn btn-primary pull-center' data-toggle = 'modal' id = 'new-tweet' tweet_id = '$id'>New Tweet</li>
+</ul></div>
+";
+echo "&nbsp;&nbsp;";
 echo "<button type ='button' class='btn btn-primary pull-center' data-toggle='modal' id='submit-button' tweet_id='$id' data-target='.conf-modal'>Submit the classification!</button>";
 echo "&nbsp;&nbsp;";
 echo "<button type ='button' class='btn btn-primary pull-center' data-toggle='modal' id='discuss-tweet-button' tweet_id='$id' >Discuss this tweet!</button>";
