@@ -263,11 +263,17 @@ echo "&nbsp;&nbsp;";
 echo "<button type ='button' class='btn btn-primary pull-center' data-toggle='modal' id='discuss-tweet-button' tweet_id='$id' >Discuss this tweet!</button>";
 echo "<font size = '2'><font color = #B8FFF3><center><b>An attitude is required to submit the tweet</b></font>";
 echo "</div><!--col-->";
-
 echo "
 <form id='discuss-tweet-form' class='hidden' action='../forum_post.php?id=17' method='post' target='_blank'>
     <input type='hidden' id='discuss-tweet-content' name='content' value=''>
 </form>";
+//tweet classified alert :)
+echo "<div class='row'>
+      <div class='span12 text-center'>
+      <div id='tweet-alert' class='alert alert-info hidden'>
+      <a class='close' data-dismiss='alert'></a>
+          Thanks! Your tweet has been classified.
+      </div></div></div>";
 
 
 //modal response to submission

@@ -1,4 +1,3 @@
-
 #!python :)
 #from config import Config - safer for connecting?
 
@@ -9,7 +8,6 @@ import langdetect
 from langdetect import detect
 
 #import MySQLdb.cursors
-
 #config = {} can also connect using dictionary of arguments/passwords **configi
 
 try:
@@ -25,11 +23,13 @@ except mysql.connector.Error as err:
         database.close()
 
 cleaner = database.cursor() #can specify cursorclass parameter
+
 try:
     cleaner.execute('SELECT * FROM climate_tweets')
     #tweets = cleaner.fetchall()#select text, lang detect
     #tweets = cleaner.fetchmany()
     #fetchmany(size=num!) selects batch of rows and returns as list of tuples!! returns empty list once rows are all gone
+
 except mysql.connector.Error as err:
     print('Failed accessing database: {} '.format(err))
     exit(1)
@@ -37,6 +37,7 @@ except mysql.connector.Error as err:
 for tweet in tweets:
     text = tweet['lang']
     realLang = detect(text)
+
     if realLang == text:
         print ('same lang!')
         continue
@@ -49,4 +50,4 @@ for tweet in tweets:
 
 cleaner.close()
 database.close()
-~                              i
+

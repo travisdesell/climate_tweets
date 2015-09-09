@@ -2,7 +2,7 @@ $(document).ready(function() {
     //sets array for users desired tweet languages
     var languages = [];
 
-
+    
     //first ajax call gets whether user has seen modal or not 
      $.ajax({
          type : 'POST',
@@ -158,12 +158,17 @@ $(document).ready(function() {
             $('#submit-button').removeClass('disabled');
     });
 
-    //submit data to server      
+    
+;    //submit data to server      
     $("#submit-button").click(function() {
         console.log("clicked the submit button!");
-
-        $(this).addClass('disabled');
-
+    
+        //alert is shown and disappears after submit button selected
+        $('#tweet-alert').removeClass('hidden');
+ 	    window.setTimeout(function() {$('.alert').alert('close'); }, 2000);
+	   
+ ;        $(this).addClass('disabled');
+       
         //making an object on the go
         var submit_data = {
                     tweet_id : $(this).attr('tweet_id'),
@@ -190,8 +195,8 @@ $(document).ready(function() {
                 $(this).removeClass('disabled');
                
                 //unchecks boxes when ajax call is successful and pulls another tweet to classify
-             
-                checked_boxes = [];
+   
+            	checked_boxes = [];
                 number_checked = 0;
                 $(".classify-checkbox").attr('checked',false);
                 $(".attitude-radio").attr('checked',false);     
@@ -203,7 +208,7 @@ $(document).ready(function() {
             }
          });//ajax
       });//function
-  
+    //$('#tweet-alert').addClass('hidden');  
     $('#modal').modal('show');
 
 });
