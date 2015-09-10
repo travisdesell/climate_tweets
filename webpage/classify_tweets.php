@@ -94,18 +94,18 @@ echo "
                 <b>Categories</b><br>
                 <i>Global Warming Phenomenon</i><br>
                 1. Drivers of Climate Change, such as greenhouse gases.<br>
-                2. Mentions science or data collected by scientists or scientific groups.<br>
+                2. Science: Mentions science or data collected by scientists or scientific groups.<br>
                 3. Denial, skepticism, or theories, such as scientists lying to the public.<br>
                 <br>
                 <i>Impacts of Climate Change</i><br>
-                4. Mentions extreme weather events, such as hurricanes or tornados.<br>
-                5. Mentions unusual weather, such as heavy snowfall or extreme temperatures.<br>
-                6. Mentions the environment, such as deforestation, wildfires, acid rain, etc.<br>
-                7. Mentions society or economics, such as how agriculture is threatened, property loss, sea rising will threaten small nations, etc.<br>
+                4. Extreme: Mentions extreme weather events, such as hurricanes or tornados.<br>
+                5. Weather: Mentions unusual weather, such as heavy snowfall or extreme temperatures.<br>
+                6. Environment: Mentions the environment, such as deforestation, wildfires, acid rain, etc.<br>
+                7. Society: Mentions society or economics, such as how agriculture is threatened, property loss, sea rising will threaten small nations, etc.<br>
                 <br>
                 <i>Adaptation and Migration</i><br>
-                8. Mentions politics, such as elections and taxes.<br>
-                9. Mentions ethics or moral responsibility, such as our need to fight global warming.<br>
+                8. Politics: Mentions politics, such as elections and taxes.<br>
+                9. Ethics: Mentions ethics or moral responsibility, such as our need to fight global warming.<br>
                 <br>
                 <i>Unknown category</i><br>
                 10. Jokes, irrelevant, or hard to classify<br>
@@ -267,13 +267,15 @@ echo "
 <form id='discuss-tweet-form' class='hidden' action='../forum_post.php?id=17' method='post' target='_blank'>
     <input type='hidden' id='discuss-tweet-content' name='content' value=''>
 </form>";
+
 //tweet classified alert :)
 echo "<div class='row'>
-      <div class='span12 text-center'>
-      <div id='tweet-alert' class='alert alert-info hidden'>
-      <a class='close' data-dismiss='alert'></a>
-          Thanks! Your tweet has been classified.
-      </div></div></div>";
+          <div class='span12 text-center'>
+              <div id='tweet-alert' class='alert alert-success hide-me'>
+              Thanks! Your tweet has been classified.
+	      </div>
+          </div>
+      </div>";
 
 
 //modal response to submission

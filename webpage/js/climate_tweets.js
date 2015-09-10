@@ -148,6 +148,7 @@ $(document).ready(function() {
        $('#modal').collapse('hide');
    });
 
+
    //set radio box variable
     $('.attitude-radio').click(function() {
         if ($('.attitude-radio'.checked)) {
@@ -158,16 +159,15 @@ $(document).ready(function() {
             $('#submit-button').removeClass('disabled');
     });
 
-    
-;    //submit data to server      
+   //submit data to server      
     $("#submit-button").click(function() {
         console.log("clicked the submit button!");
     
         //alert is shown and disappears after submit button selected
-        $('#tweet-alert').removeClass('hidden');
- 	    window.setTimeout(function() {$('.alert').alert('close'); }, 2000);
+        $('#tweet-alert').removeClass('hide-me');
+ 	    window.setTimeout(function() {$('.alert').addClass('hide-me'); }, 1500);
 	   
- ;        $(this).addClass('disabled');
+        $(this).addClass('disabled');
        
         //making an object on the go
         var submit_data = {
