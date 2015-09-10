@@ -2,7 +2,7 @@ $(document).ready(function() {
     //sets array for users desired tweet languages
     var languages = [];
 
-
+    
     //first ajax call gets whether user has seen modal or not 
      $.ajax({
          type : 'POST',
@@ -149,6 +149,7 @@ $(document).ready(function() {
        $('#modal').collapse('hide');
    });
 
+
    //set radio box variable
     $('.attitude-radio').click(function() {
         if ($('.attitude-radio'.checked)) {
@@ -159,12 +160,26 @@ $(document).ready(function() {
             $('#submit-button').removeClass('disabled');
     });
 
+<<<<<<< HEAD
 //submit data to server for correct languages 
     $("#submit_button").click(function() {
     	console.log("clicked the submit button!");
 	$(this).addClass('disabled');
 
        //making an object on the go
+=======
+   //submit data to server      
+    $("#submit-button").click(function() {
+        console.log("clicked the submit button!");
+    
+        //alert is shown and disappears after submit button selected
+        $('#tweet-alert').removeClass('hide-me');
+ 	    window.setTimeout(function() {$('.alert').addClass('hide-me'); }, 1500);
+	   
+        $(this).addClass('disabled');
+       
+        //making an object on the go
+>>>>>>> new_branch_name
         var submit_data = {
                     tweet_id : $(this).attr('tweet_id'),
                     attitude : radio_checked,
@@ -189,9 +204,15 @@ $(document).ready(function() {
                 $("#tweet-well").text( response['tweet_text'] );
                 $(this).removeClass('disabled');
                
+<<<<<<< HEAD
         //unchecks boxes when ajax call is successful and pulls another tweet to classify
              
                 checked_boxes = [];
+=======
+                //unchecks boxes when ajax call is successful and pulls another tweet to classify
+   
+            	checked_boxes = [];
+>>>>>>> new_branch_name
                 number_checked = 0;
                 $(".classify-checkbox").attr('checked',false);
                 $(".attitude-radio").attr('checked',false);     
@@ -200,10 +221,17 @@ $(document).ready(function() {
             error : function(jqXHR, textStatus, errorThrown) {
                 console.log("there was an error: '" + errorThrown + "'");
             }
+<<<<<<< HEAD
         });//ajax
     });//function
   
       $('#modal').modal('show');
+=======
+         });//ajax
+      });//function
+    //$('#tweet-alert').addClass('hidden');  
+    $('#modal').modal('show');
+>>>>>>> new_branch_name
 
 });
  
