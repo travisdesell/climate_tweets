@@ -160,14 +160,6 @@ $(document).ready(function() {
             $('#submit-button').removeClass('disabled');
     });
 
-<<<<<<< HEAD
-//submit data to server for correct languages 
-    $("#submit_button").click(function() {
-    	console.log("clicked the submit button!");
-	$(this).addClass('disabled');
-
-       //making an object on the go
-=======
    //submit data to server      
     $("#submit-button").click(function() {
         console.log("clicked the submit button!");
@@ -179,7 +171,6 @@ $(document).ready(function() {
         $(this).addClass('disabled');
        
         //making an object on the go
->>>>>>> new_branch_name
         var submit_data = {
                     tweet_id : $(this).attr('tweet_id'),
                     attitude : radio_checked,
@@ -204,15 +195,9 @@ $(document).ready(function() {
                 $("#tweet-well").text( response['tweet_text'] );
                 $(this).removeClass('disabled');
                
-<<<<<<< HEAD
-        //unchecks boxes when ajax call is successful and pulls another tweet to classify
-             
-                checked_boxes = [];
-=======
                 //unchecks boxes when ajax call is successful and pulls another tweet to classify
    
             	checked_boxes = [];
->>>>>>> new_branch_name
                 number_checked = 0;
                 $(".classify-checkbox").attr('checked',false);
                 $(".attitude-radio").attr('checked',false);     
@@ -221,17 +206,9 @@ $(document).ready(function() {
             error : function(jqXHR, textStatus, errorThrown) {
                 console.log("there was an error: '" + errorThrown + "'");
             }
-<<<<<<< HEAD
-        });//ajax
-    });//function
-  
-      $('#modal').modal('show');
-=======
          });//ajax
       });//function
     //$('#tweet-alert').addClass('hidden');  
     $('#modal').modal('show');
->>>>>>> new_branch_name
-
 });
  
