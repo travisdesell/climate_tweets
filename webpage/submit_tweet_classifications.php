@@ -72,7 +72,7 @@ if (intval($user['teamid']) > 0) {
 }
 
 $langArray = get_languages($user_id);
-$query = "SELECT id, tweet_id, text, lang, datetime FROM climate_tweets ct WHERE lang IN ( ".implode(',', $langArray).") AND NOT EXISTS(SELECT * FROM tweet_classifications tc WHERE tc.user_id != $user_id) ORDER BY RAND() LIMIT 1";
+$query = "SELECT id, tweet_id, text, lang, datetime FROM climate_tweets ct WHERE lang IN ( ".implode(',', $langArray).") AND NOT EXISTS(SELECT * FROM tweet_classifications tc WHERE tc.tweet_id = ct.id AND tc.user_id != $user_id) ORDER BY RAND() LIMIT 1";
 error_log($query);
 
 $result = query_boinc_db($query);
