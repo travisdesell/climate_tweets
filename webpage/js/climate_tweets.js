@@ -209,6 +209,6 @@ $(document).ready(function() {
          });//ajax
       });//function
     //$('#tweet-alert').addClass('hidden');  
-    $('#modal').modal('show');
+    
 });
  
