@@ -8,6 +8,17 @@ import langdetect
 from langdetect import detect
 
 #import MySQLdb.cursors
+<<<<<<< HEAD
+
+
+try:
+    database = mysql.connector.connect(host = "localhost", user="tdesell", passwd= "TDBoinc12", db="csg", user_pure = True) # cursorclass = MySQLdb.cursors.DictCursor)
+except mysql.connector.Error as err:
+    if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:
+        print("Something is wrong with your user name or password")
+    elif err.errno == errorcode.ER_BAD_DB_EERROR:
+        print("Database does not exist")
+=======
 #config = {} can also connect using dictionary of arguments/passwords **configi
 
 try:
@@ -17,11 +28,21 @@ except mysql.connector.Error as err:
         print('Something is wrong with your user name or password')
     elif err.errno == errorcode.ER_BAD_DB_EERROR:
         print('Database does not exist')
+>>>>>>> new_branch_name
     else:
         print(err)
     else:
         database.close()
 
+<<<<<<< HEAD
+
+cleaner = database.cursor() #can specify cursorclass parameter
+
+cleaner.execute("SELECT * FROM climate_tweets")
+#tweets = cleaner.fetchall()#select text, lang detect
+**tweets = cleaner.fetchmany()
+#fetchmany(size=num!) selects batch of rows and returns as list of tuples!! returns empty list once rows are all gone
+=======
 cleaner = database.cursor() #can specify cursorclass parameter
 
 try:
@@ -33,10 +54,25 @@ try:
 except mysql.connector.Error as err:
     print('Failed accessing database: {} '.format(err))
     exit(1)
+>>>>>>> new_branch_name
 
 for tweet in tweets:
     text = tweet['lang']
     realLang = detect(text)
+<<<<<<< HEAD
+    if realLang == text:
+	print 'same lang!'
+	continue
+	
+    else:
+	print 'not same :('
+	query = "REPLACE INTO climate_tweets SET language = '%s' WHERE text = '%s' " %(realLang, text)
+	cleaner.execute(query)
+	continue
+
+cleaner.close()
+database.close()
+=======
 
     if realLang == text:
         print ('same lang!')
@@ -51,3 +87,4 @@ for tweet in tweets:
 cleaner.close()
 database.close()
 
+>>>>>>> new_branch_name

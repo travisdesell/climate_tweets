@@ -86,6 +86,7 @@ $(document).ready(function() {
             }   
         }
         console.log(languages);  
+
     //sends languages to table in database to be stored for future user preferences
         $.ajax({
             type : 'POST',
@@ -174,12 +175,12 @@ $(document).ready(function() {
                     tweet_id : $(this).attr('tweet_id'),
                     attitude : radio_checked,
                     checked_boxes : checked_boxes
-                };//data
+        	};//data
 
         console.log(submit_data);
-
         var submit_button = $(this);
 
+//ajax call for tweet submissions
         $.ajax({
             type : 'POST',
             url : './submit_tweet_classifications.php',
@@ -200,8 +201,7 @@ $(document).ready(function() {
                 number_checked = 0;
                 $(".classify-checkbox").attr('checked',false);
                 $(".attitude-radio").attr('checked',false);     
-                
-            },
+	    },
             
             error : function(jqXHR, textStatus, errorThrown) {
                 console.log("there was an error: '" + errorThrown + "'");
@@ -209,7 +209,6 @@ $(document).ready(function() {
          });//ajax
       });//function
     //$('#tweet-alert').addClass('hidden');  
-    $('#modal').modal('show');
-
+    
 });
  

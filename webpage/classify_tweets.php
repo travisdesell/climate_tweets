@@ -55,6 +55,13 @@ $result = query_boinc_db($query);
 $row = $result->fetch_assoc();
 $id = $row['id'];
 
+/*
+if(count($langArray) == 0){
+    $text = 'Please enter your language preferences below';
+}
+else {
+    $text = $row['text'];
+}*/
 
 $text = $row['text'];
 $lang = $row['lang'];
@@ -277,19 +284,6 @@ echo "<div class='row'>
           </div>
       </div>";
 
-
-//modal response to submission
-/*echo " 
-<!-- Small modal -->
-        <div class='modal fade conf-modal' tabindex='1' role='dialog' aria-labelledby='mySmallModalLabel' aria-hidden='true'>
-            <div class='modal-dialog modal-sm'>
-                <div class='modal-content'>
-                    <button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
-			<center><font size = '5'>Your tweet has now been classified.</font><br>Thanks for your help!</center>
-                </div>
-            </div>
-        </div>";
-*/
 echo"<http://pietervanklinken.nl/wp-content/uploads/2010/10/twitter-creative-commons-2.jpg>";
 echo"</div> <!-- /container -->";
 print_footer('<strong>Travis Desell and the Climate Tweets Team</strong>', '<strong>Aaron Bergstrom, Travis Desell, Lindsey Wingate, and Andrei Kirilenko</strong>');
