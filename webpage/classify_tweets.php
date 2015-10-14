@@ -10,6 +10,7 @@ require_once($cwd[__FILE__] . "/../../citizen_science_grid/footer.php");
 require_once($cwd[__FILE__] . "/../../citizen_science_grid/my_query.php");
 require_once($cwd[__FILE__] . "/../../citizen_science_grid/user.php");
 require_once($cwd[__FILE__] . "/get_languages.php");
+require_once($cwd[__FILE__] . "/get_next_tweet.php");
 
 $user = csg_get_user();
 $user_id = $user['id'];
@@ -47,12 +48,15 @@ if ($langArrayResult != '') {
 }
 
 //query for tweets only within languages selected
+/*
 $query = "SELECT id, tweet_id, text, lang, datetime FROM climate_tweets ct WHERE $langArrayQuery NOT EXISTS (select * FROM tweet_classifications tc where tc.tweet_id = ct.id and tc.user_id != $user_id) order by rand() limit 1";
 
 error_log("tweet query: '$query'");
 
 $result = query_boinc_db($query);
 $row = $result->fetch_assoc();
+ */
+$row = get_next_tweet($user_id);
 $id = $row['id'];
 
 /*

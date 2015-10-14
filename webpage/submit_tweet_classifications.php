@@ -7,6 +7,7 @@ $cwd[__FILE__] = dirname($cwd[__FILE__]);
 require_once($cwd[__FILE__] . '/../../citizen_science_grid/my_query.php');
 require_once($cwd[__FILE__] . '/../../citizen_science_grid/user.php');
 require_once($cwd[__FILE__] . '/get_languages.php');
+require_once($cwd[__FILE__] . '/get_next_tweet.php');
 
 $user = csg_get_user(false);
 $user_id = $user['id'];
@@ -78,6 +79,7 @@ if (intval($user['teamid']) > 0) {
 //first try and get a tweet the user hasn't classified with number_views > 0 and < required_views
 //if cant find, get a tweet with number_views == 0
 
+/*
 $langArray = get_languages($user_id);
 $query = "SELECT id, tweet_id, text, lang, datetime FROM climate_tweets ct WHERE lang IN ( ".implode(',', $langArray).") AND NOT EXISTS(SELECT * FROM tweet_classifications tc WHERE tc.tweet_id = ct.id AND tc.user_id != $user_id) ORDER BY RAND() LIMIT 1";
 error_log($query);
@@ -86,6 +88,8 @@ $result = query_boinc_db($query);
 
 //returns new tweet information
 $row = $result->fetch_assoc();
+ */
+$row = get_next_tweet($user_id);
 $id = $row['id'];
 $text = $row['text'];
 
