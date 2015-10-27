@@ -26,11 +26,13 @@ $carousel_info['items'][] = array(
     'active' => 'true',
     'image' => './images/improvement1twitterlogo.psd',
     'caption' => '',
-    'text' => "The Climate Tweets project is focused on personal opinions about climate change or global warming. The goal is to sort tweets and view the different views in various countries, how the discussion has changed over time, and how opinions change with political orientation.");
+    'text' => "The Climate Tweets Project studies public opinions about climate change by analyzing tweets. The goal is to discover patterns of opinions on climate change in different parts of our planet. We ask for your help in understanding content of the tweets!"); 
 $carousel_info['items'][] = array(
     'image' => './images/bluemarblewest.png',
     'caption' => '',
-    'text' => "Classifying tweets allows us to discover patterns and correlations in people's opinions about our world. It also helps us understand what people know about climate change.");
+    'text' => "Please classify each tweet into no more than three categories following the instructions. You will be asked about the attitude that the tweets express. Before starting the survey, please read the instructions carefully.");
+
+
 
 $projects_template = file_get_contents($cwd[__FILE__] . "/../../citizen_science_grid/templates/carousel.html");
 
