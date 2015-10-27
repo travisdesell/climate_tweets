@@ -93,34 +93,87 @@ echo "
             <button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
           <div class='modal-body' style = 'text-align: left'>
           <font size = '4'><b>Classifications</b><br></font>
-          <i>Note: If the tweet does not fit any category select the 'Unknown' attitude and submit</i><br>
+          <i>Notes: If the tweet does not fit any category select the 'Unknown' attitude and submit.
+                Assume that \"global warming\" and \"climate change\" are synonyms.</i><br>
           <br>
-                <b>Attitudes</b><br>
-                -2: Strongly denies or criticizes Climate Change.<br>
-                -1: Denies Climate Change.<br>
-                0: Neutral.<br>
-                1. Supports Climate Change.<br>
-                2. Strongly supports Climate Change.<br>
-                <br>
-                <b>Categories</b><br>
-                <i>Global Warming Phenomenon</i><br>
-                1. Drivers of Climate Change, such as greenhouse gases.<br>
-                2. Science: Mentions science or data collected by scientists or scientific groups.<br>
-                3. Denial, skepticism, or theories, such as scientists lying to the public.<br>
-                <br>
-                <i>Impacts of Climate Change</i><br>
-                4. Extreme: Mentions extreme weather events, such as hurricanes or tornados.<br>
-                5. Weather: Mentions unusual weather, such as heavy snowfall or extreme temperatures.<br>
-                6. Environment: Mentions the environment, such as deforestation, wildfires, acid rain, etc.<br>
-                7. Society: Mentions society or economics, such as how agriculture is threatened, property loss, sea rising will threaten small nations, etc.<br>
-                <br>
-                <i>Adaptation and Migration</i><br>
-                8. Politics: Mentions politics, such as elections and taxes.<br>
-                9. Ethics: Mentions ethics or moral responsibility, such as our need to fight global warming.<br>
-                <br>
-                <i>Unknown category</i><br>
-                10. Jokes, irrelevant, or hard to classify<br>
-          </div>
+				<center>
+				<b>Attitudes</b><br>
+				-2: strongly negative<br>
+				-1: negative<br>
+				0: neutral<br>
+				1. positive<br>
+				2. strongly positive<br>
+				</center>
+				<br><br>	
+				<table class = 'table table-striped' id = 'tblGrid'>
+					<thead>
+						<tr>
+							<th>Categories</th>
+							<th>Explanation and <i>Examples</i></th>
+						</tr>
+					</thead>							
+					<tbody>
+						<tr>
+							<td><b>Drivers of Climate Change</b></td>
+							<td>Greenhouse gases mentioned such as Carbon Monoxide, Methane, or Nitrous Oxide<br>
+								<i>\"Oil, gas, and coal!\"</i></td>	
+						</tr>
+						<tr>
+							<td><b>Science of Climate Change</b></td>
+							<td><i>\"The Scientists found that the climate is in fact cooling.\"<br>
+								\"IPCC said that the temperature will be up by 4 degrees C.\"</i><br>
+						</tr>	
+						<tr>
+							<td><b>Denial of Climate Change</b></td>
+							<td>skepticism, conspiracy theory<br>
+								<i>\"Scientists are lying to the public\"</i><br>
+						</tr>	
+						<tr>
+							<td><b>Politics</b></td>
+							<td>Mentions taxes, etc..<br>
+									<i>\"Conservatives, liberals, elections\"<br>
+									\"It is too expensive to control CC;P\"</i>
+							</td>
+						</tr>
+						<tr>
+							<td><b>Ethics and Moral Responsibility</b></td>
+							<td><i>\"We need to fight for global warming!\"<br>
+									\"We need to give this planet to the next generation\"<br>
+									\"God gave us the planet to take care of\"</i>
+							</td>
+						</tr>
+						<tr>
+							<td><b>Extreme Events</b></td>
+							<td><i>\"Hurricane Sandy, flooding, snowstorm\"</i></td>
+						</tr>
+						<tr>
+							<td><b>Weather</b></td>
+							<td>Mentions unusual types of weather<br>
+							<i>\"Heavy snowfall\"</i></td>
+						</tr>
+						<tr>
+							<td><b>Threats to the Environment</b></td>
+							<td><i>\"Acid raid, smog, polution\"<br>
+									\"Deforestation\"<br>
+									\"The coral reefs are being bleached\"<br></i></td>
+						</tr>
+						<tr>
+							<td><b>Threats to Society and Economy</b></td>
+							<td><i>\"Agriculture is threated...\"<br>
+									\"Sea rising will threaten small island nations\"<br>
+									\"Property loss and no insurance...\"<br></i></td>
+						</tr>
+						<tr>
+							<td><b>Other</b></td>
+							<td>Unknown jokes, irrelevant, hard to classify<br>
+							<i>\"Global warming is cool OMG a paradox\"<br>
+								\"This guy is so hot its global warming\"</i></td>
+						</tr>
+							
+			</table>
+				
+			
+			</div>
             <button type='button' class='btn btn-primary  center-block' data-dismiss='modal'>Close</button>
             <br>   
          </div>
@@ -155,29 +208,19 @@ echo "</div>"; //row
 echo "<div class = 'row row-centered'>";
 echo "<div class='col-sm-6'>";
 echo "<div class='well well-sm'>";
-    echo "<p><h3>Categories</h3></p>";
-        echo "<div class = 'col-md-6'>";
-            echo "<b>Phenomenon:</b><br>";
-            echo "&nbsp;&nbsp;&nbsp;<input type='checkbox' class='classify-checkbox' id='phenomenon-drivers' value='0'> Drivers</input><br>";
-            echo "&nbsp;&nbsp;&nbsp;<input type='checkbox' class='classify-checkbox' id='phenomenon-science' value='0'> Science</input> <br>";
-            echo "&nbsp;&nbsp;&nbsp;<input type='checkbox' class='classify-checkbox' id='phenomenon-denial' value='0'> Denial</input> <br>";
-            echo "<br>";
-            echo "<b>Adaptation:</b><br>";
-            echo "&nbsp;&nbsp;&nbsp;<input type='checkbox' class='classify-checkbox' id='adaptation-politics' value='0'> Politics</input> <br>";
-            echo "&nbsp;&nbsp;&nbsp;<input type='checkbox' class='classify-checkbox' id='adaptation-ethics' value='0'> Ethics</input> <br>";
-        echo "<br></div>"; //closes first mini-column    
-        echo "<div class = 'col-mod-6'>"; //second mini-column
-            echo "<b>Impacts:</b><br>";
-            echo "&nbsp;&nbsp;&nbsp;<input type='checkbox' class='classify-checkbox' id='impacts-extreme' value='0'> Extreme</input> <br>";
-            echo "&nbsp;&nbsp;&nbsp;<input type='checkbox' class='classify-checkbox' id='impacts-weather' value='0'> Weather</input> <br>";
-            echo "&nbsp;&nbsp;&nbsp;<input type='checkbox' class='classify-checkbox' id='impacts-environment' value='0'> Environment</input> <br>";
-            echo "&nbsp;&nbsp;&nbsp;<input type='checkbox' class='classify-checkbox' id='impacts-society' value='0'> Society</input> <br>";
-            echo "<br>";
-            echo "<b>Other:</b><br>";
-            echo "&nbsp;&nbsp;&nbsp;<input type='checkbox' class='classify-checkbox' id='unknown' value='0'> Unknown / Jokes</input> <br>";
-        echo "<br></div>";
-        echo "<i><font size ='1'>You may choose up to three applicable categories</font></i><br>";
-    echo "</div>";//well
+    echo "<p><h3>Categories</h3></p>"; 
+        echo "<i><font size ='1'><font color ='blue'>You may choose up to three applicable categories</font></font></i><br>";
+		echo "&nbsp;&nbsp;&nbsp;<input type='checkbox' class='classify-checkbox' id='phenomenon-drivers' value='0'> Drivers of Climate Change</input><br>";
+        echo "&nbsp;&nbsp;&nbsp;<input type='checkbox' class='classify-checkbox' id='phenomenon-science' value='0'> Science of Climate Change</input> <br>";
+        echo "&nbsp;&nbsp;&nbsp;<input type='checkbox' class='classify-checkbox' id='phenomenon-denial' value='0'> Denial of Climate Change</input> <br>";
+        echo "&nbsp;&nbsp;&nbsp;<input type='checkbox' class='classify-checkbox' id='adaptation-politics' value='0'> Politics</input> <br>";
+        echo "&nbsp;&nbsp;&nbsp;<input type='checkbox' class='classify-checkbox' id='adaptation-ethics' value='0'> Ethics and Moral Responsibility</input> <br>";
+        echo "&nbsp;&nbsp;&nbsp;<input type='checkbox' class='classify-checkbox' id='impacts-extreme' value='0'> Extreme Events</input> <br>";
+        echo "&nbsp;&nbsp;&nbsp;<input type='checkbox' class='classify-checkbox' id='impacts-weather' value='0'> Weather</input> <br>";
+        echo "&nbsp;&nbsp;&nbsp;<input type='checkbox' class='classify-checkbox' id='impacts-environment' value='0'> Threats to the Environment</input> <br>";
+        echo "&nbsp;&nbsp;&nbsp;<input type='checkbox' class='classify-checkbox' id='impacts-society' value='0'> Threats to Society and Economy</input> <br>";
+        echo "&nbsp;&nbsp;&nbsp;<input type='checkbox' class='classify-checkbox' id='unknown' value='0'> Unknown / Jokes</input> <br>";
+   echo "</div>";//well
 echo "</div><!--col-->";
 
 //section for radio buttons - classify tweets by attitude
@@ -185,21 +228,22 @@ echo "<div class ='col-sm-6'>";
 echo "<div class = 'well well-sm'>";
 
 echo "<p><h3>Attitudes</h3></p>";
+echo"<i><font size='1'><font color='blue'>What is the attitude expressed towards the climate change problem?</font></font></i>";
 echo "<form role='form'>
       <div class = 'radio'>
-       <label> <input type='radio' class = 'attitude-radio' id = 'radioID' name='optradio' value ='-2' >-2: Strongly denies Climate Change </label></div>
+       <label> <input type='radio' class = 'attitude-radio' id = 'radioID' name='optradio' value ='-2' >-2: Strongly negative </label></div>
       <div class = 'radio'>
-       <label> <input type='radio' class= 'attitude-radio' id = 'radioID2' name='optradio' value ='-1'>-1: Denies Climate Change</label></div>
+       <label> <input type='radio' class= 'attitude-radio' id = 'radioID2' name='optradio' value ='-1'>-1: Negative </label></div>
       <div class = 'radio'>
        <label><input type='radio' class = 'attitude-radio' id = 'radioID3' name='optradio' value= '0'>0: Neutral / Inconclusive</label></div>
       <div class = 'radio'>
-       <label><input type = 'radio' class= 'attitude-radio' id = 'radioID4' name = 'optradio' value ='1'>1: Acknowledges Climate Change </label></div>
+       <label><input type = 'radio' class= 'attitude-radio' id = 'radioID4' name = 'optradio' value ='1'>1: Positive </label></div>
       <div class = 'radio'>
-       <label> <input type = 'radio' class = 'attitude-radio' id = 'radioID5' name = 'optradio' value ='2'>2: Strongly acknowledges Climate Change </labe></div>
+       <label> <input type = 'radio' class = 'attitude-radio' id = 'radioID5' name = 'optradio' value ='2'>2: Strongly positive </labe></div>
       <div class = 'radio'>
        <label><input type = 'radio' class = 'attitude-radio' id = 'radioID6' name = 'optradio' value = 'Unknown'>Unknown</label></div>
     </form>";
-echo "</div><!-- well -->";
+	echo "</div><!-- well -->";
 echo "</div><!-- col -->"; 
 echo "</div><!-- row -->";
 
