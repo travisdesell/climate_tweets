@@ -1,0 +1,7 @@
+If you haven't added any new directories you can just run the following:
+
+php update_symlinks.php /projects/csg/html/user/climate_lwingate/
+
+And it should update the symbolic links that the webserver is using as the webpages.  You can check them with:
+
+ls -la /projects/csg/html/user/climate_lwingate/
