@@ -144,7 +144,7 @@ echo "
 							<td><i>\"Hurricane Sandy, flooding, snowstorm\"</i></td>
 						</tr>
 						<tr>
-							<td><b>Weather</b></td>
+							<td><b>Unusual Weather</b></td>
 							<td>Mentions unusual types of weather
 							<i>\"Heavy snowfall\"
 								\"It's too hot\"</i></td>
@@ -162,7 +162,7 @@ echo "
 									\"Property loss and no insurance...\"<br></i></td>
 						</tr>
 						<tr>
-							<td><b>Other</b></td>
+							<td><b>Unknown</b></td>
 							<td>Unknown, jokes, irrelevant, hard to classify. 
 							<i>\"Global warming is cool OMG a paradox\"
 								\"This guy is so hot its global warming\"</i></td>
@@ -203,17 +203,17 @@ echo "<div class = 'row row-centered'>";
 echo "<div class='col-sm-6'>";
 echo "<div class='well well-sm'>";
     echo "<p><h3>Categories</h3></p>"; 
-        echo "<i><font size ='1'><font color ='blue'>You may choose up to three applicable categories</font></font></i><br>";
+        echo "<i><font size ='1'><font color ='blue'>Please choose only three applicable categories</font></font></i><br>";
 		echo "&nbsp;&nbsp;&nbsp;<input type='checkbox' class='classify-checkbox' id='phenomenon-drivers' value='0'> Drivers of Climate Change</input><br>";
         echo "&nbsp;&nbsp;&nbsp;<input type='checkbox' class='classify-checkbox' id='phenomenon-science' value='0'> Science of Climate Change</input> <br>";
         echo "&nbsp;&nbsp;&nbsp;<input type='checkbox' class='classify-checkbox' id='phenomenon-denial' value='0'> Denial of Climate Change</input> <br>";
         echo "&nbsp;&nbsp;&nbsp;<input type='checkbox' class='classify-checkbox' id='adaptation-politics' value='0'> Politics</input> <br>";
         echo "&nbsp;&nbsp;&nbsp;<input type='checkbox' class='classify-checkbox' id='adaptation-ethics' value='0'> Ethics and Moral Responsibility</input> <br>";
         echo "&nbsp;&nbsp;&nbsp;<input type='checkbox' class='classify-checkbox' id='impacts-extreme' value='0'> Extreme Events</input> <br>";
-        echo "&nbsp;&nbsp;&nbsp;<input type='checkbox' class='classify-checkbox' id='impacts-weather' value='0'>Unusual Weather</input> <br>";
+        echo "&nbsp;&nbsp;&nbsp;<input type='checkbox' class='classify-checkbox' id='impacts-weather' value='0'> Unusual Weather</input> <br>";
         echo "&nbsp;&nbsp;&nbsp;<input type='checkbox' class='classify-checkbox' id='impacts-environment' value='0'> Threats to the Environment</input> <br>";
         echo "&nbsp;&nbsp;&nbsp;<input type='checkbox' class='classify-checkbox' id='impacts-society' value='0'> Threats to Society and the Economy</input> <br>";
-        echo "&nbsp;&nbsp;&nbsp;<input type='checkbox' class='classify-checkbox' id='unknown' value='0'> Unknown / Jokes</input> <br>";
+        echo "&nbsp;&nbsp;&nbsp;<input type='checkbox' class='classify-checkbox' id='unknown' value='0'> Unknown </input> <br>";
    echo "</div>";//well
 echo "</div><!--col-->";
 
