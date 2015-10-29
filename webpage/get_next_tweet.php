@@ -12,7 +12,17 @@ require_once($cwd[__FILE__] . '/get_languages.php');
 
 function get_next_tweet($user_id) {
     $langArray = get_languages($user_id);
-    $query = "SELECT id, tweet_id, text, lang, datetime FROM climate_tweets ct WHERE lang IN ( ".implode(',', $langArray).") AND number_views > 0 AND number_views < required_views AND NOT EXISTS(SELECT * FROM tweet_classifications tc WHERE tc.tweet_id = ct.id AND tc.user_id = $user_id) ORDER BY RAND() LIMIT 1";
+    $langArrayResult = implode(',',$langArray);
+
+    //echo "LANG ARRAY RESULT: '" . $langArrayResult . "'<br>";
+
+    $langArrayQuery = ''; 
+    if ($langArrayResult != '') {
+        $langArrayQuery = "lang IN ($langArrayResult) AND ";
+    }
+
+
+    $query = "SELECT id, tweet_id, text, lang, datetime FROM climate_tweets ct WHERE $langArrayQuery number_views > 0 AND number_views < required_views AND NOT EXISTS(SELECT * FROM tweet_classifications tc WHERE tc.tweet_id = ct.id AND tc.user_id = $user_id) ORDER BY RAND() LIMIT 1";
     error_log($query);
 
     $result = query_boinc_db($query);

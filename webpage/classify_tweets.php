@@ -39,13 +39,17 @@ echo"
 
 echo"<http://pietervanklinken.nl/wp-content/uploads/2010/10/twitter-creative-commons-2.jpg>";
 
+/*
 $langArray = get_languages($user_id);
 $langArrayResult = implode(',',$langArray);
+
+echo "LANG ARRAY RESULT: '" . $langArrayResult . "'<br>";
 
 $langArrayQuery = '';
 if ($langArrayResult != '') {
     $langArrayQuery = "lang IN ($langArrayResult) AND ";
 }
+ */
 
 //query for tweets only within languages selected
 /*
