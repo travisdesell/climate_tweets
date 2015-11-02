@@ -1,11 +1,11 @@
 .jumbotron{
-    border: double #8DCDC1 5px;
+    border: double #00008B 10px;
     background-color: rgba(255, 255, 255, 0.8);
 }
 
 .well{
-    border: double #D3E397 8px;
-    background-color: rgba(255, 255, 255, 0.8);
+    border: solid #00008B 5px;
+    background-color: rgba(255, 255, 255, 0.9);
     padding-left: 25px;
 }
 
@@ -32,7 +32,7 @@ footer {
 
 /*background*/
 body{
-    background-image: url('../images/clouds.jpg');
+    background-image: url('../images/Melting-Ice-Cube.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100% 100%;
