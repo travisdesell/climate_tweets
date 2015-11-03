@@ -12,7 +12,20 @@ require_once($cwd[__FILE__] . '/get_languages.php');
 
 function get_next_tweet($user_id) {
     $langArray = get_languages($user_id);
-    $query = "SELECT id, tweet_id, text, lang, datetime FROM climate_tweets ct WHERE lang IN ( ".implode(',', $langArray).") AND number_views > 0 AND number_views < required_views AND NOT EXISTS(SELECT * FROM tweet_classifications tc WHERE tc.tweet_id = ct.id AND tc.user_id = $user_id) ORDER BY RAND() LIMIT 1";
+    $langArrayResult = implode(',',$langArray);
+
+    error_log("lang array is: '" . json_encode($langArray). "'");
+    error_log("langArrayResult is: '" . $langArrayResult . "'");
+
+    //echo "LANG ARRAY RESULT: '" . $langArrayResult . "'<br>";
+
+    $langArrayQuery = ''; 
+    if ($langArrayResult != '') {
+        $langArrayQuery = "lang IN ($langArrayResult) AND ";
+    }
+
+
+    $query = "SELECT id, tweet_id, text, lang, datetime FROM climate_tweets ct WHERE $langArrayQuery required_views = 10 AND number_views > 0 AND number_views < required_views AND NOT EXISTS(SELECT * FROM tweet_classifications tc WHERE tc.tweet_id = ct.id AND tc.user_id = $user_id) ORDER BY RAND() LIMIT 1";
     error_log($query);
 
     $result = query_boinc_db($query);
@@ -20,17 +33,38 @@ function get_next_tweet($user_id) {
     $row = $result->fetch_assoc();
 
     if ($row == NULL) {
-        echo "attempt to find tweet with number_views > 0 failed, trying with any number of views.\n";
 
-        $query = "SELECT id, tweet_id, text, lang, datetime FROM climate_tweets ct WHERE lang IN ( ".implode(',', $langArray).") AND number_views < required_views AND NOT EXISTS(SELECT * FROM tweet_classifications tc WHERE tc.tweet_id = ct.id AND tc.user_id = $user_id) ORDER BY RAND() LIMIT 1";
+        $query = "SELECT id, tweet_id, text, lang, datetime FROM climate_tweets ct WHERE $langArrayQuery required_views = 10 AND number_views < required_views AND NOT EXISTS(SELECT * FROM tweet_classifications tc WHERE tc.tweet_id = ct.id AND tc.user_id = $user_id) ORDER BY RAND() LIMIT 1";
         error_log($query);
 
         $result = query_boinc_db($query);
 
         $row = $result->fetch_assoc();
 
+
         if ($row == NULL) {
-            echo "attempt to find tweet with any number of views failed, no unviewed tweets left for user.\n";
+            $query = "SELECT id, tweet_id, text, lang, datetime FROM climate_tweets ct WHERE $langArrayQuery number_views > 0 AND number_views < required_views AND NOT EXISTS(SELECT * FROM tweet_classifications tc WHERE tc.tweet_id = ct.id AND tc.user_id = $user_id) ORDER BY RAND() LIMIT 1";
+            error_log($query);
+
+            $result = query_boinc_db($query);
+
+            $row = $result->fetch_assoc();
+
+
+            if ($row == NULL) {
+                echo "attempt to find tweet with number_views > 0 failed, trying with any number of views.\n";
+
+                $query = "SELECT id, tweet_id, text, lang, datetime FROM climate_tweets ct WHERE lang IN ( ".implode(',', $langArray).") AND number_views < required_views AND NOT EXISTS(SELECT * FROM tweet_classifications tc WHERE tc.tweet_id = ct.id AND tc.user_id = $user_id) ORDER BY RAND() LIMIT 1";
+                error_log($query);
+
+                $result = query_boinc_db($query);
+
+                $row = $result->fetch_assoc();
+
+                if ($row == NULL) {
+                    echo "attempt to find tweet with any number of views failed, no unviewed tweets left for user.\n";
+                }
+            }
         }
     }
 

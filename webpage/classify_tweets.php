@@ -39,13 +39,17 @@ echo"
 
 echo"<http://pietervanklinken.nl/wp-content/uploads/2010/10/twitter-creative-commons-2.jpg>";
 
+/*
 $langArray = get_languages($user_id);
 $langArrayResult = implode(',',$langArray);
+
+echo "LANG ARRAY RESULT: '" . $langArrayResult . "'<br>";
 
 $langArrayQuery = '';
 if ($langArrayResult != '') {
     $langArrayQuery = "lang IN ($langArrayResult) AND ";
 }
+ */
 
 //query for tweets only within languages selected
 /*
@@ -247,6 +251,7 @@ echo "<div class = col-sm-12 col-centered'>";
 echo "<div class = 'well well-sm'>";
 echo "<br><i>Tweets are available in six languages. Please select your preferences. (english default) </i>";
 
+$langArray = get_languages($user_id);
 error_log( json_encode($langArray) );
 
 $english = 0;
