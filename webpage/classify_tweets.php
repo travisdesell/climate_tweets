@@ -229,15 +229,15 @@ echo "<p><h3>Attitude towards Climate Change</h3></p>";
 
 echo "<form role='form'>
       <div class = 'radio'>
-       <label> <input type='radio' class = 'attitude-radio' id = 'radioID' name='optradio' value ='-2' >Strongly Negative </label></div>
+       <label> <input type='radio' class = 'attitude-radio' id = 'radioID' name='optradio' value ='-2' > Strongly Negative </label></div>
       <div class = 'radio'>
-       <label> <input type='radio' class= 'attitude-radio' id = 'radioID2' name='optradio' value ='-1'>Negative </label></div>
+       <label> <input type='radio' class= 'attitude-radio' id = 'radioID2' name='optradio' value ='-1'> Negative </label></div>
       <div class = 'radio'>
-       <label><input type='radio' class = 'attitude-radio' id = 'radioID3' name='optradio' value= '0'>Neutral / Inconclusive</label></div>
+       <label><input type='radio' class = 'attitude-radio' id = 'radioID3' name='optradio' value= '0'> Neutral</label></div>
       <div class = 'radio'>
-       <label><input type = 'radio' class= 'attitude-radio' id = 'radioID4' name = 'optradio' value ='1'>Positive </label></div>
+       <label><input type = 'radio' class= 'attitude-radio' id = 'radioID4' name = 'optradio' value ='1'> Positive </label></div>
       <div class = 'radio'>
-       <label> <input type = 'radio' class = 'attitude-radio' id = 'radioID5' name = 'optradio' value ='2'>Strongly Positive </labe></div>
+       <label> <input type = 'radio' class = 'attitude-radio' id = 'radioID5' name = 'optradio' value ='2'> Strongly Positive </labe></div>
       <div class = 'radio'>
        <label><input type = 'radio' class = 'attitude-radio' id = 'radioID6' name = 'optradio' value = 'Unknown'>Unknown</label></div>
     </form>";
@@ -315,7 +315,7 @@ echo" <div class = 'col-sm-12 text-center'>";
 echo "<button type ='button' class='btn btn-default pull-center' data-toggle='modal' id='submit-button' tweet_id='$id' data-target='.conf-modal'>Submit the classification!</button>";
 echo "&nbsp;&nbsp;";
 echo "<button type ='button' class='btn btn-default pull-center' data-toggle='modal' id='discuss-tweet-button' tweet_id='$id' >Discuss this tweet!</button>";
-echo "<font size = '2'><center><b>An attitude is required to submit the tweet</b></font>";
+echo "<font size = '2'><center><b>An attitude and category are required to submit the tweet</b></font>";
 echo "</div><!--col-->";
 echo "
 <form id='discuss-tweet-form' class='hidden' action='../forum_post.php?id=17' method='post' target='_blank'>
