@@ -108,6 +108,7 @@ $(document).ready(function() {
 
 	console.log("its working!");
     var number_checked = 0;
+    var radio_checked = null;
     var checked_boxes = [];
 
     //if user has not selected an attitude, cannot submit tweet classification
@@ -118,7 +119,7 @@ $(document).ready(function() {
         if ($(this).prop('checked')) {
             //when a box is checked, increment the number checked
             number_checked++;
-            console.log( $(this).attr("name") + " is checked! total_checked: " + number_checked );
+            console.log( $(this).attr("id") + " is checked! total_checked: " + number_checked );
             //also add it's id to the array of checked boxes
             checked_boxes.push($(this).attr("id"));
 
@@ -136,11 +137,28 @@ $(document).ready(function() {
             }
         } else {
           //remove the id of the unchecked checkbox from the checked_boxes array
+            console.log( $(this).attr("id") + " is not checked! total_checked: " + number_checked );
+            
+            var unchecked_id = $(this).attr("id");
+            for (var i = 0; i < checked_boxes.length; i++) {
+
+                if (checked_boxes[i] === unchecked_id) {
+                    console.log("unchecking: #" + checked_boxes[i]);
+                    $("#" + checked_boxes[i]).attr('checked', false);
+                    checked_boxes.splice(i,1);
+                    break;
+                }
+            }
+
             number_checked--;
-            console.log( $(this).attr("name") + " is not checked! total_checked: " + number_checked );
-            $("#" + checked_boxes[0]).attr('checked', false);
-            checked_boxes.splice(0,1);
-            number_checked--;
+            console.log( checked_boxes );
+        }
+
+        console.log(radio_checked);
+        if (number_checked > 0 && radio_checked) {
+            $('#submit-button').removeClass('disabled');
+        } else {
+            $('#submit-button').addClass('disabled');
         }
     });
 
@@ -155,9 +173,11 @@ $(document).ready(function() {
         if ($('.attitude-radio'.checked)) {
             radio_checked = ($(this).attr("value"));
             console.log( $(this).attr("value") + " is checked");
-            }
 
-            $('#submit-button').removeClass('disabled');
+            if (number_checked > 0) {
+                $('#submit-button').removeClass('disabled');
+            }
+        }
     });
 
    //submit data to server      

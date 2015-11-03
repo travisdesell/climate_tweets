@@ -251,6 +251,7 @@ echo "<div class = col-sm-12 col-centered'>";
 echo "<div class = 'well well-sm'>";
 echo "<br><i>Tweets are available in six languages. Please select your preferences. (english default) </i>";
 
+$langArray = get_languages($user_id);
 error_log( json_encode($langArray) );
 
 $english = 0;
