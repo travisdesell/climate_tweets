@@ -1,17 +1,17 @@
 .jumbotron{
-    border: double #00008B 10px;
-    background-color: rgba(255, 255, 255, 0.8);
+    border: solid #2B3856 5px;
+    background-color: rgba(255, 255, 255, 0.95);
 }
 
 .well{
-    border: solid #00008B 5px;
-    background-color: rgba(255, 255, 255, 0.9);
+    border: solid #2B3856 2px;
+    background-color: rgba(255, 255, 255, 0.95);
     padding-left: 25px;
 }
 
 /*modal for profanity warning*/
 .modal-content{
-    border: double #56A5EC 10px;
+    border: double white 7px;
     background-color: rgba(255, 255, 255, 1);
 	font-size: 10px;
 }
@@ -26,9 +26,9 @@
     background-color: rgba(109, 123, 141, 1) !important;
 }
 
-footer {
-    color: #e9FFFB;
-}
+/*footer {
+   color: #e9FFFB;
+}*/
 
 /*background*/
 body{
@@ -42,9 +42,18 @@ body{
     display: inline-block;
     margin: 0 auto;
     background-color: rgba(255, 255, 255, 0.8);
-    border: thin #D3E397 8px;
+    border: thin #2B3856 8px;
 } 
 
 .hide-me {
     display: none;
+}
+
+.btn {
+	border: solid #2B3856 3px;
+}
+
+.btn:hover{
+	border: solid #2B3856 5px;
+	background-color: solid white;
 }

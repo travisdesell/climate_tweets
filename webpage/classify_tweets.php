@@ -30,8 +30,8 @@ echo"
             <p><font color = 'red'>Note: Tweets will be shown in English unless otherwise specified.</font></p></b>
             </div>
             <div class='modal-footer'>
-                <button type='button' id = 'button1' class='btn btn-primary' data-dismiss='modal'>Continue</button>
-                <button type='button' id = 'button2' class='btn btn-primary'>Go Back</button>
+                <button type='button' id = 'button1' class='btn btn-default' data-dismiss='modal'>Continue</button>
+                <button type='button' id = 'button2' class='btn btn-default'>Go Back</button>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
@@ -82,7 +82,7 @@ echo "<h1 align='center'>Help us classify the tweets!</h1>";
 echo "
     <!-- Button trigger modal -->
     <div class = 'span6' style = 'text-align:center'>
-    <button type='button' class='btn btn-primary btn-lg' data-toggle='modal' data-target='#myModal'>
+    <button type='button' class='btn btn-default btn-lg' data-toggle='modal' data-target='#myModal'>
       Instructions
     </button>
 
@@ -169,7 +169,7 @@ echo "
 						</tr>	
 			</table>
 			</div>
-            <button type='button' class='btn btn-primary  center-block' data-dismiss='modal'>Close</button>
+            <button type='button' class='btn btn-default center-block' data-dismiss='modal'>Close</button>
          </div>
       </div>
     </div>
@@ -203,7 +203,7 @@ echo "<div class = 'row row-centered'>";
 echo "<div class='col-sm-6'>";
 echo "<div class='well well-sm'>";
     echo "<p><h3>Categories</h3></p>"; 
-        echo "<i><font size ='1'><font color ='blue'>Please choose only three applicable categories</font></font></i><br>";
+        echo "<i><font size ='2'><font color ='#2B3856'>Please choose only three applicable categories</font></font></i><br>";
 		echo "&nbsp;&nbsp;&nbsp;<input type='checkbox' class='classify-checkbox' id='phenomenon-drivers' value='0'> Drivers of Climate Change</input><br>";
         echo "&nbsp;&nbsp;&nbsp;<input type='checkbox' class='classify-checkbox' id='phenomenon-science' value='0'> Science of Climate Change</input> <br>";
         echo "&nbsp;&nbsp;&nbsp;<input type='checkbox' class='classify-checkbox' id='phenomenon-denial' value='0'> Denial of Climate Change</input> <br>";
@@ -221,19 +221,19 @@ echo "</div><!--col-->";
 echo "<div class ='col-sm-6'>";
 echo "<div class = 'well well-sm'>";
 
-echo "<p><h3>Attitudes</h3></p>";
-echo"<i><font size='1'><font color='blue'>What is the attitude expressed towards the climate change problem?</font></font></i>";
+echo "<p><h3>Attitude towards Climate Change</h3></p>";
+
 echo "<form role='form'>
       <div class = 'radio'>
-       <label> <input type='radio' class = 'attitude-radio' id = 'radioID' name='optradio' value ='-2' >-2: Strongly Negative </label></div>
+       <label> <input type='radio' class = 'attitude-radio' id = 'radioID' name='optradio' value ='-2' >Strongly Negative </label></div>
       <div class = 'radio'>
-       <label> <input type='radio' class= 'attitude-radio' id = 'radioID2' name='optradio' value ='-1'>-1: Negative </label></div>
+       <label> <input type='radio' class= 'attitude-radio' id = 'radioID2' name='optradio' value ='-1'>Negative </label></div>
       <div class = 'radio'>
-       <label><input type='radio' class = 'attitude-radio' id = 'radioID3' name='optradio' value= '0'>0: Neutral / Inconclusive</label></div>
+       <label><input type='radio' class = 'attitude-radio' id = 'radioID3' name='optradio' value= '0'>Neutral / Inconclusive</label></div>
       <div class = 'radio'>
-       <label><input type = 'radio' class= 'attitude-radio' id = 'radioID4' name = 'optradio' value ='1'>1: Positive </label></div>
+       <label><input type = 'radio' class= 'attitude-radio' id = 'radioID4' name = 'optradio' value ='1'>Positive </label></div>
       <div class = 'radio'>
-       <label> <input type = 'radio' class = 'attitude-radio' id = 'radioID5' name = 'optradio' value ='2'>2: Strongly Positive </labe></div>
+       <label> <input type = 'radio' class = 'attitude-radio' id = 'radioID5' name = 'optradio' value ='2'>Strongly Positive </labe></div>
       <div class = 'radio'>
        <label><input type = 'radio' class = 'attitude-radio' id = 'radioID6' name = 'optradio' value = 'Unknown'>Unknown</label></div>
     </form>";
@@ -307,10 +307,10 @@ echo "</div>";//row
 
 //submit button
 echo" <div class = 'col-sm-12 text-center'>";
-echo "<button type ='button' class='btn btn-primary pull-center' data-toggle='modal' id='submit-button' tweet_id='$id' data-target='.conf-modal'>Submit the classification!</button>";
+echo "<button type ='button' class='btn btn-default pull-center' data-toggle='modal' id='submit-button' tweet_id='$id' data-target='.conf-modal'>Submit the classification!</button>";
 echo "&nbsp;&nbsp;";
-echo "<button type ='button' class='btn btn-primary pull-center' data-toggle='modal' id='discuss-tweet-button' tweet_id='$id' >Discuss this tweet!</button>";
-echo "<font size = '2'><font color = #B8FFF3><center><b>An attitude is required to submit the tweet</b></font>";
+echo "<button type ='button' class='btn btn-default pull-center' data-toggle='modal' id='discuss-tweet-button' tweet_id='$id' >Discuss this tweet!</button>";
+echo "<font size = '2'><center><b>An attitude is required to submit the tweet</b></font>";
 echo "</div><!--col-->";
 echo "
 <form id='discuss-tweet-form' class='hidden' action='../forum_post.php?id=17' method='post' target='_blank'>
