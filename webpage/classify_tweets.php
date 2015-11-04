@@ -1,3 +1,4 @@
+
 <?php
 
 $cwd[__FILE__] = __FILE__;
@@ -20,6 +21,7 @@ $css_header = "<link rel='stylesheet' type = 'text/css' href = 'css/style.css' /
 print_header("Classifying Climate Tweets", "$css_header <script type='text/javascript' src='js/climate_tweets.js'></script><script type='text/javascript' src='js/discuss.js'></script>", "dna");
 print_navbar("Projects: Climate Tweets", "Climate Tweets", "..");
 
+/*Profanity Warning only shows up if the query returns a 0 from the database. If user has already seen it, it will return a 1 and the modal will not show.*/
 echo"
 <div class='modal fade modal-black' id = 'warning-modal'>
     <div class='modal-dialog'>
@@ -81,7 +83,7 @@ echo "
     <div class='col-sm-12'>
         <div class='row row-centered'>
             <div class = 'jumbotron'>";
-//echo "<html><head><body> <img src = 'http://www.steamfeed.com/wp-content/uploads/2013/07/twitter-bird.jpg' />  </body></head></html>";
+
 echo "<h1 align='center'>Help us classify the tweets!</h1>";
 echo "
     <!-- Button trigger modal -->
