@@ -330,7 +330,7 @@ echo "<div class='row'>
 	      </div>
           </div>
       </div>";
-
+echo"<!--test-->";
 echo"<http://pietervanklinken.nl/wp-content/uploads/2010/10/twitter-creative-commons-2.jpg>";
 echo"</div> <!-- /container -->";
 print_footer('<strong>Travis Desell and the Climate Tweets Team</strong>', '<strong>Aaron Bergstrom, Travis Desell, Lindsey Wingate, and Andrei Kirilenko</strong>');
