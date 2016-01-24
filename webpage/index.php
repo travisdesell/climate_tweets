@@ -11,7 +11,9 @@ require_once($cwd[__FILE__] . "/../../citizen_science_grid/footer.php");
 require_once($cwd[__FILE__] . "/../../citizen_science_grid/my_query.php");
 require_once($cwd[__FILE__] . "/../../citizen_science_grid/csg_uotd.php");
 
-print_header("Climate Tweets", "", "climate");
+//$css_header = "<link rel='stylesheet' type = 'text/css' href = 'css/style.css' />";
+
+print_header("Climate Tweets", "$css_header", "climate");
 print_navbar("Projects: Climate Tweets", "Climate Tweets", "..");
 
 echo "
