@@ -1,4 +1,3 @@
-
 <?php
 
 $cwd[__FILE__] = __FILE__;
@@ -39,39 +38,8 @@ echo"
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->";
 
-echo"<http://pietervanklinken.nl/wp-content/uploads/2010/10/twitter-creative-commons-2.jpg>";
-
-/*
-$langArray = get_languages($user_id);
-$langArrayResult = implode(',',$langArray);
-
-echo "LANG ARRAY RESULT: '" . $langArrayResult . "'<br>";
-
-$langArrayQuery = '';
-if ($langArrayResult != '') {
-    $langArrayQuery = "lang IN ($langArrayResult) AND ";
-}
- */
-
-//query for tweets only within languages selected
-/*
-$query = "SELECT id, tweet_id, text, lang, datetime FROM climate_tweets ct WHERE $langArrayQuery NOT EXISTS (select * FROM tweet_classifications tc where tc.tweet_id = ct.id and tc.user_id != $user_id) order by rand() limit 1";
-
-error_log("tweet query: '$query'");
-
-$result = query_boinc_db($query);
-$row = $result->fetch_assoc();
- */
 $row = get_next_tweet($user_id);
 $id = $row['id'];
-
-/*
-if(count($langArray) == 0){
-    $text = 'Please enter your language preferences below';
-}
-else {
-    $text = $row['text'];
-}*/
 
 $text = $row['text'];
 $lang = $row['lang'];
@@ -204,7 +172,6 @@ echo "</div>"; //col
 echo "</div>"; //row
 
 //section for checkboxes - classify tweets by categories
-
 echo "<div class = 'row row-centered'>";
 echo "<div class='col-sm-6'>";
 echo "<div class='well well-sm'>";
@@ -226,9 +193,7 @@ echo "</div><!--col-->";
 //section for radio buttons - classify tweets by attitude
 echo "<div class ='col-sm-6'>";
 echo "<div class = 'well well-sm'>";
-
 echo "<p><h3>Attitude towards Climate Change</h3></p>";
-
 echo "<form role='form'>
       <div class = 'radio'>
        <label> <input type='radio' class = 'attitude-radio' id = 'radioID' name='optradio' value ='-2' > Strongly Negative </label></div>
@@ -312,7 +277,7 @@ echo "</div>";//well
 echo "</div>";//column
 echo "</div>";//row
 
-//submit button
+//submit buttons 
 echo" <div class = 'col-sm-12 text-center'>";
 echo "<button type ='button' class='btn btn-default pull-center' data-toggle='modal' id='submit-button' tweet_id='$id' data-target='.conf-modal'>Submit the classification!</button>";
 echo "&nbsp;&nbsp;";
@@ -333,7 +298,6 @@ echo "<div class='row'>
           </div>
       </div>";
 echo"<!--test-->";
-echo"<http://pietervanklinken.nl/wp-content/uploads/2010/10/twitter-creative-commons-2.jpg>";
 echo"</div> <!-- /container -->";
 print_footer('<strong>Travis Desell and the Climate Tweets Team</strong>', '<strong>Aaron Bergstrom, Travis Desell, Lindsey Wingate, and Andrei Kirilenko</strong>');
 echo "</body></html>";
