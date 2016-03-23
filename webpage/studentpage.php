@@ -248,3 +248,53 @@ $russian = 0;
 
 foreach ($langArray as $lang) {
     if ($lang == "'en'") $english = 1;
+    if ($lang == "'es'") $spanish = 1;
+    if ($lang == "'pt'") $portuguese = 1;
+    if ($lang == "'de'") $german = 1;
+    if ($lang == "'fr'") $french = 1;
+    if ($lang == "'ru'") $russian = 1;
+}
+
+if ($english) {
+    echo "<input type='checkbox' class='lang-checkbox' id='english' value='1' checked> English  </input>";
+} else {
+    echo "<input type='checkbox' class='lang-checkbox' id='english' value='0'> English  </input>";
+}
+
+if ($portuguese) {
+    echo "<input type='checkbox' class='lang-checkbox' id='portuguese' value='1' checked> Portuguese  </input>";
+} else {
+    echo "<input type='checkbox' class='lang-checkbox' id='portuguese' value='0'> Portuguese  </input>";
+}
+
+if ($spanish) {
+    echo "<input type='checkbox' class='lang-checkbox' id='spanish' value='1' checked> Spanish  </input>";
+} else {
+    echo "<input type='checkbox' class='lang-checkbox' id='spanish' value='0'> Spanish  </input>";
+}
+
+if ($german) {
+    echo "<input type='checkbox' class='lang-checkbox' id='german' value='1' checked> German  </input>";
+} else {
+    echo "<input type='checkbox' class='lang-checkbox' id='german' value='0'> German  </input>";
+}
+
+if ($russian) {
+    echo "<input type='checkbox' class='lang-checkbox' id='russian' value='1' checked> Russian  </input>";
+} else {
+    echo "<input type='checkbox' class='lang-checkbox' id='russian' value='0'> Russian  </input>";
+}
+
+if ($french) {
+    echo "<input type='checkbox' class='lang-checkbox' id='french' value='1' checked> French  </input>";
+} else {
+    echo "<input type='checkbox' class='lang-checkbox' id='french' value='0'> French  </input>";
+}
+echo "<br><br>";
+echo "</div>";//well
+echo "</div>";//column
+echo "</div>";//row
+
+//submit button
+echo" <div class = 'col-sm-12 text-center'>";
+echo "<button type ='button' class='btn btn-success pull-center' data-toggle='modal' id='submit-button' tweet_id='$id' data-target='.conf-modal'>Submit the classification!</button>";
