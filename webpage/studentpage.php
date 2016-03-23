@@ -98,3 +98,53 @@ echo "
 							<th width = '35%'>Categories</th>
 							<th width = '65%'>Explanation and <i>Examples</i></th>
 						</tr>
+					</thead>							
+					<tbody>
+						<tr>
+							<td><b>Drivers of Climate Change</b></td>
+							<td>Greenhouse gases mentioned such as Carbon Monoxide, Methane, or Nitrous Oxide 
+								<i>\"Oil, gas, and coal!\"</i></td>	
+						</tr>
+						<tr>
+							<td><b>Science of Climate Change</b></td>
+							<td><i>\"The Scientists found that the climate is in fact cooling.\"
+								\"IPCC said that the temperature will be up by 4 degrees C.\"</i><br>
+						</tr>	
+						<tr>
+							<td><b>Denial of Climate Change</b></td>
+							<td>skepticism, conspiracy theory
+								<i>\"Scientists are lying to the public\"</i><br>
+						</tr>	
+						<tr>
+							<td><b>Politics</b></td>
+							<td>Mentions conservatives, liberals, elections, carbon tax, etc..
+									<i>\"It is too expensive to control CC\"
+									\"Treaties\"</i>
+							</td>
+						</tr>
+						<tr>
+							<td><b>Ethics and Moral Responsibility</b></td>
+							<td><i>\"We need to fight for global warming!\"
+									\"We need to give this planet to the next generation\"
+									\"God gave us the planet to take care of\"</i>
+							</td>
+						</tr>
+						<tr>
+							<td><b>Extreme Events</b></td>
+							<td><i>\"Hurricane Sandy, flooding, snowstorm\"</i></td>
+						</tr>
+						<tr>
+							<td><b>Unusual Weather</b></td>
+							<td>Mentions unusual types of weather
+							<i>\"Heavy snowfall\"
+								\"It's too hot\"</i></td>
+						</tr>
+						<tr>
+							<td><b>Threats to the Environment</b></td>
+							<td><i>\"Acid raid, smog, polution\"
+									\"Deforestation\"
+									\"The coral reefs are being bleached\"<br></i></td>
+						</tr>
+						<tr>
+							<td><b>Threats to Society and Economy</b></td>
+							<td><i>\"Agriculture is threated...\"
