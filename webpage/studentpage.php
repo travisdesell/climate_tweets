@@ -11,8 +11,8 @@ require_once($cwd[__FILE__] . "/../../citizen_science_grid/my_query.php");
 require_once($cwd[__FILE__] . "/../../citizen_science_grid/user.php");
 require_once($cwd[__FILE__] . "/get_languages.php");
 
-//$user = csg_get_user();
-//$user_id = $user['id'];
+$user = csg_get_user();
+$user_id = $user['id'];
 
 $css_header = "<link rel='stylesheet' type = 'text/css' href = 'css/style.css' />";
 
