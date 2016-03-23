@@ -11,8 +11,8 @@ require_once($cwd[__FILE__] . "/../../citizen_science_grid/my_query.php");
 require_once($cwd[__FILE__] . "/../../citizen_science_grid/user.php");
 require_once($cwd[__FILE__] . "/get_languages.php");
 
-$user = csg_get_user();
-$user_id = $user['id'];
+//$user = csg_get_user();
+//$user_id = $user['id'];
 
 $css_header = "<link rel='stylesheet' type = 'text/css' href = 'css/style.css' />";
 
@@ -397,3 +397,16 @@ echo"
             title: 'Overall Attitudes of Tweets',
 		    colors: ['#3BB9FF', '#3574E7', '#1569C7', '#153E7E', '#151B8D'],
 	 	    backgroundColor: 'transparent'
+		};
+        var piechart = new google.visualization.PieChart(document.getElementById('piechart'));
+        piechart.draw(data, options);  
+	}
+    </script>
+  	</head>
+";
+
+echo"<http://pietervanklinken.nl/wp-content/uploads/2010/10/twitter-creative-commons-2.jpg>";
+echo"</div> <!-- /container -->";
+print_footer('<strong>Travis Desell and the Climate Tweets Team</strong>', '<strong>Aaron Bergstrom, Travis Desell, Lindsey Wingate, and Andrei Kirilenko</strong>');
+echo "</body></html>";
+?>
