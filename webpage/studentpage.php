@@ -148,3 +148,53 @@ echo "
 						<tr>
 							<td><b>Threats to Society and Economy</b></td>
 							<td><i>\"Agriculture is threated...\"
+								\"Sea rising will threaten small island nations\"
+								\"Property loss and no insurance...\"<br></i></td>
+						</tr>
+						<tr>
+							<td><b>Unknown</b></td>
+							<td>Unknown, jokes, irrelevant, hard to classify. 
+							<i>\"Global warming is cool OMG a paradox\"
+								\"This guy is so hot its global warming\"</i></td>
+						</tr>	
+			</table>
+			</div>
+            <button type='button' class='btn btn-default center-block' data-dismiss='modal'>Close</button>
+         </div>
+      </div>
+    </div>
+  </div>
+";
+
+echo "<br>";
+echo "</div><!--jumbo-->";
+echo "</div><!--row-->";
+echo "</div><!--col-->";
+
+//tweets
+echo "<div class='row row-centered'>";
+echo "<div class='col-sm-12'>";
+echo "<div class='well' id='tweet-well'>";
+
+echo "'$text'<br>";
+//echo "<br>";
+//echo "Tweet ID: '$id'<br>";
+//echo "Language: '$lang'<br>";
+//echo "Tweeted on: '$datetime'<br>";
+
+echo "</div>"; //well
+echo "</div>"; //col
+echo "</div>"; //row
+
+//section for checkboxes - classify tweets by categories
+
+echo "<div class = 'row row-centered'>";
+echo "<div class='col-sm-6'>";
+echo "<div class='well well-sm'>";
+    echo "<p><h3>Categories</h3></p>";
+            echo "&nbsp;&nbsp;&nbsp;<input type='checkbox' class='classify-checkbox' id='phenomenon-drivers' value='0'> Drivers of Climate Change</input><br>";
+            echo "&nbsp;&nbsp;&nbsp;<input type='checkbox' class='classify-checkbox' id='phenomenon-science' value='0'> Science of Climate Change</input> <br>";
+            echo "&nbsp;&nbsp;&nbsp;<input type='checkbox' class='classify-checkbox' id='phenomenon-denial' value='0'> Denial of Climate Change</input> <br>";
+            echo "&nbsp;&nbsp;&nbsp;<input type='checkbox' class='classify-checkbox' id='adaptation-politics' value='0'> Politics</input> <br>";
+            echo "&nbsp;&nbsp;&nbsp;<input type='checkbox' class='classify-checkbox' id='adaptation-ethics' value='0'> Ethics and Moral Responsibility</input> <br>";
+            echo "&nbsp;&nbsp;&nbsp;<input type='checkbox' class='classify-checkbox' id='impacts-extreme' value='0'> Extreme Events</input> <br>";
