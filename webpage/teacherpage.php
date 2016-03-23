@@ -99,3 +99,52 @@ echo "
 							<td><b>Extreme Events</b></td>
 							<td><i>\"Hurricane Sandy, flooding, snowstorm\"</i></td>
 						</tr>
+						<tr>
+							<td><b>Unusual Weather</b></td>
+							<td>Mentions unusual types of weather
+							<i>\"Heavy snowfall\"
+								\"It's too hot\"</i></td>
+						</tr>
+						<tr>
+							<td><b>Threats to the Environment</b></td>
+							<td><i>\"Acid raid, smog, polution\"
+									\"Deforestation\"
+									\"The coral reefs are being bleached\"<br></i></td>
+						</tr>
+						<tr>
+							<td><b>Threats to Society and Economy</b></td>
+							<td><i>\"Agriculture is threated...\"
+									\"Sea rising will threaten small island nations\"
+									\"Property loss and no insurance...\"<br></i></td>
+						</tr>
+						<tr>
+							<td><b>Unknown</b></td>
+							<td>Unknown, jokes, irrelevant, hard to classify. 
+							<i>\"Global warming is cool OMG a paradox\"
+								\"This guy is so hot its global warming\"</i></td>
+						</tr>	
+			</table>
+			</div>
+            <button type='button' class='btn btn-default center-block' data-dismiss='modal'>Close</button>
+         </div>
+      </div>
+    </div>
+  </div>
+";
+
+echo "<br>";
+echo "</div><!--jumbo-->";
+echo "</div><!--row-->";
+echo "</div><!--col-->";
+
+//section for checkboxes - classify tweets by categories
+echo "<div class = 'row row-centered'>";
+echo "<div class='col-sm-6'>";
+echo "<div class='well well-sm'>";
+    echo "<p><h3>Categories</h3></p>";
+		echo" <div id='barchart'></div>";
+			echo "<br>";
+			echo "</div>";//well
+echo "</div><!--col-->";
+
+//section for radio buttons - classify tweets by attitude
