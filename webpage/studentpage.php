@@ -198,3 +198,53 @@ echo "<div class='well well-sm'>";
             echo "&nbsp;&nbsp;&nbsp;<input type='checkbox' class='classify-checkbox' id='adaptation-politics' value='0'> Politics</input> <br>";
             echo "&nbsp;&nbsp;&nbsp;<input type='checkbox' class='classify-checkbox' id='adaptation-ethics' value='0'> Ethics and Moral Responsibility</input> <br>";
             echo "&nbsp;&nbsp;&nbsp;<input type='checkbox' class='classify-checkbox' id='impacts-extreme' value='0'> Extreme Events</input> <br>";
+            echo "&nbsp;&nbsp;&nbsp;<input type='checkbox' class='classify-checkbox' id='impacts-weather' value='0'> Unusual Weather</input> <br>";
+            echo "&nbsp;&nbsp;&nbsp;<input type='checkbox' class='classify-checkbox' id='impacts-environment' value='0'> Threats to the Environment</input> <br>";
+            echo "&nbsp;&nbsp;&nbsp;<input type='checkbox' class='classify-checkbox' id='impacts-society' value='0'> Threats to the Scoiety and the Economy</input> <br>";
+	        echo "&nbsp;&nbsp;&nbsp;<input type='checkbox' class='classify-checkbox' id='unknown' value='0'> Unknown</input> <br>";
+			echo" <!--<div id='barchart'></div>-->";
+			echo "<br>";
+			echo "</div>";//well
+echo "</div><!--col-->";
+
+//section for radio buttons - classify tweets by attitude
+echo "<div class ='col-sm-6'>";
+echo "<div class = 'well well-sm'>";
+
+echo "<p><h3>Attitudes towards Climate Change</h3></p>";
+echo "<form role='form'>
+		<div class = 'radio'>
+        <label> <input type='radio' class = 'attitude-radio' id = 'radioID' name='optradio' value ='-2'> Strongly Negative </label></div>
+        <div class = 'radio'>
+        <label> <input type='radio' class= 'attitude-radio' id = 'radioID2' name='optradio' value ='-1'> Negative</label></div>
+        <div class = 'radio'>
+        <label><input type='radio' class = 'attitude-radio' id = 'radioID3' name='optradio' value= '0'>Neutral</label></div>
+        <div class = 'radio'>
+        <label><input type = 'radio' class= 'attitude-radio' id = 'radioID4' name = 'optradio' value ='1'> Positive</label></div>
+        <div class = 'radio'>
+        <label> <input type = 'radio' class = 'attitude-radio' id = 'radioID5' name = 'optradio' value ='2'>2: Strongly Positive </labe></div>
+        <div class = 'radio'>
+        <label><input type = 'radio' class = 'attitude-radio' id = 'radioID6' name = 'optradio' value = 'Unknown'>Unknown</label></div>
+		<!--<div id='piechart' style='width: 450px; height: 300px;' display: inline-block'></div> --> 
+	</form>";
+echo "</div><!-- well -->";
+echo "</div><!-- col -->";
+echo "</div><!-- row -->";
+
+//language stuff
+echo "<div class = 'row'>";
+echo "<div class = 'col-sm-12'>";
+echo "<div class = 'well well-sm'>";
+echo "<br><i>Tweets are available in six languages. Please select your preferences. (english default) </i>";
+
+error_log( json_encode($langArray) );
+
+$english = 0;
+$spanish = 0;
+$portuguese = 0;
+$german = 0;
+$french = 0;
+$russian = 0;
+
+foreach ($langArray as $lang) {
+    if ($lang == "'en'") $english = 1;
