@@ -14,7 +14,7 @@ require_once($cwd[__FILE__] . "/get_languages.php");
 $user = csg_get_user();
 $user_id = $user['id'];
 
-$css_header = "<link rel='stylesheet' type = 'text/css' href = 'css/style.css' />";
+$css_header = "<link rel='stylesheet' type = 'text/css' href = 'css/education_style.css' />";
 
 print_header("Classifying Climate Tweets", "$css_header <script type='text/javascript' src='js/climate_tweets.js'></script><script type='text/javascript' src='js/discuss.js'></script>", "dna");
 print_navbar("Projects: Climate Tweets", "Climate Tweets", "..");
