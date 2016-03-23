@@ -298,3 +298,53 @@ echo "</div>";//row
 //submit button
 echo" <div class = 'col-sm-12 text-center'>";
 echo "<button type ='button' class='btn btn-success pull-center' data-toggle='modal' id='submit-button' tweet_id='$id' data-target='.conf-modal'>Submit the classification!</button>";
+echo "<button type ='button' class='btn btn-success pull-center' data-toggle='modal' id='submit-button' tweet_id='$id' data-target='.conf-modal'>Submit the classification!</button>";
+echo "&nbsp;&nbsp;";
+echo "<button type ='button' class='btn btn-success pull-center' data-toggle='modal' id='discuss-tweet-button' tweet_id='$id' >Discuss this tweet!</button>";
+echo "<font size = '2'><font color = #B8FFF3><center><b>An attitude is required to submit the tweet</b></font>";
+echo "</div><!--col-->";
+echo "
+<form id='discuss-tweet-form' class='hidden' action='../forum_post.php?id=17' method='post' target='_blank'>
+    <input type='hidden' id='discuss-tweet-content' name='content' value=''>
+</form>";
+
+//tweet classified alert :)
+echo "<div class='row'>
+          <div class='span12 text-center'>
+              <div id='tweet-alert' class='alert alert-success hide-me'>
+              Thanks! Your tweet has been classified.
+	      </div>
+          </div>
+      </div>";
+
+//javascript for graphs being drawn
+echo"
+<script type='text/javascript' src='https://www.google.com/jsapi'></script>
+    <script type='text/javascript'>
+      
+	google.load('visualization', '1', {'packages':['corechart']});
+    google.setOnLoadCallback(drawBarChart);
+    google.setOnLoadCallback(drawPieChart);
+
+//BARCHART  
+	function drawBarChart() { 
+		var jsonData2 = [];
+		jsonData2 = $.ajax({
+			url: 'get_bar_chart_data.php',
+			dataType: 'json',
+			async: false
+			}).responseText;
+
+		console.log('jsonData2: \'' + jsonData2 + '\'');
+
+		jsonData2 = JSON.parse(jsonData2);
+
+		var data = new google.visualization.arrayToDataTable([
+        	['Number of Tweets', 'Classifications', {role: 'style'} ],
+        	['Drivers', jsonData2[0], '#00C957'],
+        	['Science', jsonData2[1], '#3D9140'],
+        	['Denial',  jsonData2[2], '#006400'],
+        	['Politics', jsonData2[3],'#00C957'],
+        	['Ethics',  jsonData2[4], '#3D9140'],
+			['Extreme', jsonData2[5], '#006400'],
+			['Weather', jsonData2[6], '#00C957'],
