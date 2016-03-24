@@ -1,4 +1,3 @@
-
 <?php
 
 $cwd[__FILE__] = __FILE__;
