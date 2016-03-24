@@ -148,3 +148,53 @@ echo "<div class='well well-sm'>";
 echo "</div><!--col-->";
 
 //section for radio buttons - classify tweets by attitude
+echo "<div class ='col-sm-6'>";
+echo "<div class = 'well well-sm'>";
+
+echo "<p><h3>Attitudes towards Climate Change</h3></p>";
+echo "<form role='form'>
+		
+   		<div id='piechart' style='width: 450px; height: 300px;' display: inline-block'></div>  
+	</form>";
+echo "</div><!-- well -->";
+echo "</div><!-- col -->";
+echo "</div><!-- row -->";
+
+//tweet classified alert :)
+echo "<div class='row'>
+          <div class='span12 text-center'>
+              <div id='tweet-alert' class='alert alert-success hide-me'>
+              Thanks! Your tweet has been classified.
+	      </div>
+          </div>
+      </div>";
+
+//javascript for graphs being drawn
+echo"
+<script type='text/javascript' src='https://www.google.com/jsapi'></script>
+    <script type='text/javascript'>
+      
+	google.load('visualization', '1', {'packages':['corechart']});
+    google.setOnLoadCallback(drawBarChart);
+    google.setOnLoadCallback(drawPieChart);
+
+//BARCHART  
+	function drawBarChart() { 
+		var jsonData2 = [];
+		jsonData2 = $.ajax({
+			url: 'get_bar_chart_data.php',
+			dataType: 'json',
+			async: false
+			}).responseText;
+
+		console.log('jsonData2: \'' + jsonData2 + '\'');
+
+		jsonData2 = JSON.parse(jsonData2);
+
+		var data = new google.visualization.arrayToDataTable([
+        	['Number of Tweets', 'Classifications', {role: 'style'} ],
+        	['Drivers', jsonData2[0], '#00C957'],
+        	['Science', jsonData2[1], '#3D9140'],
+        	['Denial',  jsonData2[2], '#006400'],
+        	['Politics', jsonData2[3],'#00C957'],
+        	['Ethics',  jsonData2[4], '#3D9140'],
