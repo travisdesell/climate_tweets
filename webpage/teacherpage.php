@@ -198,3 +198,53 @@ echo"
         	['Denial',  jsonData2[2], '#006400'],
         	['Politics', jsonData2[3],'#00C957'],
         	['Ethics',  jsonData2[4], '#3D9140'],
+			['Extreme', jsonData2[5], '#006400'],
+			['Weather', jsonData2[6], '#00C957'],
+			['Environment', jsonData2[7],'#3D9140'],
+			['Society', jsonData2[8], '#006400'],
+			['Unknown', jsonData2[9], '#00C957'], 
+        ]);
+	    
+		var options = {
+     		title: 'Tweet Categories',
+			width: 400,
+			height: 300,
+			//bar: {groupWidth: '48%'},
+			legend: { position: 'none'},
+			backgroundColor: 'transparent'			
+		};
+        
+		var barchart = new google.visualization.BarChart(document.getElementById('barchart'));
+		barchart.draw(data, options);
+ 	}
+
+//PIECHART
+	function drawPieChart() {
+		var jsonData = [];
+		jsonData = $.ajax({
+			url: 'get_pie_chart_data.php',
+			dataType: 'json',
+			async: false
+			}).responseText;
+
+		console.log('jsonData: \'' + jsonData + '\'');
+
+		jsonData = JSON.parse(jsonData);
+/*
+		console.log('jsonData[-2]: \'' + jsonData[-2] + '\'');
+		console.log('jsonData[-1]: \'' + jsonData[-1] + '\'');
+		console.log('jsonData[0]: \'' + jsonData[0] + '\'');
+		console.log('jsonData[1]: \'' + jsonData[1] + '\'');
+		console.log('jsonData[2]: \'' + jsonData[2] + '\'');
+*/		
+	var data = new google.visualization.arrayToDataTable([
+			['Attitude', 'Number of Tweets Classified'],
+        	['Strongly Denies', jsonData[-2]],
+        	['Denies', jsonData[-1]],
+        	['Neutral', jsonData[0]],
+        	['Acknowledges', jsonData[1]],
+        	['Strongly Acknowledges',jsonData[2]],
+        ]);
+
+        var options = {
+            title: 'Overall Attitudes of Tweets',
