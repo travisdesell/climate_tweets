@@ -25,14 +25,17 @@ echo "
     <div class='row'>
 	<div class='col-sm-8'>
     
-        <h1>Curriculum Download</h1>
+        <h1>Climate Tweets - Lesson Plans</h1>
+		<p> </p>
         </div><!--col-->
     </div><!--row-->
 
 
 <p>Please double check your information. Click to submit and begin download.</p>
-<div class='btn btn-success'>Submit and Download</div>
-</div>
+";
+/*<div class='btn btn-success'>Submit and Download</div>
+*/
+"</div>
 
 </div><!--container-->
 ";
