@@ -24,7 +24,6 @@ print_navbar("Projects: Climate Tweets", "Climate Tweets", "..");
 
 class testing {
 	public $text = "blah blah blah!!!!!!";
-	public $checkbox = "<input type='radio' class='attitude-radio'>"
 	
 	public function test() {
 		return $this->text;
