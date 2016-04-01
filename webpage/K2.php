@@ -23,10 +23,12 @@ print_header("Tweet Selection", "$css_header <script type='text/javascript' src=
 print_navbar("Projects: Climate Tweets", "Climate Tweets", "..");
 
 class testing {
-	public $text = 'blah blah blah!!!!!!';
+	public $text = "blah blah blah!!!!!!";
+	public $checkbox = "<input type='radio' class='attitude-radio'>"
 	
 	public function test() {
 		return $this->text;
+		//return $this->checkbox;
 	}
 }
 
