@@ -11,9 +11,9 @@ require_once($cwd[__FILE__] . "/../../citizen_science_grid/my_query.php");
 require_once($cwd[__FILE__] . "/../../citizen_science_grid/user.php");
 require_once($cwd[__FILE__] . "/get_languages.php");
 require_once($cwd[__FILE__] . "/get_next_tweet.php");
-require_once($cwd[__FILE__] . "/../mustache.php/src/Musstache/Autoloader.php";
+/*require_once($cwd[__FILE__] . "/../mustache.php/src/Mustache/Autoloader.php";
 Mustache_Autoloader::register();
-
+*/
 $user = csg_get_user();
 $user_id = $user['id'];
 
@@ -24,13 +24,17 @@ print_navbar("Projects: Climate Tweets", "Climate Tweets", "..");
 
 class testing {
 	public $text = 'blah blah blah!!!!!!';
+	
+	public function test() {
+		return $this->text;
+	}
 }
 
 $tweet_selection = file_get_contents($cwd[__FILE__] . "/templates/tweet_selection.html");
 
 $m = new Mustache_Engine;
 $testing = new testing;
-echo $m->render($tweet_selection, $users);
+echo $m->render($tweet_selection, $testing);
 
 print_footer('<strong>Travis Desell and the Climate Tweets Team</strong>', '<strong>Aaron Bergstrom, Travis Desell, Lindsey Wingate, and Andrei Kirilenko</strong>');
 echo "</body></html>";
