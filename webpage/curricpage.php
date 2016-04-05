@@ -49,7 +49,7 @@ echo "
 				</button>
 				</a>
 
-				<a href='docs/11-12.doc'>
+				<a href='11-12.doc'>
 				<button type='button' class='btn btn-default'>
 					11-12 Lesson Plan
 				</button>

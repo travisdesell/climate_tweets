@@ -62,4 +62,8 @@ $command = "ln -s $cwd/templates $target/templates";
 shell_exec("rm $target/templates ");
 shell_exec("rm $cwd/templates ");
 
+$command ="ln -s $cwd/docs $target/docs";
+shell_exec("rm $target/docs ");
+shell_exec($command);
+
 ?>
