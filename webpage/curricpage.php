@@ -27,7 +27,31 @@ echo "
         	<div class='well'>
 				<a href='docs/K-2.docx'>
 				<button type='button' class='btn btn-default'>
-					Lesson Plan
+					K-2 Lesson Plan
+				</button>
+				</a>
+
+				<a href='docs/3-5.docx'>
+				<button type='button' class='btn btn-default'>
+					3-5 Lesson Plan
+				</button>
+				</a>
+
+				<a href='docs/6-8.docx'>
+				<button type='button' class='btn btn-default'>
+					6-8 Lesson Plan
+				</button>
+				</a>
+
+				<a href='docs/9-10.docx'>
+				<button type='button' class='btn btn-default'>
+					9-10 Lesson Plan
+				</button>
+				</a>
+
+				<a href='docs/11-12.doc'>
+				<button type='button' class='btn btn-default'>
+					11-12 Lesson Plan
 				</button>
 				</a>
 			</div><!--well-->

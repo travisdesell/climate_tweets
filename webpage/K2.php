@@ -23,12 +23,8 @@ print_header("Tweet Selection", "$css_header <script type='text/javascript' src=
 print_navbar("Projects: Climate Tweets", "Climate Tweets", "..");
 
 class testing {
-	public $text = "blah blah blah!!!!!!";
+	public $text = "blah blah blah text for the tweets will go here filling up with lots of letters to see how the formatting will turn out looks good!!!!!!";
 	
-	public function test() {
-		return $this->text;
-		//return $this->checkbox;
-	}
 }
 
 $tweet_selection = file_get_contents($cwd[__FILE__] . "/templates/tweet_selection.html");
