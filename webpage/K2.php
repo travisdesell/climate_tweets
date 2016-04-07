@@ -22,11 +22,14 @@ $css_header = "<link rel='stylesheet' type = 'text/css' href = 'css/style.css' /
 print_header("Tweet Selection", "$css_header <script type='text/javascript' src='js/climate_tweets.js'></script><script type='text/javascript' src='js/discuss.js'></script>", "dna");
 print_navbar("Projects: Climate Tweets", "Climate Tweets", "..");
 
+$result = query_boinc_db("SELECT text FROM climate_tweets where prof = 0 LIMIT 30");
+//$testing=array( 
+//	'text'=>"testing",
+//);
+ 
 class testing {
-	public $text = "blah blah blah text for the tweets will go here filling up with lots of letters to see how the formatting will turn out looks good!!!!!!";
-	
+	public $text = "blah";
 }
-
 $tweet_selection = file_get_contents($cwd[__FILE__] . "/templates/tweet_selection.html");
 
 $m = new Mustache_Engine;

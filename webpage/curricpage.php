@@ -13,7 +13,7 @@ require_once($cwd[__FILE__] . "/../../citizen_science_grid/user.php");
 $user = csg_get_user();
 $user_id = $user['id'];
 */
-$css_header = "<link rel='stylesheet' type = 'text/css' href = 'css/style.css' />";
+$css_header = "<link rel='stylesheet' type = 'text/css' href = 'css/style2.css' />";
 
 print_header("Download Curriculum", "$css_header", "dna");
 print_navbar("Projects: Climate Tweets", "Climate Tweets", "..");
@@ -24,7 +24,7 @@ echo "
     <div class='row'>
 		<div class='col-sm-12'>
 			<div class='well'>
-        		<h1>Climate Tweets - Lesson Plans</h1>
+        		<h1>Climate Tweets Lesson Plans</h1>
 			</div><!--well-->
 		</div><!--col-->
 	</div><!--row-->
