@@ -22,18 +22,21 @@ $css_header = "<link rel='stylesheet' type = 'text/css' href = 'css/style.css' /
 print_header("Tweet Selection", "$css_header <script type='text/javascript' src='js/climate_tweets.js'></script><script type='text/javascript' src='js/discuss.js'></script>", "dna");
 print_navbar("Projects: Climate Tweets", "Climate Tweets", "..");
 
-$result = query_boinc_db("SELECT text FROM climate_tweets where prof = 0 LIMIT 30");
-//$testing=array( 
-//	'text'=>"testing",
-//);
- 
-class testing {
-	public $text = "blah";
-}
+$results = query_boinc_db("SELECT text FROM climate_tweets where prof = 0 LIMIT 30");
+	$row=$results->fetch_assoc();
+
+$testing=array(
+	'text'=>'testing'
+);
+
+//class testing {
+//	public $text = "blah";
+//}
+
 $tweet_selection = file_get_contents($cwd[__FILE__] . "/templates/tweet_selection.html");
 
 $m = new Mustache_Engine;
-$testing = new testing;
+//$testing = new testing;
 echo $m->render($tweet_selection, $testing);
 
 print_footer('<strong>Travis Desell and the Climate Tweets Team</strong>', '<strong>Aaron Bergstrom, Travis Desell, Lindsey Wingate, and Andrei Kirilenko</strong>');
