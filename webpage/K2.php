@@ -21,7 +21,7 @@ print_navbar("Projects: Climate Tweets", "Climate Tweets", "..");
 
 $results = query_boinc_db("SELECT text FROM climate_tweets where prof = 0 LIMIT 1");
 while($row=mysqli_fetch_array($results)) {
-	echo $row['text'];
+	 echo $row['text'];
 }
 
 echo "
