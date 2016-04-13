@@ -47,6 +47,21 @@ echo "
 
 ";
 
+class tweet
+{
+	//function assign_var()
+	//{
+		
+	//}
+	public $text = "test";
+}
+
+$tweet_template = file_get_contents($cwd[__FILE__] . "/templates/tweet_selection.html");
+
+$renderme = new Mustache_Engine;
+$tweet = new tweet;
+echo $renderme->render($tweet_template, $tweet);
+
 print_footer('<strong>Travis Desell and the Climate Tweets Team</strong>', '<strong>Aaron Bergstrom, Travis Desell, Lindsey Wingate, and Andrei Kirilenko</strong>');
 echo "</body></html>";
 ?>
