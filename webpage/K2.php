@@ -19,48 +19,17 @@ $css_header = "<link rel='stylesheet' type = 'text/css' href = 'css/style.css' /
 print_header("Tweet Selection", "$css_header <script type='text/javascript' src='js/climate_tweets.js'></script><script type='text/javascript' src='js/discuss.js'></script>", "dna");
 print_navbar("Projects: Climate Tweets", "Climate Tweets", "..");
 
-$results = query_boinc_db("SELECT text FROM climate_tweets where prof = 0 LIMIT 1");
+$repeat = array();
+
+$results = query_boinc_db("SELECT text FROM climate_tweets where prof=0 and lang='en' LIMIT 50");
 while($row=mysqli_fetch_array($results)) {
-	 echo $row['text'];
+	$stupid = $row[0];
+	$repeat['repeat'][] = array('text'=>$stupid);
 }
-
-echo "
-<div class='container'>
-	<div class= 'row'>
-		<div class='col'>
-			<div class='well'>
-				<table class='table table-bordered'>
-					<h3>
-					Please select the desired tweets
-					</h3>
-					<tbody>
-						<tr>
-							<td><div class='radio'><label><input type='radio' class='attitude-radio'></label></div></td>
-							<td>test test </td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-		</div>
-	</div>
-</div>
-
-";
-
-class tweet
-{
-	//function assign_var()
-	//{
-		
-	//}
-	public $text = "test";
-}
-
 $tweet_template = file_get_contents($cwd[__FILE__] . "/templates/tweet_selection.html");
 
 $renderme = new Mustache_Engine;
-$tweet = new tweet;
-echo $renderme->render($tweet_template, $tweet);
+echo $renderme->render($tweet_template, $repeat);
 
 print_footer('<strong>Travis Desell and the Climate Tweets Team</strong>', '<strong>Aaron Bergstrom, Travis Desell, Lindsey Wingate, and Andrei Kirilenko</strong>');
 echo "</body></html>";
