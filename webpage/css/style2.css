@@ -1,0 +1,58 @@
+@font-face {
+	font-family: existence;
+	src: url('HarabaraHand.ttf');
+}
+
+.well{
+    border: solid #2B3856 2px;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding-left: 25px;
+}
+
+/*modal for profanity warning*/
+.modal-content{
+    border: double white 7px;
+    background-color: rgba(255, 255, 255, 1);
+	font-size: 10px;
+}
+.modal-backdrop{
+    opacity:.90 !important;
+}
+.modal-backdrop{
+    background-color: #000000;
+}
+
+#myModal.modal-backdrop {
+    background-color: rgba(109, 123, 141, 1) !important;
+}
+
+h1 {
+	font-family: existence;
+}
+/*background*/
+body{
+    background-image: url('../images/Melting-Ice-Cube.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
+.alert {
+    display: inline-block;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: thin #2B3856 8px;
+} 
+
+.hide-me {
+    display: none;
+}
+
+.btn {
+	border: solid #2B3856 3px;
+}
+
+.btn:hover{
+	border: solid #2B3856 5px;
+	background-color: solid white;
+}

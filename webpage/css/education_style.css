@@ -1,0 +1,51 @@
+#test {
+	font-color: green;
+	
+}
+#button1 {
+	background-color: green;
+	border: black;
+}
+
+.well{
+    border: black; #D3E397 8px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding-left: 25px;
+}
+
+/*modal for profanity warning*/
+.modal-content{
+    border: black;
+    background-color: rgba(255, 255, 255, 1);
+}
+.modal-backdrop{
+    opacity:.90 !important;
+}
+.modal-backdrop{
+    background-color: #000000;
+}
+
+#myModal.modal-backdrop {
+    background-color: rgba(109, 123, 141, 1) !important;
+}
+
+footer {
+    color: #e9FFFB;
+}
+
+body {
+	background-color: #808080;
+	font-color: black;
+}
+
+.alert {
+    display: inline-block;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: thin #D3E397 8px;
+} 
+
+.hide-me {
+    display: none;
+}
+
