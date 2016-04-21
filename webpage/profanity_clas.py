@@ -1,47 +1,10 @@
 #python - program sorts through tweets in database and labels whether contains profanity or not
 
-#cursor is used to access the database
-import sys
-import mysql.connector
-from mysql.connector import errorcode
-
-#used to generate the path of the file
-import os
-import random
-import re
-
-#used for splitting tweets 
-import urlparse
-
-#connecting to database
-try:
-    database = mysql.connector.connect(host = '127.0.0.1', user='tdesell', password= 'TDBoinc12', database='csg') # cursorclass = MySQLdb.cursors.DictCursor)
-except mysql.connector.Error as err:
-    if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:
-        print('Something is wrong with your user name or password')
-    elif err.errno == errorcode.ER_BAD_DB_EERROR:
-        print('Database does not exist')
-    else:
-        print(err)
-        database.close()
-
-#cursor used to pull tweets
-point = database.cursor() #can specify cursorclass parameter... buffered=True??? use???
-
-try:
-    point.execute('SELECT * FROM climate_tweets')
+    ('SELECT * FROM climate_tweets')
     #tweets = point.fetchall()#select text, lang detect
     tweet_tuple = point.fetchall()
     #fetchmany(size=num!) selects rows and returns as list of tuples!! returns empty list once rows are all gone
-
-
-except mysql.connector.Error as err:
-    print('Failed accessing database: {} '.format(err))
-    exit(1)
-
-
 """real program starts"""
-
 #variables
 lines = None
 words = None

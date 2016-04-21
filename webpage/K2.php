@@ -21,7 +21,7 @@ print_navbar("Projects: Climate Tweets", "Climate Tweets", "..");
 
 $repeat = array();
 
-$results = query_boinc_db("SELECT text FROM climate_tweets where prof=0 and lang='en' LIMIT 50");
+$results = query_boinc_db("SELECT text FROM climate_tweets where lang='en' and prof=0 order by rand() LIMIT 60");
 while($row=mysqli_fetch_array($results)) {
 	$stupid = $row[0];
 	$repeat['repeat'][] = array('text'=>$stupid);
