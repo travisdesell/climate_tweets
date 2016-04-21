@@ -1,18 +1,4 @@
-#python - program sorts through tweets in database and labels whether contains profanity or not
 
-    ('SELECT * FROM climate_tweets')
-    #tweets = point.fetchall()#select text, lang detect
-    tweet_tuple = point.fetchall()
-    #fetchmany(size=num!) selects rows and returns as list of tuples!! returns empty list once rows are all gone
-"""real program starts"""
-#variables
-lines = None
-words = None
-_ROOT = os.path.abspath(os.path.dirname(__file__))
-
-#gets path
-#def get_data(path):
-#    return os.path.join(_ROOT, 'data', path)
 
 """Gets wordlist. If wordlist is not loaded, calls load_words to cache list"""
 def get_words():
@@ -39,11 +25,25 @@ def load_words(wordlist=None):
     global words
     if not wordlist:
         # no wordlist was provided, load the wordlist from the local store
-        f = open('profanitylist.txt', 'r')
+        f = open('badwords.txt', 'r')
         wordlist = f.readlines()
         wordlist = [w.strip() for w in wordlist if w]
     words = wordlist
    
+#python - program sorts through tweets in database and labels whether contains profanity or not
+point = query_boinc_db('SELECT * FROM climate_tweets')
+    #tweets = point.fetchall()#select text, lang detect
+tweet_tuple = point.fetchall()
+    #fetchmany(size=num!) selects rows and returns as list of tuples!! returns empty list once rows are all gone
+"""real program starts"""
+#variables
+lines = None
+words = None
+_ROOT = os.path.abspath(os.path.dirname(__file__))
+
+#gets path
+#def get_data(path):
+#    return os.path.join(_ROOT, 'data', path)
 
 #main code - uses functions to verify profanity
 for tweet in tweet_tuple:
@@ -58,6 +58,4 @@ for tweet in tweet_tuple:
         point.execute("UPDATE climate_tweets SET prof = %s WHERE tweet_id = %s", (0, tweetID)) 
         print(tweetID, 'not profane')
 
-point.close()
-database.close()
   

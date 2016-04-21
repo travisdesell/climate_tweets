@@ -9,14 +9,14 @@ require_once($cwd[__FILE__] . "/../../citizen_science_grid/navbar.php");
 require_once($cwd[__FILE__] . "/../../citizen_science_grid/footer.php");
 require_once($cwd[__FILE__] . "/../../citizen_science_grid/my_query.php");
 require_once($cwd[__FILE__] . "/../../citizen_science_grid/user.php");
-require_once($cwd[__FILE__] . "/get_languages.php");
-require_once($cwd[__FILE__] . "/get_next_tweet.php");
+//require_once($cwd[__FILE__] . "/get_languages.php");
+//require_once($cwd[__FILE__] . "/get_next_tweet.php");
 //$user = csg_get_user();
 //$user_id = $user['id'];
 
-$css_header = "<link rel='stylesheet' type = 'text/css' href = 'css/style.css' />";
-
-print_header("Tweet Selection", "$css_header <script type='text/javascript' src='js/climate_tweets.js'></script><script type='text/javascript' src='js/discuss.js'></script>", "dna");
+$css_header = "<link rel='stylesheet' type = 'text/css' href = 'css/style.css'/>";
+$js_header = "<script type='text/javascript' src='js/K2.js'></script>";
+print_header("Tweet Selection", "$css_header $js_header", "");
 print_navbar("Projects: Climate Tweets", "Climate Tweets", "..");
 
 $repeat = array();
