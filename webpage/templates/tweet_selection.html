@@ -9,13 +9,15 @@
 				<tbody>
 				{{#repeat}}
 					<tr>
-						<td><div class='checkbox'><label><input type='checkbox' class='selection_box' id='select'></label></div></td>
+						<td><div class='checkbox'><label><input type='checkbox' class='selection_box' id='{{text}}'></label></div></td>
 						<td>{{text}}</td>
 					</tr>
 				{{/repeat}}
 				</tbody>
 				</table>
-				<button type='button' class='btn btn-default btn-lg'>Click for Download</button>	
+				<a href='../js/tweets.txt'>
+				<button type='button' class='btn btn-default btn-lg' id='download_button'>Click for Download</button>	
+				</a>
 			</div>
 		</div>
 	</div>
