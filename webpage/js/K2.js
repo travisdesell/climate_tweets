@@ -16,8 +16,9 @@ $(document).ready(function() {
 		}
 	});
 
-/*	$('.download_button').click(function() {
-			
+	$('#render_doc').click(function() {
+
+		console.log('Document is prepared for download');
 	});
-*/
+
 });
