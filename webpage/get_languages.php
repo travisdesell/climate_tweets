@@ -1,6 +1,5 @@
 <?php
 
-
 function get_languages($user_id) {
 
     $languages_result = query_boinc_db("SELECT english, portuguese, spanish, german, russian, french FROM tweet_preferences WHERE user_id = $user_id");

@@ -26,8 +26,8 @@ while($row=mysqli_fetch_array($results)) {
 	$stupid = $row[0];
 	$repeat['repeat'][] = array('text'=>$stupid);
 }
-$tweet_template = file_get_contents($cwd[__FILE__] . "/templates/tweet_selection.html");
 
+$tweet_template = file_get_contents($cwd[__FILE__] . "/templates/tweet_selection.html");
 $renderme = new Mustache_Engine;
 echo $renderme->render($tweet_template, $repeat);
 

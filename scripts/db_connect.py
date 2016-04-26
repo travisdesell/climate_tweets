@@ -1,8 +1,7 @@
 #!/usr/bin/python
 import MySQLdb
 
-#from "../../db_info/csg_database.py" import db_name, db_user, db_host, db_pass
-from "../../db_info/csg_database.py"
+from csg_database import db_name, db_user, db_host, db_pass
 
 print "connecting to database '%s' with user '%s' on host '%s' using password '%s'" % (db_name, db_user, db_host, db_pass)
 

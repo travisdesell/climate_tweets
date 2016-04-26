@@ -17,8 +17,20 @@ $(document).ready(function() {
 	});
 
 	$('#render_doc').click(function() {
+		$.ajax({
+			type: 'POST',
+			url: './load_k2_tweet_file.php',
+			data: {selected : selected},
+			dataType: 'text',
+ 
+			success : function() {
+				console.log('File data sent successfully. '+selected);
+			
+   		 	// Uncheck all checkboxes on page load    
+			}
 
-		console.log('Document is prepared for download');
-	});
+		});	//ajax call:
+	});//click function
 
-});
+	var selected = [];
+});//
