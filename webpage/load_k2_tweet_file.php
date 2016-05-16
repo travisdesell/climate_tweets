@@ -11,8 +11,9 @@ $array = explode(",", $data);
 $file = fopen("docs/tweets.txt", "w");
 //check if incoming data is iterable
 if(is_array($data)) {
-	foreach($data as &$d) {
-		echo fwrite($file, "hi");
+	$arrlength = count($array);
+	for($x=0; x<$arrlength; $x++) {
+		echo fwrite($file, $array[$x]);
 	}
 }
 fclose($file);
