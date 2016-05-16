@@ -17,13 +17,14 @@ $(document).ready(function() {
 	});
 
 	$('#render_doc').click(function() {
+		var data = selected.join(",");
 		$.ajax({
 			type: 'POST',
 			url: './load_k2_tweet_file.php',
-			data: {selected : selected},
-			dataType: 'text',
- 
-			success : function() {
+			data: {	
+					source1: data
+					},
+			success : function(data) {
 				console.log('File data sent successfully. '+selected);
 			
    		 	// Uncheck all checkboxes on page load    
@@ -32,5 +33,7 @@ $(document).ready(function() {
 		});	//ajax call:
 	});//click function
 
-	var selected = [];
+	//download button action defined in php
+	//$('download_button').click(function() {
+	//});
 });//
