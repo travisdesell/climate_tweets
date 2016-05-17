@@ -21,9 +21,7 @@ $(document).ready(function() {
 		$.ajax({
 			type: 'POST',
 			url: './load_k2_tweet_file.php',
-			data: {	
-					source1: data
-					},
+			data: {source1: data},
 			success : function(data) {
 				console.log('File data sent successfully. '+selected);
 			

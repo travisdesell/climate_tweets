@@ -8,12 +8,13 @@ require_once($cwd[__FILE__] . "/../../citizen_science_grid/user.php");
 
 $data = $_POST["source1"];
 $array = explode(",", $data);
-$file = fopen("docs/tweets.txt", "w");
+$file = fopen("docs/tweets.txt", "w") or die("Unable to open file!");
+
 //check if incoming data is iterable
 if(is_array($data)) {
 	$arrlength = count($array);
 	for($x=0; x<$arrlength; $x++) {
-		echo fwrite($file, $array[$x]);
+		fwrite($file, $array[$x]);
 	}
 }
 fclose($file);
