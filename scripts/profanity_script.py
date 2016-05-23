@@ -13,11 +13,6 @@ db = MySQLdb.connect(host=db_host,    # your host, usually localhost
                      passwd=db_pass,  # your password
                      db=db_name)        # name of the data base
 
-_ROOT = os.path.abspath(os.path.dirname(__file__))
-
-def get_data(path):
-	return os.path.join(_ROOT, 'data', path)
-
 def get_words():
 	if not words:
 		load_words()
@@ -35,7 +30,7 @@ def contains_profanity(words, input_text):
 def load_words(wordlist=None):
 	global words
 	if not wordlist:
-		f=open('bad_words.txt', 'w+')
+		f=open('bad_words.txt', 'r')
 		wordlist = f.readlines()
 		wordlist = [w.strip() for w in wordlist if w]
 	words = wordlist
@@ -57,11 +52,11 @@ for tweet in tweet_tuple:
 	get_words()
 
 	if contains_profanity(words, text):
-		point.execute("UPDATE climate_tweets SET prof = %s WHERE tweet_id = %s", (1, tweetID))
+		cur.execute("UPDATE climate_tweets SET prof = %s WHERE tweet_id = %s", (1, tweetID))
 		print(tweetID, 'profane')
 	else:
 		cur.execute("UPDATE climate_tweets SET prof = %s WHERE tweet_id = %s", (0, tweetID))
- 		print(tweetID, 'not profane')
+ 		#print(text, 'not profane')
 
 
 db.close()
