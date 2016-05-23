@@ -222,7 +222,7 @@ echo "<form role='form'>
         <div class = 'radio'>
         <label><input type = 'radio' class= 'attitude-radio' id = 'radioID4' name = 'optradio' value ='1'> Positive</label></div>
         <div class = 'radio'>
-        <label> <input type = 'radio' class = 'attitude-radio' id = 'radioID5' name = 'optradio' value ='2'>2: Strongly Positive </labe></div>
+        <label> <input type = 'radio' class = 'attitude-radio' id = 'radioID5' name = 'optradio' value ='2'>Strongly Positive </labe></div>
         <div class = 'radio'>
         <label><input type = 'radio' class = 'attitude-radio' id = 'radioID6' name = 'optradio' value = 'Unknown'>Unknown</label></div>
 		<!--<div id='piechart' style='width: 450px; height: 300px;' display: inline-block'></div> --> 
