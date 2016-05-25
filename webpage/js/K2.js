@@ -17,17 +17,15 @@ $(document).ready(function() {
 	});
 
 	$('#render_doc').click(function() {
-		var data = selected.join(",");
+		var data = selected.join("(*)");
+		$('.selection_box').prop('checked', false);
 		$.ajax({
 			type: 'POST',
 			url: './load_k2_tweet_file.php',
 			data: {source1: data},
 			success : function(data) {
 				console.log('File data sent successfully. '+selected);
-			
-   		 	// Uncheck all checkboxes on page load    
-			}
-
+				}
 		});	//ajax call:
 	});//click function
 
