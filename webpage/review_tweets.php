@@ -18,6 +18,8 @@ $user_id = $user['id'];
 //$css_header = "<link rel='stylesheet' type = 'text/css' href = 'css/style.css' />";
 //$js_header = "<script type='text/javascript' src='js/climate_tweets.js'></script><script type='text/javascript' src='js/discuss.js'></script>";
 
+$css_header = "<link rel='stylesheet' type = 'text/css' href = 'css/style.css' />";
+
 print_header("Reviewing Your Climate Tweets", "$css_header $js_header", "climate");
 print_navbar("Projects: Climate Tweets", "Climate Tweets", "..");
 

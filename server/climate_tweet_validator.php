@@ -43,7 +43,8 @@ function match_classifications($c1, $c2, &$accuracy_difference, &$category_match
 }
 
 //$query = "SELECT id, tweet_id FROM climate_tweets WHERE number_views > 1";
-$query = "SELECT id, tweet_id FROM climate_tweets WHERE number_views = required_views AND status = 'IN_PROGRESS'";
+//$query = "SELECT id, tweet_id FROM climate_tweets WHERE number_views = required_views AND status = 'IN_PROGRESS'";
+$query = "SELECT id, tweet_id, number_views, required_views FROM climate_tweets WHERE number_views > 1 AND status = 'IN_PROGRESS'";
 echo $query . "\n";
 
 $result = query_boinc_db($query);
@@ -89,7 +90,6 @@ while ($row = $result->fetch_assoc()) {
         echo "\t\t" . json_encode($tweets[$i]) . "\n";
 
         $j = $i + 1;
-
 
         while ($j < count($tweets)) {
             match_classifications($tweets[$i], $tweets[$j], $accuracy_difference, $category_matches, $category_mismatches);
@@ -157,6 +157,21 @@ while ($row = $result->fetch_assoc()) {
                 $query = "UPDATE user SET valid_tweets = valid_tweets + 1 WHERE id = " . $tweets[$i]['user_id'];
                 echo $query . "\n";
                 query_boinc_db($query);
+
+                $query = "SELECT teamid FROM user WHERE id = " . $tweets[$i]['user_id'];
+                echo $query . "\n";
+                $teamid_result = query_boinc_db($query);
+
+                if (($teamid_row = $teamid_result->fetch_assoc()) != NULL) {
+                    $teamid = $teamid_row['teamid'];
+                    echo "TEAMID: $teamid";
+
+                    if ($teamid > 0) {
+                        $query = "UPDATE team SET valid_tweets = valid_tweets + 1 WHERE id = $teamid";
+                        echo $query . "\n";
+                        query_boinc_db($query);
+                    }
+                }
             }
         }
 
@@ -166,10 +181,12 @@ while ($row = $result->fetch_assoc()) {
         $tweets_finished++;
 
         //UPDATE TWEET SUCH THAT 
-        $query = "UPDATE climate_tweets SET status = 'OVER' WHERE id = $tweet_id";
-        echo $query . "\n";
+        if ($row['number_views'] == $row['required_views']) {
+            $query = "UPDATE climate_tweets SET status = 'OVER' WHERE id = $tweet_id";
+            echo $query . "\n";
 
-        query_boinc_db($query);
+            query_boinc_db($query);
+        }
     } else {
         $query = "UPDATE climate_tweets SET required_views = required_views + 1 WHERE id = $tweet_id";
         echo $query . "\n";
