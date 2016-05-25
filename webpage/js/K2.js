@@ -17,7 +17,7 @@ $(document).ready(function() {
 	});
 
 	$('#render_doc').click(function() {
-		var data = selected.join("(*)");
+		var data = selected.join("**");
 		$('.selection_box').prop('checked', false);
 		$.ajax({
 			type: 'POST',
