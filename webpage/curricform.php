@@ -43,8 +43,10 @@ echo "
 
 
 <p>Please double check your information. Click to submit and begin download.</p>
+<a href='http://csgrid.org/csg/climate_lwingate/curricpage.php'>
 <div class='btn btn-success'>Submit and Download</div>
 </div>
+</a>
 
 </div><!--container-->
 ";
