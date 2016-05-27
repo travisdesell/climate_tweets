@@ -9,12 +9,11 @@ require_once($cwd[__FILE__] . "/../../citizen_science_grid/navbar.php");
 require_once($cwd[__FILE__] . "/../../citizen_science_grid/footer.php");
 require_once($cwd[__FILE__] . "/../../citizen_science_grid/my_query.php");
 require_once($cwd[__FILE__] . "/../../citizen_science_grid/user.php");
-//require_once($cwd[__FILE__] . "/get_languages.php");
-//require_once($cwd[__FILE__] . "/get_next_tweet.php");
-//$user = csg_get_user();
-//$user_id = $user['id'];
+
+//This header allows the js API FileSaver to create a file with the tweets on the user side
 echo"
 <script src='js/FileSaver.js'></script>";
+
 $css_header = "<link rel='stylesheet' type = 'text/css' href = 'css/style.css'/>";
 $js_header = "<script type='text/javascript' src='js/K2.js'></script>";
 //$filesaver_api = "<script src='https://raw.github.com/eligrey/FileSaver.js/master/FileSaver.js'/>";
