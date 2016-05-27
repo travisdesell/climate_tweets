@@ -16,6 +16,7 @@ require_once($cwd[__FILE__] . "/../../citizen_science_grid/user.php");
 
 $css_header = "<link rel='stylesheet' type = 'text/css' href = 'css/style.css'/>";
 $js_header = "<script type='text/javascript' src='js/K2.js'></script>";
+//$filesaver_api = "<script src='https://raw.github.com/eligrey/FileSaver.js/master/FileSaver.js'/>";
 print_header("Tweet Selection", "$css_header $js_header", "");
 print_navbar("Projects: Climate Tweets", "Climate Tweets", "..");
 

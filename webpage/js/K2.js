@@ -17,7 +17,13 @@ $(document).ready(function() {
 	});
 
 	$('#render_doc').click(function() {
-		var data = selected.join("**");
+		var data = new Blob(selected,{type: "text/plain;charset=utf-8"});
+		saveAs(data, 'text.txt');
+	
+		//var blob = new Blob(selected, {type: "text/plain;charset=utf-8"});
+		//saveAs(blob, "tweetfile.txt");
+
+		/*var data = selected.join("**");
 		$('.selection_box').prop('checked', false);
 		$.ajax({
 			type: 'POST',
@@ -26,9 +32,13 @@ $(document).ready(function() {
 			success : function(data) {
 				console.log('File data sent successfully. '+selected);
 				}
-		});	//ajax call:
+		});	//ajax call:*/
 	});//click function
-
+/*
+	angular
+	.module('fileSaverExample', ['ngFileSaver'])
+	.controller('ExampleCtrl', ['FileSaver', 'Blob', ExampleCtrl]);
+*/
 	//download button action defined in php
 	//$('download_button').click(function() {
 	//});
