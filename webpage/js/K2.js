@@ -17,29 +17,11 @@ $(document).ready(function() {
 	});
 
 	$('#render_doc').click(function() {
+		for(var x=0; x<selected.length; x++) {
+			selected[x] = selected[x] + "\n\n";
+		}
 		var data = new Blob(selected,{type: "text/plain;charset=utf-8"});
-		saveAs(data, 'text.txt');
+		saveAs(data, 'tweets.txt');
 	
-		//var blob = new Blob(selected, {type: "text/plain;charset=utf-8"});
-		//saveAs(blob, "tweetfile.txt");
-
-		/*var data = selected.join("**");
-		$('.selection_box').prop('checked', false);
-		$.ajax({
-			type: 'POST',
-			url: './load_k2_tweet_file.php',
-			data: {source1: data},
-			success : function(data) {
-				console.log('File data sent successfully. '+selected);
-				}
-		});	//ajax call:*/
 	});//click function
-/*
-	angular
-	.module('fileSaverExample', ['ngFileSaver'])
-	.controller('ExampleCtrl', ['FileSaver', 'Blob', ExampleCtrl]);
-*/
-	//download button action defined in php
-	//$('download_button').click(function() {
-	//});
-});//
+});
