@@ -136,7 +136,7 @@ echo "</div><!--jumbo-->";
 echo "</div><!--row-->";
 echo "</div><!--col-->";
 
-//section for checkboxes - classify tweets by categories
+//section for barchart 
 echo "<div class = 'row row-centered'>";
 echo "<div class='col-sm-6'>";
 echo "<div class='well well-sm'>";
@@ -146,7 +146,7 @@ echo "<div class='well well-sm'>";
 			echo "</div>";//well
 echo "</div><!--col-->";
 
-//section for radio buttons - classify tweets by attitude
+//section for pie chart
 echo "<div class ='col-sm-6'>";
 echo "<div class = 'well well-sm'>";
 
@@ -158,15 +158,6 @@ echo "<form role='form'>
 echo "</div><!-- well -->";
 echo "</div><!-- col -->";
 echo "</div><!-- row -->";
-
-//tweet classified alert :)
-echo "<div class='row'>
-          <div class='span12 text-center'>
-              <div id='tweet-alert' class='alert alert-success hide-me'>
-              Thanks! Your tweet has been classified.
-	      </div>
-          </div>
-      </div>";
 
 //javascript for graphs being drawn
 echo"
@@ -258,7 +249,6 @@ echo"
   	</head>
 ";
 
-echo"<http://pietervanklinken.nl/wp-content/uploads/2010/10/twitter-creative-commons-2.jpg>";
 echo"</div> <!-- /container -->";
 print_footer('<strong>Travis Desell and the Climate Tweets Team</strong>', '<strong>Aaron Bergstrom, Travis Desell, Lindsey Wingate, and Andrei Kirilenko</strong>');
 echo "</body></html>";
