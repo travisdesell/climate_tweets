@@ -1,4 +1,3 @@
-
 <?php
 
 $cwd[__FILE__] = __FILE__;
@@ -6,14 +5,7 @@ if (is_link($cwd[__FILE__])) $cwd[__FILE__] = readlink($cwd[__FILE__]);
 $cwd[__FILE__] = dirname($cwd[__FILE__]);
 
 require_once($cwd[__FILE__] . "/../../citizen_science_grid/header.php");
-require_once($cwd[__FILE__] . "/../../citizen_science_grid/navbar.php");
 require_once($cwd[__FILE__] . "/../../citizen_science_grid/footer.php");
-require_once($cwd[__FILE__] . "/../../citizen_science_grid/my_query.php");
-require_once($cwd[__FILE__] . "/../../citizen_science_grid/user.php");
-
-
-$user = csg_get_user();
-$user_id = $user['id'];
 
 $css_header = "<link rel='stylesheet' type = 'text/css' href = 'css/curriculum_style.css' />";
 
@@ -30,7 +22,9 @@ echo "
             <div class='input-group'>
 	        <input type='text' class='form-control' placeholder='First Name' aria-describedby='basic-addon1'>
 	        <input type='text' class='form-control' placeholder='Last Name' aria-describedby='basic-addon1'>
-	        <input type='text' class='form-control' placeholder='Email' aria-describedby='basic-addon1'>
+	        <input type='text' class='form-control' placeholder='Username' aria-describedby='basic-addon1'>
+			<input type='text' class='form-control' placeholder='Password' aria-describedby='basic-addon1'>
+			<input type='text' class='form-control' placeholder='Email' aria-describedby='basic-addon1'>
 	        <input type='text' class='form-control' placeholder='Work Phone' aria-describedby='basic-addon1'>
 	        <input type='text' class='form-control' placeholder='School' aria-describedby='basic-addon1'>
 	        <input type='text' class='form-control' placeholder='School District' aria-describedby='basic-addon1'>
@@ -38,12 +32,14 @@ echo "
 			</div><!--input-->
         </div><!--col-->
     </div><!--row-->
+<p></p>
+	<p><b>Please double check your information.</b></p>
 
-<p>Please double check your information. Click to submit and view lesson plans.</p>
-<a href='http://csgrid.org/csg/climate_lwingate/curricpage.php'>
-<div class='btn btn-default'>Submit</div>
-</div>
-</a>
-
+	<a href='http://csgrid.org/csg/climate_lwingate/guide.php'>
+		<div class='btn btn-default'>Submit</div>
+		</div>
+	</a>
 </div><!--container-->
 ";
+print_footer('<strong>Travis Desell and the Climate Tweets Team</strong>', '<strong>Aaron Bergstrom, Travis Desell, Lindsey Wingate, and Andrei Kirilenko</strong>');
+

@@ -5,11 +5,8 @@ if (is_link($cwd[__FILE__])) $cwd[__FILE__] = readlink($cwd[__FILE__]);
 $cwd[__FILE__] = dirname($cwd[__FILE__]);
 
 require_once($cwd[__FILE__] . "/../../citizen_science_grid/header.php");
-require_once($cwd[__FILE__] . "/../../citizen_science_grid/navbar.php");
 require_once($cwd[__FILE__] . "/../../citizen_science_grid/footer.php");
-require_once($cwd[__FILE__] . "/../../citizen_science_grid/my_query.php");
 require_once($cwd[__FILE__] . "/../../citizen_science_grid/user.php");
-require_once($cwd[__FILE__] . "/get_languages.php");
 
 $user = csg_get_user();
 $user_id = $user['id'];
