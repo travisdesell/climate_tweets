@@ -20,7 +20,6 @@ $css_header = "<link rel='stylesheet' type = 'text/css' href = 'css/education_st
 print_header("Teacher Page", "$css_header <script type='text/javascript' src='js/climate_tweets.js'></script><script type='text/javascript' src='js/discuss.js'></script>", "dna");
 print_navbar("Projects: Climate Tweets", "Climate Tweets", "..");
 
-echo"<http://pietervanklinken.nl/wp-content/uploads/2010/10/twitter-creative-commons-2.jpg>";
 
 //modal for instructions
 echo "
