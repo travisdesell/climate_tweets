@@ -1,4 +1,3 @@
-
 <?php
 
 $cwd[__FILE__] = __FILE__;
@@ -17,8 +16,7 @@ $user_id = $user['id'];
 
 $css_header = "<link rel='stylesheet' type = 'text/css' href = 'css/education_style.css' />";
 
-print_header("Teacher Page", "$css_header <script type='text/javascript' src='js/climate_tweets.js'></script><script type='text/javascript' src='js/discuss.js'></script>", "dna");
-print_navbar("Projects: Climate Tweets", "Climate Tweets", "..");
+print_header("Teacher Page", "$css_header", "");
 
 
 //modal for instructions
