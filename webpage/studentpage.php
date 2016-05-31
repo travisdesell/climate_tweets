@@ -219,6 +219,6 @@ echo "<div class='row'>
 
 //javascript for graphs being drawn
 echo"</div> <!-- /container -->";
-print_footer('<strong>Travis Desell and the Climate Tweets Team</strong>', '<strong>Aaron Bergstrom, Travis Desell, Lindsey Wingate, and Andrei Kirilenko</strong>');
+print_footer('<strong>Travis Desell and the Climate Tweets Team</strong>', '<strong>Aaron Bergstrom, Travis Desell, Lindsey Wingate, Rhonda Olson, and Andrei Kirilenko</strong>');
 echo "</body></html>";
 ?>

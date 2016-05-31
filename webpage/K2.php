@@ -32,6 +32,6 @@ $tweet_template = file_get_contents($cwd[__FILE__] . "/templates/tweet_selection
 $renderme = new Mustache_Engine;
 echo $renderme->render($tweet_template, $repeat);
 
-print_footer('<strong>Travis Desell and the Climate Tweets Team</strong>', '<strong>Aaron Bergstrom, Travis Desell, Lindsey Wingate, and Andrei Kirilenko</strong>');
+print_footer('<strong>Travis Desell and the Climate Tweets Team</strong>', '<strong>Aaron Bergstrom, Travis Desell, Lindsey Wingate, Rhonda Olson and Andrei Kirilenko</strong>');
 echo "</body></html>";
 ?>
