@@ -2,7 +2,6 @@ $(document).ready(function() {
     //sets array for users desired tweet languages
     var languages = [];
 
-    
     //first ajax call gets whether user has seen modal or not 
      $.ajax({
          type : 'POST',

@@ -27,16 +27,17 @@ $(document).ready(function() {
 	$('#more_tweets').click(function() {
 		//ajax call for php script for new html, then append
 		$.ajax({
-			type : 'GET',
+			type : 'POST',
 			url : './get_more_tweets.php',
 			datatype : 'text',
 		
-			success : function(return_array) {
+			success : function(result) {
 				console.log("More tweets were received!");
-				for(var x=0; x<return_array.length; x++) {
-					$("p").append(return_array[x]);		
+				console.log("php returned '" + result + "'");
+				//for(var x=0; x<return_array.length; x++) {
+				//	$("p").append(return_array[x]);		
 		//$("button").append("<button type='button' class='btn btn-default");	
-				}
+				//}
 			}
 		});
 	});
