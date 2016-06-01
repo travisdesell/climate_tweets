@@ -10,6 +10,5 @@ $results = query_boinc_db("SELECT text FROM climate_tweets where lang='en' and p
 
 $row = $results->fetch_assoc();
 
-print_r ($row);
-
+echo json_encode($row);
 ?>

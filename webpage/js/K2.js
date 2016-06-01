@@ -29,11 +29,11 @@ $(document).ready(function() {
 		$.ajax({
 			type : 'POST',
 			url : './get_more_tweets.php',
-			datatype : 'text',
+			data : JSON,
 		
-			success : function(result) {
+			success : function(data) {
 				console.log("More tweets were received!");
-				console.log("php returned '" + result + "'");
+				console.log("php returned '" + data + "'");
 				//for(var x=0; x<return_array.length; x++) {
 				//	$("p").append(return_array[x]);		
 		//$("button").append("<button type='button' class='btn btn-default");	
