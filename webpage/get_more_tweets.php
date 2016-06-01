@@ -6,8 +6,10 @@ $cwd[__FILE__] = dirname($cwd[__FILE__]);
 
 require_once($cwd[__FILE__] . "/../../citizen_science_grid/my_query.php");
 
-$results = query_boinc_db("SELECT text FROM climate_tweets where lang='en' and prof=0 order by rand() LIMIT 60"); 
+$results = query_boinc_db("SELECT text FROM climate_tweets where lang='en' and prof=0 order by rand() LIMIT 10"); 
 
-echo json_encode($results);
+$row = $results->fetch_assoc();
+
+print_r ($row);
 
 ?>
