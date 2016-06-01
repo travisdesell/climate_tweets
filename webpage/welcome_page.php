@@ -35,7 +35,7 @@ echo"
 		<div class='col-sm-8'>	
 			<div class='well'>
 				<p>
-					Welcome to the Climate Tweets project. Climate Tweets measures the public’s attitude toward the subject of climate change, a subject around which online discussions can be highly vitriolic. The lesson plans available here seek to educate K-12 students on the nature of climate change, the use of social media as a debate platform, and the need for civil public discourse. The Climate Tweets project developed these lesson plans in collaboration with the Dakota Science Center. We have made our lesson plans available through this online interface in the hope that you and your students will find the educational experience engaging and informative.
+					Welcome to the Climate Tweets project. Climate Tweets measures the public's attitude toward climate change, a subject which can be highly controversial in online discussions. The lesson plans available here seek to educate K-12 students on the nature of climate change, the use of social media as a debate platform, and the need for civil public discourse. The Climate Tweets project developed these lesson plans in collaboration with the Dakota Science Center. We have made our lesson plans available through this online interface in the hope that you and your students will find the educational experience engaging and informative.
 				</p>
 			</div><!--well-->
 		</div><!--col-->
