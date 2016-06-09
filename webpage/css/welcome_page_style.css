@@ -1,0 +1,22 @@
+body{
+    background-image: url('../images/Melting-Ice-Cube.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
+#form-control {
+	border: solid #2B3856 3px;
+}
+
+.well{
+    border: solid #2B3856 2px;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding-left: 25px;
+	font-size: larger;
+}
+.btn {
+	border: solid #2B3856 3px;
+}
+
+
