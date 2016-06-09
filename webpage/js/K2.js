@@ -34,9 +34,10 @@ $(document).ready(function() {
 			success : function(data) {
 				console.log("More tweets were received!");
 				console.log("php returned '" + data + "'");
-				//for(var x=0; x<return_array.length; x++) {
-				//	$("p").append(return_array[x]);		
-		//$("button").append("<button type='button' class='btn btn-default");	
+				//for(var x=0; x<10; x++) {
+					$("#mytable").append("<tr><td><center><div class='checkbox'><label><input type='checkbox' class='selection box'></label></div></center></td><td>new</td></tr>");	
+					//$("td").append("this is da text"); //appends that text 10 times in each checkbox and after each tweets text
+					//$("td").append("<td><div class='checkbox'><label><input type='checkbox' class='selection_box'></label></div></td><td>data[x]</td>");//appends a ton of disorganized checkboxes.		
 				//}
 			}
 		});
