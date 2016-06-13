@@ -19,13 +19,13 @@ $(document).ready(function() {
 		
 			success : function(data) {
 				//console.log("More tweets were received!");
-				console.log("php returned '" + JSON.stringify(data) + "'");
+				//console.log("php returned '" + JSON.stringify(data) + "'");
 				//data = data.slice(9, -2);//cleans text for use in id and visual on site
 				//console.log(data);
 				var new_tweets = data.split("****");
 				for(var x=0; x<20; x++) 
 				{
-				$("#mytable").append("<tr><td><center><div class='checkbox'><label><input type='checkbox' class='selection box'></label></div></center></td><td>"+new_tweets[x]+"</td></tr>");	
+					$("#mytable").append("<tr><td><center><div class='checkbox'><label><input type='checkbox' class='selection_box' id="+new_tweets[x]+"></label></div></center></td><td>"+new_tweets[x]+"</td></tr>");	
 				}
 			}
 		});
