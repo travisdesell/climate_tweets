@@ -10,7 +10,7 @@ $(document).ready(function() {
 	});//click function
 
 //when this button is pushed, an ajax call is made to get_more_tweets.php, which queries the database for 20 more tweets. 
-	$('#more_tweets').click(function() {
+	$(document).on("click", "#more_tweets", function() {
 		//ajax call for php script for new html, then append
 		$.ajax({
 			type : 'POST',
@@ -20,15 +20,13 @@ $(document).ready(function() {
 			success : function(data) {
 				//console.log("More tweets were received!");
 				//console.log("php returned '" + JSON.stringify(data) + "'");
-				//data = data.slice(9, -2);//cleans text for use in id and visual on site
-				//console.log(data);
 				var new_tweets = data.split("****");
 				for(var x=0; x<20; x++) 
 				{
 					$("#mytable").append("<tr><td><center><div class='checkbox'><label><input type='checkbox' class='selection_box' id="+new_tweets[x]+"></label></div></center></td><td>"+new_tweets[x]+"</td></tr>");	
-				}
+				}	
 			}
-		});
+		});		
 	});
 
 	$('.selection_box').click(function() {
