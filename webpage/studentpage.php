@@ -169,7 +169,7 @@ echo "<div class='well well-sm'>";
             echo "&nbsp;&nbsp;&nbsp;<input type='checkbox' class='classify-checkbox' id='impacts-extreme' value='0'> Extreme Events</input> <br>";
             echo "&nbsp;&nbsp;&nbsp;<input type='checkbox' class='classify-checkbox' id='impacts-weather' value='0'> Unusual Weather</input> <br>";
             echo "&nbsp;&nbsp;&nbsp;<input type='checkbox' class='classify-checkbox' id='impacts-environment' value='0'> Threats to the Environment</input> <br>";
-            echo "&nbsp;&nbsp;&nbsp;<input type='checkbox' class='classify-checkbox' id='impacts-society' value='0'> Threats to the Scoiety and the Economy</input> <br>";
+            echo "&nbsp;&nbsp;&nbsp;<input type='checkbox' class='classify-checkbox' id='impacts-society' value='0'> Threats to the Society and the Economy</input> <br>";
 	        echo "&nbsp;&nbsp;&nbsp;<input type='checkbox' class='classify-checkbox' id='unknown' value='0'> Unknown</input> <br>";
 			echo" <!--<div id='barchart'></div>-->";
 			echo "<br>";
@@ -206,7 +206,7 @@ echo" <div class = 'col-sm-12 text-center'>";
 echo "<button type ='button' class='btn btn-success pull-center' data-toggle='modal' id='submit-button' tweet_id='$id' data-target='.conf-modal'>Submit the classification!</button>";
 echo "&nbsp;&nbsp;";
 echo "<button type ='button' class='btn btn-success pull-center' data-toggle='modal' id='discuss-tweet-button' tweet_id='$id' >Discuss this tweet!</button>";
-echo "<font size = '2'><font color = #B8FFF3><center><b>An attitude and cateegory is required to submit the tweet</b></font>";
+echo "<font size = '2'><font color = #B8FFF3><center><b>An attitude and cateegory are required to submit the tweet</b></font>";
 echo "</div><!--col-->";
 //tweet classified alert :)
 echo "<div class='row'>
