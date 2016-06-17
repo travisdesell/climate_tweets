@@ -10,7 +10,7 @@ $(document).ready(function() {
 		saveAs(data, 'tweets.txt');
 	});//click function
 
-//when this button is pushed, an ajax call is made to get_more_tweets.php, which queries the database for 20 more tweets. 
+//when more tweets is pushed, checked boxes remain while unchecked disappear for new tweets. . 
 	$('#more_tweets').click(function() {
 		//ajax call for php script for new html, then append
 		$("tr").remove();
