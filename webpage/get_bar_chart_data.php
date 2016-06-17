@@ -1,5 +1,5 @@
 <?php
-
+//this page retrieves the bar chart data from the main database.
 $cwd[__FILE__] = __FILE__;
 if (is_link($cwd[__FILE__])) $cwd[__FILE__] = readlink($cwd[__FILE__]);
 $cwd[__FILE__] = dirname($cwd[__FILE__]);

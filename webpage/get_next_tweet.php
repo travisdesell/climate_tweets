@@ -1,5 +1,5 @@
 <?php
-
+//This script is called when a tweet has been classified on classify_tweets and a new one is required. This page pulls tweets based on how many are classified and the validator, which Travis maintains.
 $cwd[__FILE__] = __FILE__;
 if (is_link($cwd[__FILE__])) $cwd[__FILE__] = readlink($cwd[__FILE__]);
 $cwd[__FILE__] = dirname($cwd[__FILE__]);

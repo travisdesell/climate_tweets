@@ -1,6 +1,5 @@
 #!python :)
-#from config import Config - safer for connecting?
-
+#This program runs through the tweets and verifies which language they are. If they are misclassified, the language detector resets their language in the database.
 import mysql.connector
 from mysql.connector import errorcode
 

@@ -1,5 +1,5 @@
 <?php
-
+//This script is called when the classify_tweets page first loads to verify whether or not the user has seen the profanity-warning. It is only shown once to each user
 $cwd[__FILE__] = __FILE__;
 if (is_link($cwd[__FILE__])) $cwd[__FILE__] = readlink($cwd[__FILE__]);
 $cwd[__FILE__] = dirname($cwd[__FILE__]);

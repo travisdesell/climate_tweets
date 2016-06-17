@@ -1,4 +1,6 @@
 <?php
+//This script was originally used to open the tweets file, but is inactive due to the API Aaron found to create a file directly in javascript
+
 $cwd[__FILE__] = __FILE__;
 if (is_link($cwd[__FILE__])) $cwd[__FILE__] = readlink($cwd[__FILE__]);
 $cwd[__FILE__] = dirname($cwd[__FILE__]);

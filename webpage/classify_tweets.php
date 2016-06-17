@@ -1,5 +1,5 @@
 <?php
-
+//This is the main tweet classification page that is live on the CSG.
 $cwd[__FILE__] = __FILE__;
 if (is_link($cwd[__FILE__])) $cwd[__FILE__] = readlink($cwd[__FILE__]);
 $cwd[__FILE__] = dirname($cwd[__FILE__]);
@@ -160,7 +160,7 @@ echo "</div><!--col-->";
 echo "<div class='row row-centered'>";
 echo "<div class='col-sm-12'>";
 echo "<div class='well' id='tweet-well'>";
-
+//puts tweet text into the well
 echo "'$text'<br>";
 //echo "<br>";
 //echo "Tweet ID: '$id'<br>";
@@ -217,7 +217,7 @@ echo "<div class = 'row'>";
 echo "<div class = col-sm-12 col-centered'>";
 echo "<div class = 'well well-sm'>";
 echo "<br><i>Tweets are available in six languages. Please select your preferences. (english default) </i>";
-
+//get user preferences for languages
 $langArray = get_languages($user_id);
 error_log( json_encode($langArray) );
 

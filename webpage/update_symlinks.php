@@ -1,5 +1,5 @@
 <?php
-
+//This script needs to be run any time a new page is created
 if (count($argv) != 2) {
     die("Error, invalid arguments. usage: php $argv[0] <target_directory>\n");
 }

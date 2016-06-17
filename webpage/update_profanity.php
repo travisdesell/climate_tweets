@@ -1,5 +1,5 @@
 <?php
-
+//This script sends a 1 to the database, updating it so they user will not see the profanity modal more than once
 $cwd[__FILE__] = __FILE__;
 if (is_link($cwd[__FILE__])) $cwd[__FILE__] = readlink($cwd[__FILE__]);
 $cwd[__FILE__] = dirname($cwd[__FILE__]);

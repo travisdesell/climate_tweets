@@ -1,5 +1,5 @@
 <?php
-
+//This page is where the teachers can go to gain access to the curriculum downloads
 $cwd[__FILE__] = __FILE__;
 if (is_link($cwd[__FILE__])) $cwd[__FILE__] = readlink($cwd[__FILE__]);
 $cwd[__FILE__] = dirname($cwd[__FILE__]);

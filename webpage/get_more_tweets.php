@@ -1,5 +1,5 @@
 <?php
-
+//This script is called when the "more tweets" button is pressed on the K2 page
 $cwd[__FILE__] = __FILE__;
 if (is_link($cwd[__FILE__])) $cwd[__FILE__] = readlink($cwd[__FILE__]);
 $cwd[__FILE__] = dirname($cwd[__FILE__]);

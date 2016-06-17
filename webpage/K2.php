@@ -1,5 +1,5 @@
 <?php
-
+//THis is the page where the teachers will go to select the tweets they want to use and create a text file. It is linked to the template tweet_selection (in the directory templates) and the 
 $cwd[__FILE__] = __FILE__;
 if (is_link($cwd[__FILE__])) $cwd[__FILE__] = readlink($cwd[__FILE__]);
 $cwd[__FILE__] = dirname($cwd[__FILE__]);

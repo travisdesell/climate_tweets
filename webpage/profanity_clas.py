@@ -1,3 +1,4 @@
+#This is the profanity filter, about 75% accurate.
 """Gets wordlist. If wordlist is not loaded, calls load_words to cache list"""
 def get_words():
     if not words:

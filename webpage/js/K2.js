@@ -1,6 +1,7 @@
+//This javascript is associated with K2.php and tweet_selection.html
 $(document).ready(function() {
 	var selected = [];
-
+//when the "download tweet file" is selected, the API is used to create a downloadable text document
 	$('#render_doc').click(function() {
 		for(var x=0; x<selected.length; x++) {
 			selected[x] = selected[x] + "\r\n\r\n";
@@ -10,22 +11,26 @@ $(document).ready(function() {
 	});//click function
 
 //when this button is pushed, an ajax call is made to get_more_tweets.php, which queries the database for 20 more tweets. 
-	$(document).on("click", "#more_tweets", function() {
+	$('#more_tweets').click(function() {
 		//ajax call for php script for new html, then append
+		$("tr").remove();
+		for(var x=0; x<selected.length; x++) {
+			$("#mytable").append("<tr><td><center><div class='checkbox'><label><input type='checkbox' class='selection_box' id="+selected[x]+" checked></label></div></center></td><td>"+selected[x]+"</td></tr>");	
+		}
 		$.ajax({
-			type : 'POST',
-			url : './get_more_tweets.php',
-			data : JSON,
+		type : 'POST',
+		url : './get_more_tweets.php',
+		data : JSON,
 		
 			success : function(data) {
-				//console.log("More tweets were received!");
-				//console.log("php returned '" + JSON.stringify(data) + "'");
+				//for(var x=0; x<selected.length; x++) {
+								//}
+				//add more tweets to page list
 				var new_tweets = data.split("****");
-				for(var x=0; x<20; x++) 
-				{
+				for(var x=0; x<20; x++) {
 					$("#mytable").append("<tr><td><center><div class='checkbox'><label><input type='checkbox' class='selection_box' id="+new_tweets[x]+"></label></div></center></td><td>"+new_tweets[x]+"</td></tr>");	
-				}	
-			}
+				}
+			}	
 		});		
 	});
 

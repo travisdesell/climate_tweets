@@ -1,5 +1,5 @@
 <?php
-
+//This is the page the teachers will see. It has the graphs for a visual of the classification results.
 $cwd[__FILE__] = __FILE__;
 if (is_link($cwd[__FILE__])) $cwd[__FILE__] = readlink($cwd[__FILE__]);
 $cwd[__FILE__] = dirname($cwd[__FILE__]);

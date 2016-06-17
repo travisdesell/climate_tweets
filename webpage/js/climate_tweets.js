@@ -1,3 +1,4 @@
+//This page is the javascript for the main classify_tweets page.
 $(document).ready(function() {
     //sets array for users desired tweet languages
     var languages = [];

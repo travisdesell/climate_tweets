@@ -1,5 +1,5 @@
 <?php
-
+//This script returns the result of a classified tweet and inserts it into the database.
 $cwd[__FILE__] = __FILE__;
 if (is_link($cwd[__FILE__])) $cwd[__FILE__] = readlink($cwd[__FILE__]);
 $cwd[__FILE__] = dirname($cwd[__FILE__]);
@@ -13,7 +13,6 @@ $user = csg_get_user(false);
 $user_id = $user['id'];
 
 error_log("user with id: $user_id submitted tweet classifications!");
-
 
 $tweet_id = $boinc_db->real_escape_string($_POST['tweet_id']);
 $attitude = $boinc_db->real_escape_string($_POST['attitude']);
@@ -76,19 +75,6 @@ if (intval($user['teamid']) > 0) {
     query_boinc_db($query);
 }
 
-//first try and get a tweet the user hasn't classified with number_views > 0 and < required_views
-//if cant find, get a tweet with number_views == 0
-
-/*
-$langArray = get_languages($user_id);
-$query = "SELECT id, tweet_id, text, lang, datetime FROM climate_tweets ct WHERE lang IN ( ".implode(',', $langArray).") AND NOT EXISTS(SELECT * FROM tweet_classifications tc WHERE tc.tweet_id = ct.id AND tc.user_id != $user_id) ORDER BY RAND() LIMIT 1";
-error_log($query);
-
-$result = query_boinc_db($query);
-
-//returns new tweet information
-$row = $result->fetch_assoc();
- */
 $row = get_next_tweet($user_id);
 $id = $row['id'];
 $text = $row['text'];

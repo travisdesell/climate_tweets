@@ -1,5 +1,5 @@
 <?php
-
+//this script is used to retrieve the languages for the user logged in from the database so they can classify in more than one language
 function get_languages($user_id) {
 
     $languages_result = query_boinc_db("SELECT english, portuguese, spanish, german, russian, french FROM tweet_preferences WHERE user_id = $user_id");

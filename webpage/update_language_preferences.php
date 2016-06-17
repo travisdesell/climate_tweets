@@ -1,4 +1,5 @@
 <?php
+//This script updates the language preferences of a user when they select a new/unselect and old preference on the classify_tweets page
 
 $cwd[__FILE__] = __FILE__;
 if (is_link($cwd[__FILE__])) $cwd[__FILE__] = readlink($cwd[__FILE__]);
