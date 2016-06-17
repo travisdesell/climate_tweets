@@ -86,8 +86,6 @@ echo "
 				Select Tweets
 				</button>
 				</a>
-				<br><br>
-				<p>Additional Materials: \nPut books here</p>
 			</div><!--well-->
 		</div><!--col-->
 		<div class='col-sm-6'>
@@ -104,7 +102,18 @@ echo "
 					Download PDF 
 				</button>
 				</a>
-
+				<br><br>
+				<p>Classify tweets with the students or show the bar and pie chart results</p>
+				<a href='http://csgrid.org/csg/climate_lwingate/studentpage.php'>
+				<button type='button' class='btn btn-default btn-sm'>
+					Classify Tweets
+				</button>
+				</a>
+				<a href='http://csgrid.org/csg/climate_lwingate/teacherpage.php'>
+				<button type='button' class='btn btn-default btn-sm'>	
+					Show Class Results
+				</button>
+				</a>
 			</div><!--well-->
 		</div><!--col-->
 	</div><!--row-->
@@ -112,6 +121,29 @@ echo "
 		<div class='col-sm-6'>
 			<div class='well'>
 				<h4>Grades 11 and 12</h4>
+					<p>Develop data analysis skills and critically evaluate opinion vs. fact.</p>
+				<a href='docs/11-12.docx'>
+				<button type='button' class='btn btn-default btn-sm'>
+					Download Word Doc
+				</button>
+				</a>
+				<a href='docs/11-12.pdf'>
+				<button type='button' class='btn btn-default btn-sm'>
+					Download PDF
+				</button>
+				</a>
+				<br><br>
+				<p>Classify tweets with the students or show the bar and pie chart results</p>
+				<a href='http://csgrid.org/csg/climate_lwingate/studentpage.php'>
+				<button type='button' class='btn btn-default btn-sm'>
+					Classify Tweets
+				</button>
+				</a>
+				<a href='http://csgrid.org/csg/climate_lwingate/teacherpage.php'>
+				<button type='button' class='btn btn-default btn-sm'>	
+					Show Class Results
+				</button>
+				</a>
 			</div><!--well-->
 		</div><!--col-->
 	</div><!--row-->
