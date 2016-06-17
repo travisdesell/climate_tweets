@@ -20,19 +20,46 @@ echo "
 		</div><!--col-->
 	</div><!--row-->
 	<div class='row'>
-		<div class='col-sm-12'>
+		<div class='col-sm-6'>
 			<div class='well'>
-				K-2	
+				<h4>Grades K-2</h4>
+					<p>Help the students develop an understanding of the difference between climate and weather with this lesson plan.</p>
+				<a href='docs/K-2.docx'>
+				<button type='button' class='btn btn-default btn-sm'>
+					Download Word Doc
+				</button>
+				</a>
+				<a href='docs/K-2.pdf'>
+				<button type='button' class='btn btn-default btn-sm'>
+					Download PDF 
+				</button>
+				</a>
+				<br><br>
+				<p>Create a list of tweets the students will analyze.</p>
+				<a href='http://csgrid.org/csg/climate_lwingate/K2.php'>
+				<button type='button' class='btn btn-default btn-sm'>
+				Select Tweets
+				</button>
+				</a>
+
 			</div><!--well-->
+		</div><!--col-->
+		<div class='col-sm-6'>
 			<div class='well'>
 				3-5
-			</div>
+			</div><!--well-->
+		</div><!--col-->
+	</div><!--row-->
+	<div class='row'>
+		<div class='col-sm-6'>
 			<div class='well'>
 				6-8
-			</div>
+			</div><!--well-->
+		</div><!--col-->
+		<div class='col-sm-6'>
 			<div class='well'>
 				9-12
-			</div>
+			</div><!--well-->
 		</div><!--col-->
 	</div><!--row-->
 </div><!--container-->
