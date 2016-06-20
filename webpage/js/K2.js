@@ -47,7 +47,7 @@ $(document).ready(function() {
 				var new_tweets = data.split("****");
 				for(var x=0; x<20; x++) {
 					var temp = new_tweets[x];
-					$("#mytable").append("<tr><td><center><div class='checkbox'><label><input type='checkbox' class='selection_box' id=\""+temp+"\"></label></div></center></td><td>\""+temp+"\"</td></tr>");	
+					$("#mytable").append("<tr><td><center><div class='checkbox'><label><input type='checkbox' class='selection_box' id=\""+temp+"\"></label></div></center></td><td>"+temp+"</td></tr>");	
 				}
 			}
 		});		
