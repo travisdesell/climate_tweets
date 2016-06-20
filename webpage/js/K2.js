@@ -2,7 +2,25 @@
 $(document).ready(function() {
 	var selected = [];
 //when the "download tweet file" is selected, the API is used to create a downloadable text document
-	$('#render_doc').click(function() {
+/*
+	function checkbox() {
+		$('.selection_box').click(function() {
+			if($(this).prop('checked')) { 
+				console.log($(this).attr('id') + ' is checked');
+				selected.push($(this).attr('id'));
+			}
+			else {
+				console.log($(this).attr('id') + ' is not checked');
+				for(var y=0; y<selected.length; y++) {
+					if(selected[y] == $(this).attr('id')) {
+						selected.splice(y, 1);
+					}
+				}
+			}
+		});
+	}
+*/
+	$(document).on('click', '#render_doc', function() {
 		for(var x=0; x<selected.length; x++) {
 			selected[x] = selected[x] + "\r\n\r\n";
 		}
@@ -11,7 +29,7 @@ $(document).ready(function() {
 	});//click function
 
 //when more tweets is pushed, checked boxes remain while unchecked disappear for new tweets. . 
-	$('#more_tweets').click(function() {
+	$(document).on('click','#more_tweets', function() {
 		//ajax call for php script for new html, then append
 		$("tr").remove();
 		for(var x=0; x<selected.length; x++) {
@@ -30,11 +48,26 @@ $(document).ready(function() {
 				for(var x=0; x<20; x++) {
 					$("#mytable").append("<tr><td><center><div class='checkbox'><label><input type='checkbox' class='selection_box' id="+new_tweets[x]+"></label></div></center></td><td>"+new_tweets[x]+"</td></tr>");	
 				}
-			}	
+			}
 		});		
 	});
 
-	$('.selection_box').click(function() {
+	$('#mytable').delegate('#checkbox', 'click', function() {
+		if($(this).prop('checked')) { 
+			console.log($(this).attr('id') + ' is checked');
+			selected.push($(this).attr('id'));
+		}
+		else {
+			console.log($(this).attr('id') + ' is not checked');
+			for(var y=0; y<selected.length; y++) {
+				if(selected[y] == $(this).attr('id')) {
+					selected.splice(y, 1);
+				}
+			}
+		}
+	});
+
+	$(document).on('click', '.selection_box', function() {
 		if($(this).prop('checked')) { 
 			console.log($(this).attr('id') + ' is checked');
 			selected.push($(this).attr('id'));
