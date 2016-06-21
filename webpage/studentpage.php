@@ -11,7 +11,7 @@ require_once($cwd[__FILE__] . "/../../citizen_science_grid/user.php");
 $user = csg_get_user();
 $user_id = $user['id'];
 
-$css_header = "<link rel='stylesheet' type = 'text/css' href = 'css/education_style.css' />";
+$css_header = "<link rel='stylesheet' type = 'text/css' href = 'css/style.css' />";
 
 print_header("Classifying Climate Tweets", "$css_header <script type='text/javascript' src='js/climate_tweets.js'></script>", "dna");
 
@@ -41,7 +41,7 @@ echo "
 
 	<!-- Button trigger modal -->
 	<div class = 'span6' style = 'text-align:center'>
-	<button type='button' id = 'button1' class='btn btn-success btn-lg' data-toggle='modal' data-target='#myModal'>
+	<button type='button' id = 'button1' class='btn btn-default btn-lg' data-toggle='modal' data-target='#myModal'>
 	  Instructions
 	</button>
 
@@ -203,9 +203,9 @@ echo "</div><!-- row -->";
 //language stuff
 //submit button
 echo" <div class = 'col-sm-12 text-center'>";
-echo "<button type ='button' class='btn btn-success pull-center' data-toggle='modal' id='submit-button' tweet_id='$id' data-target='.conf-modal'>Submit the classification!</button>";
+echo "<button type ='button' class='btn btn-default pull-center' data-toggle='modal' id='submit-button' tweet_id='$id' data-target='.conf-modal'>Submit the classification!</button>";
 echo "&nbsp;&nbsp;";
-echo "<button type ='button' class='btn btn-success pull-center' data-toggle='modal' id='discuss-tweet-button' tweet_id='$id' >Discuss this tweet!</button>";
+echo "<button type ='button' class='btn btn-default pull-center' data-toggle='modal' id='discuss-tweet-button' tweet_id='$id' >Discuss this tweet!</button>";
 echo "<font size = '2'><font color = #B8FFF3><center><b>An attitude and cateegory are required to submit the tweet</b></font>";
 echo "</div><!--col-->";
 //tweet classified alert :)

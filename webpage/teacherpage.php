@@ -7,7 +7,7 @@ $cwd[__FILE__] = dirname($cwd[__FILE__]);
 require_once($cwd[__FILE__] . "/../../citizen_science_grid/header.php");
 require_once($cwd[__FILE__] . "/../../citizen_science_grid/footer.php");
 
-$css_header = "<link rel='stylesheet' type = 'text/css' href = 'css/education_style.css' />";
+$css_header = "<link rel='stylesheet' type = 'text/css' href = 'css/style.css' />";
 
 print_header("Teacher Page", "$css_header", "");
 
@@ -27,7 +27,7 @@ echo "
 
     <!-- Button trigger modal -->
     <div class = 'span6' style = 'text-align:center'>
-    <button type='button' id = 'button1' class='btn btn-success btn-lg' data-toggle='modal' data-target='#myModal'>
+    <button type='button' id = 'button1' class='btn btn-default btn-lg' data-toggle='modal' data-target='#myModal'>
       Instructions
     </button>
 
