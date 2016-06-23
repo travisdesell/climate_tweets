@@ -206,7 +206,7 @@ echo" <div class = 'col-sm-12 text-center'>";
 echo "<button type ='button' class='btn btn-default pull-center' data-toggle='modal' id='submit-button' tweet_id='$id' data-target='.conf-modal'>Submit the classification!</button>";
 echo "&nbsp;&nbsp;";
 echo "<button type ='button' class='btn btn-default pull-center' data-toggle='modal' id='discuss-tweet-button' tweet_id='$id' >Discuss this tweet!</button>";
-echo "<font size = '2'><font color = #B8FFF3><center><b>An attitude and cateegory are required to submit the tweet</b></font>";
+echo "<font size = '2'><center><b>An attitude and cateegory are required to submit the tweet</b></font>";
 echo "</div><!--col-->";
 //tweet classified alert :)
 echo "<div class='row'>

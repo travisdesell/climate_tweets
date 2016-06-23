@@ -17,113 +17,17 @@ echo "
 <div class='container'>
 	<div class = 'col-sm-12'>
 	<div class = 'row row-centered'>
-		
+		<p>  </p>
+		<p>  </p>		
 		<h1><center>Tweet Classification Results</center></h1>	
 	
 	</div>
 	</div>
     <div class='col-sm-12'>
         <div class='row row-centered'>
-
-    <!-- Button trigger modal -->
-    <div class = 'span6' style = 'text-align:center'>
-    <button type='button' id = 'button1' class='btn btn-default btn-lg' data-toggle='modal' data-target='#myModal'>
-      Instructions
-    </button>
-
-
-    <!-- Modal -->
-    <div class='modal fade' id='myModal' tabindex='-1' role='dialog' aria-labelledby='myModalLabel' aria-hidden='true'>
-      <div class='modal-dialog'>
-        <div class='modal-content'>
-            <button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
-          <div class='modal-body' style = 'text-align: left'>
-          <font size = '4'><b>Classifications</b><br></font>
-          <i>Assume that \"global warming\" and \"climate change\" are synonyms. Classify each tweet using no more than three categories listed below. If you cannot find any suitable category, select Other and the Unknown attitude and submit.</i><br>
-			<br>		
-			<b>Attitudes</b><br>
-				-2: Strongly Negative: Denial, skepticism with strong emotional component. \"Man made GLOBAL WARMING HOAX EXPOSED\"<br>
-				-1: Negative: <i>\"Sunny on my porch in December. Global Warming ain't so bad\"</i><br>
-				0: Neutral: <i>\"A new article on climate change is published in a newspaper.\"</i><br>
-				1. Positive: <i>\"How's planet Earth doing? Take a look at the signs of climate change here\"</i><br>
-				2. Strongly Positive: Very supportive, with strong emotional component.<i>\"Global warming? It's like earth having a Sauna!\"</i><br>
-				<br>
-				<table class = 'table table-striped' id = 'tblGrid'>
-					<thead>
-						<tr>
-							<th width = '35%'>Categories</th>
-							<th width = '65%'>Explanation and <i>Examples</i></th>
-						</tr>
-					</thead>							
-					<tbody>
-						<tr>
-							<td><b>Drivers of Climate Change</b></td>
-							<td>Greenhouse gases mentioned such as Carbon Monoxide, Methane, or Nitrous Oxide 
-								<i>\"Oil, gas, and coal!\"</i></td>	
-						</tr>
-						<tr>
-							<td><b>Science of Climate Change</b></td>
-							<td><i>\"The Scientists found that the climate is in fact cooling.\"
-								\"IPCC said that the temperature will be up by 4 degrees C.\"</i><br>
-						</tr>	
-						<tr>
-							<td><b>Denial of Climate Change</b></td>
-							<td>skepticism, conspiracy theory
-								<i>\"Scientists are lying to the public\"</i><br>
-						</tr>	
-						<tr>
-							<td><b>Politics</b></td>
-							<td>Mentions conservatives, liberals, elections, carbon tax, etc..
-									<i>\"It is too expensive to control CC\"
-									\"Treaties\"</i>
-							</td>
-						</tr>
-						<tr>
-							<td><b>Ethics and Moral Responsibility</b></td>
-							<td><i>\"We need to fight for global warming!\"
-									\"We need to give this planet to the next generation\"
-									\"God gave us the planet to take care of\"</i>
-							</td>
-						</tr>
-						<tr>
-							<td><b>Extreme Events</b></td>
-							<td><i>\"Hurricane Sandy, flooding, snowstorm\"</i></td>
-						</tr>
-						<tr>
-							<td><b>Unusual Weather</b></td>
-							<td>Mentions unusual types of weather
-							<i>\"Heavy snowfall\"
-								\"It's too hot\"</i></td>
-						</tr>
-						<tr>
-							<td><b>Threats to the Environment</b></td>
-							<td><i>\"Acid raid, smog, polution\"
-									\"Deforestation\"
-									\"The coral reefs are being bleached\"<br></i></td>
-						</tr>
-						<tr>
-							<td><b>Threats to Society and Economy</b></td>
-							<td><i>\"Agriculture is threated...\"
-									\"Sea rising will threaten small island nations\"
-									\"Property loss and no insurance...\"<br></i></td>
-						</tr>
-						<tr>
-							<td><b>Unknown</b></td>
-							<td>Unknown, jokes, irrelevant, hard to classify. 
-							<i>\"Global warming is cool OMG a paradox\"
-								\"This guy is so hot its global warming\"</i></td>
-						</tr>	
-			</table>
-			</div>
-            <button type='button' class='btn btn-default center-block' data-dismiss='modal'>Close</button>
-         </div>
-      </div>
-    </div>
-  </div>
 ";
 
 echo "<br>";
-echo "</div><!--jumbo-->";
 echo "</div><!--row-->";
 echo "</div><!--col-->";
 
