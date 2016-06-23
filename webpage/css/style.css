@@ -9,6 +9,16 @@
     padding-left: 25px;
 }
 
+#hi{
+	position: fixed;
+	left: calc(100% - 500px);
+	top: calc(100% - 200px);
+}
+
+.frank{
+	font-size: xx-small;
+}
+
 /*modal for profanity warning*/
 .modal-content{
     border: double white 7px;

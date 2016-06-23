@@ -2,24 +2,7 @@
 $(document).ready(function() {
 	var selected = [];
 //when the "download tweet file" is selected, the API is used to create a downloadable text document
-/*
-	function checkbox() {
-		$('.selection_box').click(function() {
-			if($(this).prop('checked')) { 
-				console.log($(this).attr('id') + ' is checked');
-				selected.push($(this).attr('id'));
-			}
-			else {
-				console.log($(this).attr('id') + ' is not checked');
-				for(var y=0; y<selected.length; y++) {
-					if(selected[y] == $(this).attr('id')) {
-						selected.splice(y, 1);
-					}
-				}
-			}
-		});
-	}
-*/
+
 	$(document).on('click', '#render_doc', function() {
 		for(var x=0; x<selected.length; x++) {
 			selected[x] = selected[x] + "\r\n\r\n";
@@ -41,9 +24,6 @@ $(document).ready(function() {
 		data : JSON,
 		
 			success : function(data) {
-				//for(var x=0; x<selected.length; x++) {
-								//}
-				//add more tweets to page list
 				var new_tweets = data.split("****");
 				for(var x=0; x<20; x++) {
 					var temp = new_tweets[x];
