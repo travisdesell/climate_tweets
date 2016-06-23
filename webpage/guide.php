@@ -28,11 +28,7 @@ echo "
 				<a target='_blank' href='docs/K-2.pdf'><button type='button' class='btn btn-default btn-sm'>Download PDF</button></a>
 				<br><br>
 				<p>Create a list of tweets the students will analyze.</p>
-				<a href='http://csgrid.org/csg/climate_lwingate/K2.php'>
-				<button type='button' class='btn btn-default btn-sm'>
-				Select Tweets
-				</button>
-				</a>
+				<a href='http://csgrid.org/csg/climate_lwingate/K2.php'><button type='button' class='btn btn-default btn-sm'>Select Tweets</button></a>
 				<br><br>
 				<p>Additional Materials: \nPut books here</p>
 			</div><!--well-->
@@ -57,11 +53,7 @@ echo "
 				<a target='_blank' href='docs/6-8.pdf'><button type='button' class='btn btn-default btn-sm'>Download PDF</button></a>
 				<br><br>
 				<p>Create a list of tweets the students will analyze.</p>
-				<a href='http://csgrid.org/csg/climate_lwingate/K2.php'>
-				<button type='button' class='btn btn-default btn-sm'>
-				Select Tweets
-				</button>
-				</a>
+				<a href='http://csgrid.org/csg/climate_lwingate/K2.php'><button type='button' class='btn btn-default btn-sm'>Select Tweets</button></a>
 			</div><!--well-->
 		</div><!--col-->
 		<div class='col-sm-6'>
