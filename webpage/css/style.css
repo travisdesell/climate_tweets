@@ -11,12 +11,12 @@
 
 #hi{
 	position: fixed;
-	left: calc(100% - 500px);
+	left: calc(100% - 350px);
 	top: calc(100% - 200px);
 }
 
 .frank{
-	font-size: xx-small;
+	font-size: small;
 }
 
 /*modal for profanity warning*/
