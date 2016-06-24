@@ -19,16 +19,16 @@ echo "
     
     <h1>Curriculum Download</h1>
 	<p>We use your information for ... To use all available resources, please create an account.</p>
-            <div class='input-group'>
+    	<div class='input-group'>
 	        <input type='text' class='form-control' placeholder='First Name' aria-describedby='basic-addon1'>
 	        <input type='text' class='form-control' placeholder='Last Name' aria-describedby='basic-addon1'>
 	        <input type='text' class='form-control' placeholder='Username' aria-describedby='basic-addon1'>
 			<input type='text' class='form-control' placeholder='Password' aria-describedby='basic-addon1'>
 			<input type='text' class='form-control' placeholder='Email' aria-describedby='basic-addon1'>
+			<input type='text' class='form-control' placeholder='Cell Phone (optional)' aria-describedby='basic-addon1'>
 	        <input type='text' class='form-control' placeholder='Work Phone' aria-describedby='basic-addon1'>
 	        <input type='text' class='form-control' placeholder='School' aria-describedby='basic-addon1'>
 	        <input type='text' class='form-control' placeholder='School District' aria-describedby='basic-addon1'>
-        	<textarea rows='3' input type='text' class='form-control' placeholder='Comments' aria-describedby='basic-addon1'></textarea>
 			</div><!--input-->
         </div><!--col-->
     </div><!--row-->
