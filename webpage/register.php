@@ -1,5 +1,6 @@
-<?
-include_once 'includes/register.inc.php';
+<?php
+#references files in cludes ile.
+include_once 'includes/register.iinc.php';
 include_once 'includes/functions.php';
 ?>
 <!DOCTYPE html>
@@ -33,7 +34,7 @@ include_once 'includes/functions.php';
             </li>
             <li>Your password and confirmation must match exactly</li>
         </ul>
-        <form action="<?php echo esc_url($_SERVER['PHP_SELF']); ?>" 
+        <form action="<?php echo esc_url($_SERVER['REQUEST_URI']); ?>" 
                 method="post" 
                 name="registration_form">
             Username: <input type='text' 

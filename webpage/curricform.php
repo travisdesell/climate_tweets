@@ -15,21 +15,53 @@ print_header("Download Curriculum", "$css_header", "");
 echo "
 <div class='container'>
     <div class='row'>
-	<div class='col-sm-8'>
+	<div class='col-sm-12'>
     
     <h1>Curriculum Download</h1>
 	<p>We use your information for ... To use all available resources, please create an account.</p>
-    	<div class='input-group'>
-	        <input type='text' class='form-control' placeholder='First Name' aria-describedby='basic-addon1'>
-	        <input type='text' class='form-control' placeholder='Last Name' aria-describedby='basic-addon1'>
-	        <input type='text' class='form-control' placeholder='Username' aria-describedby='basic-addon1'>
-			<input type='text' class='form-control' placeholder='Password' aria-describedby='basic-addon1'>
-			<input type='text' class='form-control' placeholder='Email' aria-describedby='basic-addon1'>
-			<input type='text' class='form-control' placeholder='Cell Phone (optional)' aria-describedby='basic-addon1'>
-	        <input type='text' class='form-control' placeholder='Work Phone' aria-describedby='basic-addon1'>
-	        <input type='text' class='form-control' placeholder='School' aria-describedby='basic-addon1'>
-	        <input type='text' class='form-control' placeholder='School District' aria-describedby='basic-addon1'>
-			</div><!--input-->
+
+			<form>
+				<fieldset class='form-group'>
+					<label for='example'>First Name</label>
+					<input type='email' class='form-control' id='first_name' placeholder=''>
+				</fieldset>
+				<fieldset class='form-group'>
+					<label for='example'>Last Name</label>
+					<input type='email' class='form-control' id='last_name' placeholder=''>
+				</fieldset>
+				<fieldset class='form-group'>
+					<label for='example'>Username</label>
+					<input type='email' class='form-control' id='username' placeholder=''>
+				</fieldset>
+				<fieldset class='form-group'>
+					<label for='example'>Password</label>
+					<input type='email' class='form-control' id='password' placeholder=''>
+				</fieldset>
+				<fieldset class='form-group'>
+					<label for='example'>Email</label>
+					<input type='email' class='form-control' id='email' placeholder=''>
+				</fieldset>
+				<fieldset class='form-group'>
+					<label for='example'>Email (verify)</label>
+					<input type='email' class='form-control' id='email_ver' placeholder=''>
+				</fieldset>
+				<fieldset class='form-group'>
+					<label for='example'>Cell Phone</label>
+					<input type='email' class='form-control' id='cell_phone' placeholder=''>
+				</fieldset>
+				<fieldset class='form-group'>
+					<label for='example'>Work Phone</label>
+					<input type='email' class='form-control' id='work_phone' placeholder=''>
+				</fieldset>
+				<fieldset class='form-group'>
+					<label for='example'>School</label>
+					<input type='email' class='form-control' id='school' placeholder=''>
+				</fieldset>
+				<fieldset class='form-group'>
+					<label for='example'>School District</label>
+					<input type='email' class='form-control' id='school_district' placeholder=''>
+				</fieldset>
+			</form>
         </div><!--col-->
     </div><!--row-->
 <p></p>
