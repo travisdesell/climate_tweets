@@ -26,7 +26,7 @@ echo "
 //these lines will add images
 $carousel_info['items'][] = array(
     'active' => 'true',
-    'image' => './images/improvement1twitterlogo.psd',
+    'image' => './images/twitter_vector_logo.jpg',
     'caption' => '',
     'text' => "The Climate Tweets Project studies public opinions about climate change by analyzing tweets. The goal is to discover patterns of opinions on climate change in different parts of our planet. We ask for your help in understanding content of the tweets!"); 
 $carousel_info['items'][] = array(
